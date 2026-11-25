@@ -11,11 +11,50 @@
 <p class="title1">解题</p>
 <p class="date">第8卷，小说 · 蜕（未完）</p>
 <br>
-<div class="content"><p>是在昆明湖的苔石上，也许是在北海上斜着身自顾绿影的古柳旁，有小小一只蝉正在蜕变。无疑的，时候是已经晚一点了，因为柳影已略略含着悲意，晚风开始透出一点警告的秋凉。蜕变似嫌太迟了些个。</p>
-<p>可是，生的意志顽抗着一切的困难，生或死全凭今日的挣扎，没工夫去顾虑什么。生命的第一句口号是勇往直前，不管不顾的向前冲杀是它的最原始而最聪明的战略。这只小蝉要把钢一般黑润的身儿，由皮壳里冲出来，由阴暗而光明，由隐忍而活跃，绝对相信它自己的力量。它必须自证能否飞上枝头，唱出生命最美的歌。它必须鼓动那潜在的大力，把自己提拔到朝阳与晚晴中，由酣睡而飞鸣。它那点小小的力量也就是世界上最大的力量，它是所向无敌，用生的意志击破所有的困难的。一直到它飞上柳枝，它还是喊着“冲杀”，“前进”！</p>
-<p>反之，它若是知难而退，缩敛起它的足与翅，它将无可挽救的做了僵虫；也许被顽童的脚踏碎在泥土上，也许被虫蚁掳架到暗穴中，也许随着落叶被西风卷到水里去。世界上所有的力量，到那时候，是没法把它提到柳枝上去的。</p>
-<p>降服便扫兴的抹去生命一切的光荣与意义。看！那小蝉的嫩翼是怎样的颤动，在生与死之间颤动呢！</p>
+<div class="content"><p>是在昆明湖的苔石上，也许是在北海上斜着身自顾绿影的古柳旁，有小小一只蝉正在蜕变。无疑的，时候是已经晚一点了，因为柳影已略略含着悲意，晚风开始透出一点警告的秋凉。蜕变似嫌太迟了些个。</p>
+
+<p>可是，生的意志顽抗着一切的困难，生或死全凭今日的挣扎，没工夫去顾虑什么。生命的第一句口号是勇往直前，不管不顾的向前冲杀是它的最原始而最聪明的战略。这只小蝉要把钢一般黑润的身儿，由皮壳里冲出来，由阴暗而光明，由隐忍而活跃，绝对相信它自己的力量。它必须自证能否飞上枝头，唱出生命最美的歌。它必须鼓动那潜在的大力，把自己提拔到朝阳与晚晴中，由酣睡而飞鸣。它那点小小的力量也就是世界上最大的力量，它是所向无敌，用生的意志击破所有的困难的。一直到它飞上柳枝，它还是喊着“冲杀”，“前进”！</p>
+
+<p>反之，它若是知难而退，缩敛起它的足与翅，它将无可挽救的做了僵虫；也许被顽童的脚踏碎在泥土上，也许被虫蚁掳架到暗穴中，也许随着落叶被西风卷到水里去。世界上所有的力量，到那时候，是没法把它提到柳枝上去的。</p>
+
+<p>降服便扫兴的抹去生命一切的光荣与意义。看！那小蝉的嫩翼是怎样的颤动，在生与死之间颤动呢！</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00576.html">← 上一页</a> ｜ <a href="./文00578.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "解题", "itemUrl": "老舍全集/文00577.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

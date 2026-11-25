@@ -34,6 +34,41 @@
 <p class="noteitem">[352] 指徐世昌（1855—1939），字卜五，号菊人，天津人。清宣统时曾任内阁协理大臣，1918年10月至1922年6月任北洋政府总统。“听其自然”是他常说的处世方法的一句话。</p>
 <p class="noteitem">[353] <b>改革学校运动</b> 厦门大学学生自治会得知鲁迅辞职的消息后，于1927年1月2日派代表前往挽留。当他们知道鲁迅去志已定时，就组织罢课风潮委员会，于1月7日召开全校学生大会，发动停课罢考，张贴打倒校长亲信刘树杞的标语和传单。据《福建青年》第四期（1927年2月15日）《集美停办与厦大风潮之再起》一文说：“这次风潮的目的就是：一、求整个的——学生、教员、学校——的生机。二、拯救闽南衰落的文化。三、培植福建的革命气息。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01233.html">← 上一页</a> ｜ <a href="./文01235.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "一〇九", "itemUrl": "鲁迅全集/文01234.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷11.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

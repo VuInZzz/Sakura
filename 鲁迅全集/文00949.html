@@ -94,6 +94,41 @@
 <p class="noteitem">[511] 关于《海上花列传》刊出情况，该书自光绪十八年（1892）二月初一日起，陆续刊印于韩邦庆所编文艺杂志《海上奇书》。该刊开始时每逢初一、十五出刊一期，每期印《海上花列传》二回；第九期起，改为每月一期，出至十五期停刊，《海上花列传》共刊出三十回。</p>
 <p class="noteitem">[512] 据《谭瀛室随笔》载：《海上花列传》“书中人名，大抵皆有所指，熟于同、光间上海名流事实者，类能言之。兹姑举所知者，如：齐韵叟为沈仲馥，史天然为李木斋，赖头鼋为勒元侠，方蓬壶为袁翔父，一说为王紫诠，李实夫为盛朴人，李鹤汀为盛杏荪，黎篆鸿为胡雪岩，王莲生为马眉叔，小柳儿为杨猴子，高亚白为李芋仙。以外诸人，苟以类推之，当十得八九，是在读者之留意也。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00948.html">← 上一页</a> ｜ <a href="./文00950.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "第二十六篇 清之狭邪小说", "itemUrl": "鲁迅全集/文00949.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷09.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

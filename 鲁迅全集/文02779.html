@@ -50,6 +50,41 @@
 <p class="noteitem">[244] <b>《吴越春秋》</b> 东汉赵晔撰，记述吴自太伯至夫差、越自无余至勾践的史事，收入不少民间传说。原书十一卷，今存十卷。<b>《越绝书》</b>，东汉袁康撰。记述吴越两国史地及重要历史人物的事迹，多采传闻异说。原书二十五卷，今存十五卷。在《吴越春秋·阖闾内传》和《越绝书·越绝外传记宝剑》中均有《铸剑》故事的记载。</p>
 <p class="noteitem">[245] <b>《中国童话集》</b> 日本池田大伍编译，1924年东京富山房出版。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文02778.html">← 上一页</a> ｜ <a href="./文02780.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "360328（日） 致增田涉", "itemUrl": "鲁迅全集/文02779.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

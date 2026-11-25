@@ -11,9 +11,9 @@
 <p class="title1">十三</p>
 <p class="date">第6卷，小说 · 鼓书艺人</p>
 <br>
-<div class="content"><p>唐家这回总算是称了心，因为方家为了秀莲闹得很不顺遂。真不懂为什么宝庆不肯卖了秀莲。这个人真疯了！想想吧，为了留住个姑娘，还舍得往外掏钱。“真是个傻瓜！”四奶奶src="./images/Image00092.jpg"
+<div class="content"><p>唐家这回总算是称了心，因为方家为了秀莲闹得很不顺遂。真不懂为什么宝庆不肯卖了秀莲。这个人真疯了！想想吧，为了留住个姑娘，还舍得往外掏钱。“真是个傻瓜！”四奶奶<img alt="" src="./images/Image00092.jpg" />
 
- src="./images/Image00093.jpg"
+ <img alt="" src="./images/Image00093.jpg" />
 
  
 
@@ -199,9 +199,9 @@
 
  [1]
 
- src="./images/Image00092.jpg"
+ <img alt="" src="./images/Image00092.jpg" />
 
- src="./images/Image00093.jpg"
+ <img alt="" src="./images/Image00093.jpg" />
 
  念ㄓ丫ㄌㄛ，意尖声。</p>
 
@@ -212,6 +212,41 @@
  为了译好《鼓书艺人》，我曾向熟悉老舍的尹福来、高凤山、李振英等曲艺界前辈请教。宝庆这段唱词在英译本中是取自周玉吉抗李自成的戏，歌颂忠、孝、节、义，满门殉难；解放后该戏停演。根据老艺人们的提示，我将这段唱词改为梁红玉抗金兵。——译者注</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00411.html">← 上一页</a> ｜ <a href="./文00413.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "十三", "itemUrl": "老舍全集/文00412.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷06.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -42,6 +42,41 @@
 <p>“好吧。”玉旨一郎又那么含蓄地笑笑说，“那就全拿走吧。我去招呼校役，你把没看完的再看一看。”说完不等王一民回答就微笑着走出去了。</p>
 <p>王一民顾不上分析他为什么要亲自去找校役，是留给自己一个机会？还是有什么别的意图？他按自己已经想好的计划，迅速地把那封写有大地包地址的信从棉袄兜里拽出来，又抓起那个小本，把信一叠，夹在里面，敏捷地装进了衣兜。然后他又伏下身，探头往罗世诚床下看，床下地板上有一条二指宽的裂缝，裂缝里黑乎乎的，他忙把手指探进去试了试，里边是空的。这个地板缝是他在拽柳条包时看到的，这时用上了。他忙把可能被敌人看出问题的两本笔记和报纸摘录等都塞了进去。他准备告诉肖光义，让他设法拿走。他用尽可能快的速度做完了这些事情。等到玉旨一郎领着校役老冯进来的时候，他已经擦于了头上的汗水，掸净了身上的尘土，静静地等在那里了。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./章034.html">← 上一页</a> ｜ <a href="./章036.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "夜幕下的哈尔滨", "bookTitle": "夜幕下的哈尔滨", "itemTitle": "第 35 章 - 夜幕下的哈尔滨", "itemUrl": "夜幕下的哈尔滨/章035.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="navbar"><a href="./index.html">返回本书目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 <br>
 <hr color="#C0C0C0" width="60%%" size="1" align="left">

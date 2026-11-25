@@ -30,6 +30,41 @@
 
   <p class="msonormal2">阿姆拉堡：多么迷人的小型王宫，墙面和穹顶都经过妙笔精绘，王宫高踞于干涸的博托夫干河岸边。7月里，地表没有一点水的迹象；而穿过这砂石河床向上游去，树冠浓密的树木跃然而出，如同小孩玩的诺亚方舟玩具上的树木。莽莽荒野之中何等的生机，何等的美景啊：哈里发为他的小特里阿农宫选取的地点多好！把王宫装点得多美！阿姆拉堡映衬在沙漠之下的如画景色永远铭刻在我的脑海里；每当我回想起来，沉浸在愉悦之中，就无法苛责这个创造出阿姆拉堡的王朝了。倭马亚哈里发们无疑骇人听闻，但其实我既不是哈瓦利吉派的成员，也不是利甲族人，所以我不必愤愤不平。另一方面来说，我生性有亲希腊的倾向，因此为倭马亚家族开明资助古希腊艺术而深怀感谢之情，他们发现在他们引以为家的罗马帝国的先前行省中，古希腊艺术依然是流行事物。再者，这些倭马亚哈里发们都不仅仅有教养，而且怀柔包容。所以天主对他们、对耶洗别，以及对可敬的希律王（我说的可敬是对作为建造者的希律王，作为个人他可无甚可敬之处）都算仁慈宽大。至于阿布·穆斯里姆、耶户和约拿达，我不打算替他们祷告，宗教狂热分子大可自我防备去。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0292.html">← 上一页</a> ｜ <a href="./篇0294.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "72.骇人的倭马亚家族", "itemUrl": "汤因比著作集/篇0293.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

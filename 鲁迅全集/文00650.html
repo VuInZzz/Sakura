@@ -46,6 +46,41 @@
 <p class="noteitem">[200] <b>“断发文身”</b> 语出《史记·越王勾践世家》：“越王勾践，……封于会稽，以奉守禹之祀，文（纹）身断发，披草莱而邑焉。”又《汉书·地理志》：“粤（越）地……文身断发，以避蛟龙之害。”据唐代颜师古注引后汉应劭说：“常在水中，故断其发，文其身，以象龙子；故不见伤害也。”</p>
 <p class="noteitem">[201] <b>黄克强</b>（1874—1916） 名兴，字克强，湖南善化（今属长沙）人，近代民主革命家。他曾留学日本，与孙中山同倡革命，民国成立后曾任陆军总长。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00649.html">← 上一页</a> ｜ <a href="./文00651.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "因太炎先生而想起的二三事", "itemUrl": "鲁迅全集/文00650.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷06.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

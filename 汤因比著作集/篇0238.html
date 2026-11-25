@@ -24,6 +24,41 @@
 
   <p class="msonormal2">你质疑我对婆罗浮屠的热爱吗？你告诉我它的节律巴洛克至极吗？你是否更偏爱附近佛教神祠文荼塔古典朴素的风格，或者是巴兰班南的湿婆<span class="math-super"><a id="z78" href="part0271.html#bz78" class="calibre1">[78]</a></span>庙周围浮雕生动活泼的气息？湿婆庙那里的主角可不是乔达摩<span class="math-super"><a id="z79" href="part0271.html#bz79" class="calibre1">[79]</a></span>，而是罗摩<span class="math-super"><a id="z80" href="part0271.html#bz80" class="calibre1">[80]</a></span>。或许你可以说服我的看法，但你无法改变我的感受。婆罗浮屠俘虏了我的心：对我而言，它是圣地中的圣地，相当于圣穴<span class="math-super"><a id="z81" href="part0271.html#bz81" class="calibre1">[81]</a></span>和圣礼拜教堂<span class="math-super"><a id="z82" href="part0271.html#bz82" class="calibre1">[82]</a></span>。当窣堵波盘踞的山顶消失在棕榄树丛中时，我伸长脖子回过头去，恋恋不舍地再看最后一眼以示告别。转眼之间，我淹没在日惹的8 000名大学生和40 000名中学生当中，他们全都跟荷兰人一样骑在自行车上。“那歌声去了：我是睡？是醒？”<span class="math-super"><a id="z83" href="part0271.html#bz83" class="calibre1">[83]</a></span></p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0237.html">← 上一页</a> ｜ <a href="./篇0239.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "17.婆罗浮屠", "itemUrl": "汤因比著作集/篇0238.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

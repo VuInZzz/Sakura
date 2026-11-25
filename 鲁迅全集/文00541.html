@@ -41,6 +41,41 @@
 <p class="noteitem">[348] 冯妇搏虎，见《孟子·尽心（下）》。关于这段文字的断句，宋代刘昌诗《芦浦笔记·冯妇》中曾有这样的意见：“《孟子》‘晋人有冯妇者善搏虎卒为善士则之野有众逐虎’云云……至今读者，以‘卒为善士’为一句，‘则之野’为一句。以余味其言，则恐合以‘卒为善’为一句，‘士则之’为一句，‘野有众逐虎’为一句。盖其有搏虎之勇，而卒能为善，故士以为则；及其不知止，则士以为笑。‘野有众逐虎’句意亦健，何必谓之野外，而后云攘臂也。”</p>
 <p class="noteitem">[349] 这是对林语堂的讽刺。林在《人间世》第十二期（1934年9月）《辜鸿铭特辑·辑者弁言》中说过：“今日随波逐流之人太多，这班人才不值得研究”的话。<b>“性灵”</b>，是当时林语堂提倡的一种文学主张。他在《论语》第十五期（1933年4月16日）发表的《论文》中说：“文章者，个人性灵之表现。性灵之为物，惟我知之，生我之父母不知，同床之吾妻亦不知。然文学之生命实寄托于此。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00540.html">← 上一页</a> ｜ <a href="./文00542.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "点句的难", "itemUrl": "鲁迅全集/文00541.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -36,6 +36,41 @@
 <p class="noteitem">[378] <b>革命的导师</b> 指列宁（1870—1924）。他在1907年称赞高尔基的《母亲》是“一本非常及时的书”，“这是一本必需的书，很多工人不自觉地、自发地参加了革命运动，现在他们读一读《母亲》，对自己会有很大的益处。”（引自高尔基：《列宁》）1910年，又在《政治家的短评》中说：“高尔基毫无疑问是无产阶级艺术的最杰出的代表，他对无产阶级艺术作出了许多贡献，并且还会作出更多贡献。”</p>
 <p class="noteitem">[379] <b>无祖国的文学</b> 马克思、恩格斯所撰《共产党宣言》中有“工人没有祖国”的话，所以也有人称无产阶级文学为无祖国的文学。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00756.html">← 上一页</a> ｜ <a href="./文00758.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "译本高尔基《一月九日》小引", "itemUrl": "鲁迅全集/文00757.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷07.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

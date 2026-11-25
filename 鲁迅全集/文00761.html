@@ -108,6 +108,41 @@
 <p class="noteitem">[425] <b>西谛</b> 郑振铎（1898—1958），笔名西谛，福建长乐人，作家、文学史家，文学研究会的发起人之一。著有短篇小说集《桂公圹》、《插图本中国文学史》等。</p>
 <p class="noteitem">[426] <b>富家赘婿</b> 指邵洵美（1906—1968），浙江余姚人，诗人。他是清末大官僚、买办盛宣怀的孙女婿。在他办的刊物《十日谈》1934年1月1日新年特辑上，刊有杨天南的《二十二年的出版界》一文，其中说：“特别可以提起的是北平笺谱，此种文雅的事，由鲁迅、西谛二人为之，提倡中国古法木刻，真是大开倒车，老将其实老了。至于全书六册预购价十二元，真真吓得煞人也。无论如何，中国尚有如此优游不迫之好奇精神，是十分可贺的，但愿所余四十余部，没有一个闲暇之人敢去接受。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00760.html">← 上一页</a> ｜ <a href="./文00762.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "《引玉集》后记", "itemUrl": "鲁迅全集/文00761.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷07.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

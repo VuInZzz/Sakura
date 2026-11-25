@@ -24,6 +24,41 @@
 
   <p class="msonormal2">部分原因在于这样的历史事实——印度尼西亚并不是通过军事征服的手段，而是通过温和渐进的方式，逐步皈依成为穆斯林国家，这个转变发生在基督教纪年的16、17世纪之际，其实并不久远。伊斯兰教在这里扎根下来，如同印度教深厚沃土上的薄薄一层植被，而更为古老、更为宽泛普遍的宗教依然隐约可见。一位印度尼西亚穆斯林会用阿拉伯语的名字，但姓氏却是梵文的。即便是在位于苏门答腊中部高地的米南加保这一穆斯林意识很强的地区，也还保留沿用冠以梵文姓氏的习惯。印度尼西亚的穆斯林也庆祝先知穆罕默德的诞辰（如果你提起圣纪节<span class="math-super"><a id="z69" href="part0271.html#bz69" class="calibre1">[69]</a></span>，他们懂你的意思，尽管他们的叫法是马来语的表达形式），但庆祝的仪式令人瞠目结舌，采取的是演通宵皮影戏的形式，并且人物造型和场景都取自《摩诃婆罗多》<span class="math-super"><a id="z70" href="part0271.html#bz70" class="calibre1">[70]</a></span>，而不是先知的传记。左右印度尼西亚穆斯林感情和想象的英雄人物，是阿周那<span class="math-super"><a id="z71" href="part0271.html#bz71" class="calibre1">[71]</a></span>和奎师那<span class="math-super"><a id="z72" href="part0271.html#bz72" class="calibre1">[72]</a></span>，而非哈姆扎<span class="math-super"><a id="z73" href="part0271.html#bz73" class="calibre1">[73]</a></span>或者哈立德<span class="math-super"><a id="z74" href="part0271.html#bz74" class="calibre1">[74]</a></span>。他们的确是与众不同的伊斯兰教信徒。然而只要你跨过爪哇岛东端和巴厘岛之间那道狭窄的海峡，便会发现印度教依然大行其道，连例行公事的伊斯兰外表都没有。这里每户人家都有家祠，每座村庄都有自己的村庙，有神龛供奉印度教诸神的神像，有塔状的圣柜接收拜神者的供品。巴厘岛印度教徒是一支小小的少数派，但他们的穆斯林同胞从未强人所难。印度尼西亚正是以这样至关重要的宗教宽容，树立起了榜样，我们其余这些国家最好能够引而效之。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0236.html">← 上一页</a> ｜ <a href="./篇0238.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "16.各宗教睦邻友好之地", "itemUrl": "汤因比著作集/篇0237.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

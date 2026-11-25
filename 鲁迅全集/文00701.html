@@ -56,6 +56,41 @@
 <p class="noteitem">[237] <b>孙传芳</b>（1885—1935） 字馨远，山东历城人，北洋直系军阀。1925年盘踞东南五省，自任五省联军总司令。1926年冬，其主力在江西南昌、九江一带被北伐军击溃。</p>
 <p class="noteitem">[238] <b>叶遂宁</b>（C.A.Eсенин，1895—1925） 通译叶赛宁，苏联诗人。他以描写宗法制度下田园生活的抒情诗著称。十月革命时曾向往革命，写过一些赞美革命的诗，如《天上的鼓手》等。但革命后陷入苦闷，最后自杀。著有长诗《四旬祭》、《苏维埃俄罗斯》等。<b>梭波里</b>（А.Соболь，1888—1926），苏联作家。十月革命后曾接近革命，但终因不满于现实生活而自杀。著有长篇小说《尘土》，短篇小说集《樱桃开花的时候》。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00700.html">← 上一页</a> ｜ <a href="./文00702.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "文艺与政治的歧途", "itemUrl": "鲁迅全集/文00701.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷07.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -35,6 +35,41 @@
 <p class="noteitem">[179] <b>文字狱</b> 封建时代迫害知识分子的冤狱，往往故意从作者诗文中摘取字句，罗织罪名。信中所说清代的文字狱，据梁启超《中国近三百年学术史》载，顺治、康熙、雍正、乾隆四朝各类文字狱难以计算，仅乾隆一朝就多达一百三十起以上，从乾隆三十九年至四十七年即烧书二十四次，共焚书籍一万三千八百六十二部。</p>
 <p class="noteitem">[180] “<b>邻猫生子</b>” 这是梁启超《中国史界革命案》中所引英国斯宾塞的话：“或有告者曰：邻家之猫，昨日产一子，以云事实，诚事实也；然谁不知为无用之事实乎？何也？以其与他事毫无关涉，于吾人生活上之行为，毫无影响也。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01983.html">← 上一页</a> ｜ <a href="./文01985.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "340409", "itemUrl": "鲁迅全集/文01984.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷13.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

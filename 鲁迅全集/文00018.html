@@ -52,6 +52,41 @@
 <p class="noteitem">[565] <b>额黄和眉绿</b> 古代妇女在额中和眉上所作的修饰。额黄起于六朝时，眉绿大约于战国时已开始，二者都盛行于唐代。</p>
 <p class="noteitem">[566] <b>汪曰桢</b>（1813—1881） 字刚木，号谢城，浙江乌程（今吴兴）人。清咸丰时任会稽教谕。著有《湖雅》、《历代长术辑要》等。《湖雅》共九卷，收在他自己编纂的《荔墙丛刻》中。在《湖雅》卷九“器用之属”中谈到镜子时说：“近年玻璃镜盛行，薛镜（按指明人薛惠公所铸铜镜）已久不复铸。然玻璃镜每多照物不准，俗谓之走作，铜镜则无此病。又玻璃易碎，不及铜质耐久，世俗乃弃彼取此，良不可解。盖风气日薄，厌常喜新，即一物可征矣。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00017.html">← 上一页</a> ｜ <a href="./文00019.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "看镜有感", "itemUrl": "鲁迅全集/文00018.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷01.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -11,9 +11,46 @@
 <p class="title1">五</p>
 <p class="date">第14卷，散文 杂文 · 滇行短记</p>
 <br>
-<div class="content"><p>在西南联大讲演了四次。</p>
-<p>第一次讲演，闻一多先生作主席。他谦虚的说：大学里总是作研究工作，不容易产出活的文学来……我答以：抗战四年来，文艺写家们发现了许多文艺上的问题，诚恳的去讨论。但是，讨论的第二步，必是研究，否则不易得到结果；而写家们忙于写作，很难静静的坐下去作研究；所以，大学里作研究工作，是必要的，是帮着写家们解决问题的。研究并不是崇古鄙今，而是供给新文艺以有益的参考，使新文艺更坚实起来。譬如说：这两年来，大家都讨论民族形式问题，但讨论的多半是何谓民族形式，与民族形式的源泉何在；至于其中的细腻处，则必非匆匆忙忙的所能道出，而须一项一项的细心研究了。近来，罗莘田先生根据一百首北方俗曲，指出民间诗歌用韵的活泼自由，及十三辙的发展，成为小册。这小册子虽只谈到了民族形式中的一项问题，但是老老实实详详细细的述说，绝非空论。看了这小册子，至少我们会明白十三辙已有相当长久的历史，和它怎样代替了官样的诗韵；至少我们会看出民间文艺的用韵是何等活动，何等大胆——也就增加了我们写作时的勇气。罗先生是音韵学家，可是他的研究结果就能直接有助于文艺的写作，我愿这样的例子一天比一天多起来。</p>
+<div class="content"><p>在西南联大讲演了四次。</p>
+
+<p>第一次讲演，闻一多先生作主席。他谦虚的说：大学里总是作研究工作，不容易产出活的文学来……我答以：抗战四年来，文艺写家们发现了许多文艺上的问题，诚恳的去讨论。但是，讨论的第二步，必是研究，否则不易得到结果；而写家们忙于写作，很难静静的坐下去作研究；所以，大学里作研究工作，是必要的，是帮着写家们解决问题的。研究并不是崇古鄙今，而是供给新文艺以有益的参考，使新文艺更坚实起来。譬如说：这两年来，大家都讨论民族形式问题，但讨论的多半是何谓民族形式，与民族形式的源泉何在；至于其中的细腻处，则必非匆匆忙忙的所能道出，而须一项一项的细心研究了。近来，罗莘田先生根据一百首北方俗曲，指出民间诗歌用韵的活泼自由，及十三辙的发展，成为小册。这小册子虽只谈到了民族形式中的一项问题，但是老老实实详详细细的述说，绝非空论。看了这小册子，至少我们会明白十三辙已有相当长久的历史，和它怎样代替了官样的诗韵；至少我们会看出民间文艺的用韵是何等活动，何等大胆——也就增加了我们写作时的勇气。罗先生是音韵学家，可是他的研究结果就能直接有助于文艺的写作，我愿这样的例子一天比一天多起来。</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01408.html">← 上一页</a> ｜ <a href="./文01410.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "五", "itemUrl": "老舍全集/文01409.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

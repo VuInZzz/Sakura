@@ -48,6 +48,41 @@
 <p class="noteitem">[49] <b>一种杂志</b> 当指《小说丛报》。秋翁（平襟亚）在《秋斋杂感》一文（载1942年1月《万象》第一年第七期）的“文抄公”一节中，曾谈及“二十年前”的这“一段公案”，说当年朱鸳雏“忽然发见新出版的《小说丛报》内，刊着一篇特载小说《乐人扬珂》，是从《域外小说集》中一字不易地抄来的，只把译者的署名，改上李定夷三字。”</p>
 <p class="noteitem">[50] <b>显克微支</b>（H.Sienkiewicz，1846—1916） 波兰作家。他的早期作品主要反映波兰农民的痛苦生活，以及波兰人民反对异族侵略的斗争。后来多写历史小说，如《火与剑》、《你往何处去？》、《十字军骑士》等。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01008.html">← 上一页</a> ｜ <a href="./文01010.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "域外小说集序", "itemUrl": "鲁迅全集/文01009.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷10.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

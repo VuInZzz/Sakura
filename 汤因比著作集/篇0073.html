@@ -26,6 +26,41 @@
 
   <p class="msonormal2">商代中国与孔子时代的中国最重要的不同就是疆域的变化。在商代，中国的领域局限于北方的黄河下游平原以及黄河西岸渭河流域的关中地区。渭河是黄河的支流。到了公元前500年，中国的领土向南方和北方都有了拓展。在南面，它已包括了淮河流域和汉水流域，以及长江下游的低洼地区。这块南部新添领土上的土著居民不是中国社会的原有成员，但他们在种族上与中国人有相同的血缘关系，他们的母语与汉语有着密切的关系，而且他们一直采取中国人的生活方式。所以，他们日益卷入了中国的强权政治。同时发生的中国领土向北方和西北方的扩展，使得中国人与欧亚大草原上的游牧民族发生了直接的接触，在这里，中国人遇到了不可同化的异族。这些游牧民族不仅不讲汉语，而且有着与中国人不同的生活方式。到了中国的农民与欧亚大陆的游牧者相互发生冲撞的时期，两个社会之间互不相容的生活方式早已变得凝固化了。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0072.html">← 上一页</a> ｜ <a href="./篇0074.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第二十章 中国文明", "itemUrl": "汤因比著作集/篇0073.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

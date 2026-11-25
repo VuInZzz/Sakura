@@ -11,13 +11,54 @@
 <p class="title1">呸！</p>
 <p class="date">第14卷，散文 杂文</p>
 <br>
-<div class="content"><p>有人说：贪污的事儿，自古有之，何必大惊小怪！</p>
-<p>呸！这分明是轻视伟大的“三反”运动，以为这运动是多此一举！贪污的事儿的确是自古有之，正因如此，才须在今天彻底肃清。人应当一代比一代好，坏处越古，越须从速消灭。我们正在积极地打“老虎”，那贪污自古有之的思想也是“老虎”，必须打杀，不再教它在人心中发威作怪！所以，有人援引古事，轻视“三反”，咱们要“诛”他的心！</p>
-<p>有人说：不但贪污是自古有之，而且是人的天性，所以贪污必不可免！</p>
-<p>呸！呸！这是为贪污开脱罪名，倒好像贪污不是什么可耻可恨的事。好不要脸！这种话完全由个人利益出发。敢发此言的不是贪污分子，必是想包庇贪污分子！一个手脚干净的人，一定不会说这种无耻的话！</p>
-<p>这种话也另有恶意：即使三反运动成了功，也不过是一时的；贪污分子只须逃过这一关，还可以卷土重来！哼，告诉你吧，没有那个事！三反运动是全国人民一致热烈拥护的，民意与贪污势不两立，而且永远如此。这一关不好逃，即使设法逃脱，日后必定落网。改了尊家的“天性”，坦白自己的罪过吧！您的“天性”要是顽固到底，国法可不能为您格外宽大！</p>
-<p class="right">原载1952年2月23日《光明日报》</p>
+<div class="content"><p>有人说：贪污的事儿，自古有之，何必大惊小怪！</p>
+
+<p>呸！这分明是轻视伟大的“三反”运动，以为这运动是多此一举！贪污的事儿的确是自古有之，正因如此，才须在今天彻底肃清。人应当一代比一代好，坏处越古，越须从速消灭。我们正在积极地打“老虎”，那贪污自古有之的思想也是“老虎”，必须打杀，不再教它在人心中发威作怪！所以，有人援引古事，轻视“三反”，咱们要“诛”他的心！</p>
+
+<p>有人说：不但贪污是自古有之，而且是人的天性，所以贪污必不可免！</p>
+
+<p>呸！呸！这是为贪污开脱罪名，倒好像贪污不是什么可耻可恨的事。好不要脸！这种话完全由个人利益出发。敢发此言的不是贪污分子，必是想包庇贪污分子！一个手脚干净的人，一定不会说这种无耻的话！</p>
+
+<p>这种话也另有恶意：即使三反运动成了功，也不过是一时的；贪污分子只须逃过这一关，还可以卷土重来！哼，告诉你吧，没有那个事！三反运动是全国人民一致热烈拥护的，民意与贪污势不两立，而且永远如此。这一关不好逃，即使设法逃脱，日后必定落网。改了尊家的“天性”，坦白自己的罪过吧！您的“天性”要是顽固到底，国法可不能为您格外宽大！</p>
+
+<p class="right">原载1952年2月23日《光明日报》</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01510.html">← 上一页</a> ｜ <a href="./文01512.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "呸！", "itemUrl": "老舍全集/文01511.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

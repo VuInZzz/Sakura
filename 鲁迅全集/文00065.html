@@ -40,6 +40,41 @@
 <p class="noteitem">[199] <b>《国粹学报》</b> 月刊，1905年1月创刊于上海，邓实编辑，1911年12月停刊，共出八十二期。主要撰稿人有章太炎、刘师培等。该志时常刊载明末遗民反清的文章，对当时反对清朝政府的革命运动，起过一些作用。</p>
 <p class="noteitem">[200] <b>《长青》</b> 周刊，1922年9月创刊。包天笑、胡环琛编辑。同年10月停刊。《红》，即《红杂志》，周刊，1922年8月创刊。严独鹤、施济群编辑。1924年7月改名《红玫瑰》。《快活》，旬刊，1922年1月创刊。李涵秋、张云石编辑。同年12月停刊。《礼拜六》，周刊，1914年6月6日创刊。王钝根、孙剑秋编辑。1916年4月停刊。1921年3月曾复刊，至1923年4月停刊。这些都是鸳鸯蝴蝶派在上海主办的文艺刊物。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00064.html">← 上一页</a> ｜ <a href="./文00066.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "“一是之学说”", "itemUrl": "鲁迅全集/文00065.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷01.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

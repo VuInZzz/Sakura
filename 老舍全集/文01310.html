@@ -11,14 +11,56 @@
 <p class="title1">停薪留职</p>
 <p class="date">第14卷，散文 杂文</p>
 <br>
-<div class="content"><p>北方的学校现已至少停闭一半了。</p>
-<p>对学生的处置，自然极关重要；不过，先按下不讲，且说说教师的问题。</p>
-<p>学校关门，教师的命运十之八九是“停薪留职”。</p>
-<p>教育事业本来清苦，向无发财机会；停薪等于断炊，留职不过就是赋闲。而这些人呢，有知识，能受苦，又决不甘心蹲在家里。政府对流亡学生已有一些招待与安置的办法，独对教师一字不提，不知何故。教师的能力与身体并不弱于学生，为什么不可以作学生们所能得到的工作呢？所谓留职，不过是句空话，长期抗战似与马上复职不能相容。那么，任着这些有才有用，而甘心愿去服务的教师们赋闲挨饿，岂不是极大的损失？</p>
-<p>深希望政府及早想个办法，把留职的教师召集了来，给予相当的工作。这是用人的时候，而教师们又是勤苦惯了喜爱作事的人。再说，他们容易集合，有命令就马上能来。他们容易训练，因为他们平日是最规矩的人。他们起码是高中与师范毕业，而对作事上又有相当的经验。</p>
-<p>假若政府无暇及此，教师们是不是应当自动的联合起来，向政府请求些工作呢？</p>
-<p class="right">原载1937年11月11日《宇宙风》第五十一期</p>
+<div class="content"><p>北方的学校现已至少停闭一半了。</p>
+
+<p>对学生的处置，自然极关重要；不过，先按下不讲，且说说教师的问题。</p>
+
+<p>学校关门，教师的命运十之八九是“停薪留职”。</p>
+
+<p>教育事业本来清苦，向无发财机会；停薪等于断炊，留职不过就是赋闲。而这些人呢，有知识，能受苦，又决不甘心蹲在家里。政府对流亡学生已有一些招待与安置的办法，独对教师一字不提，不知何故。教师的能力与身体并不弱于学生，为什么不可以作学生们所能得到的工作呢？所谓留职，不过是句空话，长期抗战似与马上复职不能相容。那么，任着这些有才有用，而甘心愿去服务的教师们赋闲挨饿，岂不是极大的损失？</p>
+
+<p>深希望政府及早想个办法，把留职的教师召集了来，给予相当的工作。这是用人的时候，而教师们又是勤苦惯了喜爱作事的人。再说，他们容易集合，有命令就马上能来。他们容易训练，因为他们平日是最规矩的人。他们起码是高中与师范毕业，而对作事上又有相当的经验。</p>
+
+<p>假若政府无暇及此，教师们是不是应当自动的联合起来，向政府请求些工作呢？</p>
+
+<p class="right">原载1937年11月11日《宇宙风》第五十一期</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01309.html">← 上一页</a> ｜ <a href="./文01311.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "停薪留职", "itemUrl": "老舍全集/文01310.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

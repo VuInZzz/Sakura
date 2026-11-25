@@ -28,6 +28,41 @@
 
   <p class="msonormal2">勇于突破的乳牛场农场主的孙辈将会和处在威斯康星州和明尼苏达州他们的同辈一样摩登。傍晚我们离开他的农场，驾车穿行过荒芜的沼泽，一两个小时内都见不到房屋人影。我们飞速驶过一家巨大的造纸厂，在夜色中到达了一座阿伊努人的渔猎村庄。留着大胡子的族长面容庄重，脸上带着一丝悲悯的笑容，以示原谅了将他古老的生活方式扫荡无存的现代世界。北海道见证沧海桑田，但因为缺失而最为显眼的，却是日本传统文明的那个时代。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0245.html">← 上一页</a> ｜ <a href="./篇0247.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "25.北海道", "itemUrl": "汤因比著作集/篇0246.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

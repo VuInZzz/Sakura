@@ -38,6 +38,41 @@
 <p class="noteitem">[234] 指吴稚晖在南昌对新闻界的谈话，见1933年4月29日《申报》“南昌专电”：“吴稚晖谈，暴日侵华，为全国预定计划，不因我退让而软化，或抵抗而强硬，我惟不计生死，拚死抵抗。”由于国民党政府实行不抵抗政策，此时正酝酿派亲日分子黄郛北上，与进犯华北的日本侵略者妥协，因此《大晚报》“星期谈屑”曾载《吴稚晖抗日》一文，对吴的谈话加以嘲笑，文中说：“自九一八以后，一二八以后，我们久已不闻吴稚晖先生的解颐快论了，最近，申报的南昌电，记着吴老先生的一段谈话”，“便是吴老先生的一张嘴巴，也是无从可以救国了”，“吴老先生的解颐快论”，只不过是“‘皓首匹夫’的随便谈谈而已！”</p>
 <p class="noteitem">[235] <b>药渣</b> 见清代褚人获《坚瓠丙集·药渣》：“明吾郡陆天池博学能文，精于音律。有寓言曰：某帝时，宫人多怀春疾，医者曰：‘须敕数十少年药之。’帝如言。后数日，宫人皆颜舒体胖，拜帝曰：‘赐药疾愈，谨谢恩！’诸少年俯伏于后，枯瘠蹒跚，无复人状。帝问是何物？对曰：‘药渣！’”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00407.html">← 上一页</a> ｜ <a href="./文00409.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "新药", "itemUrl": "鲁迅全集/文00408.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

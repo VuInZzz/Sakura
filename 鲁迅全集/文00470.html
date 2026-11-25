@@ -43,6 +43,41 @@
 <p class="noteitem">[312] <b>国联</b> 参看本卷第34页注〔7〕。1931年九一八事变后，国民党政府对日本侵略采取不抵抗政策，声称要期待国联的“公理判决”。1932年3月国联派调查团来中国，10月发表名为调解中日争端实则偏袒日本的《国联调查团报告书》，主张在东北建立以日本为主、国际共管的“满洲自治政府”。国民党政府竟称《报告书》“明白公允”，表示佩服赞赏。但日本帝国主义为达到独占中国的目的，拒绝国联意见书，于1933年3月27日通告退出国联。国民党政府又对国联无力约束日本表示过不满。</p>
 <p class="noteitem">[313] <b>军缩</b> 指国际军缩（即裁军）会议，1932年2月起在日内瓦召开。当时中国一些报刊曾赞扬军缩会议，散布和平幻想。1933年10月希特勒宣布德国退出军缩会议，一些报刊又为希特勒扩军备战进行辩护，如同年10月17日《申报》载《德国退出军缩会议后的动向》一文说：德国此举乃“为准备自己，原无不当，且亦适合于日尔曼民族之传统习惯”。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00469.html">← 上一页</a> ｜ <a href="./文00471.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "黄祸", "itemUrl": "鲁迅全集/文00470.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -101,7 +101,7 @@
 
 </a>
 
- 的：“无论你要说什么一件事，那里只有一个名词去代表它，只有一个动词去活动它，只有一个形容词去限制它。最重要的是找这个名词，这个动词，这个形容词，直到找着为止，而且这找到的是比别的一切都满意的。”但是，这决不是说：去掀开字典由头至尾去找一遍，而是那文人心灵的运用，把最好的思想用最好的言语传达出来。设若有两个文人同时对同一事物作这样的工作，他们所找到的也许完全不相同吧？普通的事物本来有普通的字代表，可是文学家由他自己的心灵，把文字另炼造一番，这普通的字便也有了文学的气味。言语的本身并不能够有力量，活泼，正确；而是要待文学家给它这些个好处的构成力。那“山高月小，水落石出”原是八个极普通的字，可是作成多么伟大的一幅图画！只有能觉得这简素而伟大之美的苏东坡才能这样写出，不是个个人都能办到的。那构思十稔而作成《三都赋》的左太冲，恐怕只是苦心搜求字眼，而心中实无所有吧？看他的“树则有木兰梫桂杞src="./images/Image00231.jpg"
+ 的：“无论你要说什么一件事，那里只有一个名词去代表它，只有一个动词去活动它，只有一个形容词去限制它。最重要的是找这个名词，这个动词，这个形容词，直到找着为止，而且这找到的是比别的一切都满意的。”但是，这决不是说：去掀开字典由头至尾去找一遍，而是那文人心灵的运用，把最好的思想用最好的言语传达出来。设若有两个文人同时对同一事物作这样的工作，他们所找到的也许完全不相同吧？普通的事物本来有普通的字代表，可是文学家由他自己的心灵，把文字另炼造一番，这普通的字便也有了文学的气味。言语的本身并不能够有力量，活泼，正确；而是要待文学家给它这些个好处的构成力。那“山高月小，水落石出”原是八个极普通的字，可是作成多么伟大的一幅图画！只有能觉得这简素而伟大之美的苏东坡才能这样写出，不是个个人都能办到的。那构思十稔而作成《三都赋》的左太冲，恐怕只是苦心搜求字眼，而心中实无所有吧？看他的“树则有木兰梫桂杞<img alt="" src="./images/Image00231.jpg" />
 
  桐棕桠楔枞”等等，字是找了不少，可是到底能给我们一个美好的图画，像“山高月小，水落石出”那样的美妙吗？这砌墙似的堆字，不能产生出活文学来，足以反证出风格不只是以修辞为能事的。那么，风格是什么呢？我们看瑞得（Herbert Read）
 
@@ -306,6 +306,41 @@
  《荆川先生文集》中标题为《答茅鹿门知县》。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01922.html">← 上一页</a> ｜ <a href="./文01924.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "第七讲 文学的风格", "itemUrl": "老舍全集/文01923.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷16.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

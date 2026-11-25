@@ -42,6 +42,41 @@
 <p class="noteitem">[318] <b>“年方花信”</b> “花信”本为花开的信息之意，古有“二十四番花信”之说，见南朝梁宗懔《荆楚岁时记》、宋程大昌《演繁露》、宋王逵《蠡海集》等。“二十四番花信”指二十四种花的开花期，旧时借“花信”指女性正当青春成熟期。</p>
 <p class="noteitem">[319] <b>“婴儿杀戮”</b> 见基督教的《新约全书·马太福音》第二章，其中说：当犹太希律王的时候，耶稣生在犹太的伯利恒，希律王知道了，心里很不安。“有主的使者向约瑟（按约瑟是马利亚的丈夫，马利亚在婚前受圣灵感动怀孕，婚后生子耶稣）梦中显现，说：‘起来，带着小孩子同他母亲，逃往埃及，……因为希律必寻找小孩子要除灭他。’”他们走后，希律“就大大发怒，差人将伯利恒城里，并四境所有的男孩，……凡两岁以里的，都杀尽了。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00470.html">← 上一页</a> ｜ <a href="./文00472.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "冲", "itemUrl": "鲁迅全集/文00471.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

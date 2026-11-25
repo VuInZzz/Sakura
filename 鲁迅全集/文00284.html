@@ -38,6 +38,41 @@
 <p class="noteitem">[83] <b>“好人政府”</b> 是胡适等人于1922年5月提出的政治主张，见《努力周报》第二期发表的《我们的政治主张》一文：“我们以为现在不谈政治则已，若谈政治，应该有一个切实的，明了的，人人都能了解的目标。我们以为国内的优秀分子，无论他们理想中的政治组织是什么，……现在都应该平心降格的公认‘好政府’一个目标，作为现在改革中国政治的最低限度的要求。”“今日政治改革第一步在于好人须要有奋斗的精神。凡是社会上的优秀分子，应该为自卫计，为社会国家计，出来和恶势力奋斗。”1930年前后，胡适、罗隆基等又在《新月》上重提这个主张。</p>
 <p class="noteitem">[84] <b>乌略诺夫</b> 通译乌里扬诺夫，即列宁。他在《共产主义运动中的“左派”幼稚病》一书中曾说：“无产阶级专政是对旧社会的势力和传统进行的顽强斗争，流血的和不流血的，暴力的和和平的，军事的和经济的，教育的和行政的斗争。千百万人的习惯势力是最可怕的势力。没有铁一般的和在斗争中锻炼出来的党，没有为本阶级一切正直的人所信赖的党，没有善于考察群众情绪和影响群众情绪的党，要顺利地进行这种斗争是不可能的。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00283.html">← 上一页</a> ｜ <a href="./文00285.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "习惯与改革", "itemUrl": "鲁迅全集/文00284.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

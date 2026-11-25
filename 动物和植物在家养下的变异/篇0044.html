@@ -60,7 +60,7 @@
 
   <p class="bodytext">最后，关于“遗传”虽然还有很多暧昧不明之处，但我们可以把以下的法则看做已经相当充分地得到了证实。第一，每一种性状，无论新的或旧的，都有一种借着种子生殖或芽生殖而被遗传下去的倾向，虽然这种倾向常常由于各种已知的和未知的原因而受到阻碍。返祖取决于作为两种不同力量的遗传和发育；它通过种子生殖和芽生殖以各种不同的程度和方式发生作用。第二，遗传的优势，可能局限于一性，也可能为两性所共有。第三，当遗传受到性的限制的时候，最初呈现某种性状的那一性一般会承继有这种性状；在许多、可能在大多数场合中，这种情形取决于新性状的最初出现是在相当晚的生命时期。第四，遗传如果是在生命的相应时期，那么遗传的性状就有较早发育的倾向。就像“遗传”法则在家养下所显示的那样，我们在这等法则中看到了通过变异性和自然选择为新的物种类型的产生所作的充分准备。</p>
 
-  <div class="tupian">src="./images/01418.jpeg"</div>
+  <div class="tupian"><img alt="" src="./images/01418.jpeg" /></div>
 
   <p class="zhusi"><a id="new-notef1" href="part0469.html#new-note1" class="calibre4">[1]</a> 波利卡得：《人类的体格史》（Phys．Hist of Mankind），1851年，第一卷，第349页。</p>
 
@@ -94,6 +94,41 @@
 
   <p class="zhusi"><a id="new-notef16" href="part0469.html#new-note16" class="calibre4">[16]</a> 《自然遗传论》，第二卷，第852页。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0043.html">← 上一页</a> ｜ <a href="./篇0045.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "在生命的相应时期的遗传", "itemUrl": "动物和植物在家养下的变异/篇0044.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

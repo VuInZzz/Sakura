@@ -11,12 +11,52 @@
 <p class="title1">序</p>
 <p class="date">第13卷，曲艺 诗文 · 剑北篇</p>
 <br>
-<div class="content"><p>《剑北篇》的设计与写法，略见于致友人函中，附录于后，即不另赘。</p>
-<p>此诗于廿九年二月中动笔，至七月初，成二十段，约二千五百行。七八两月写《张自忠》剧本，诗暂停。九十两月复得七段。十一月由乡入城，事忙心乱，无从为诗，又暂放置。时写时停，一年间仅成二十七段，共三千余行。所余材料，仅足再写十几段，连已成之廿七段，或可共得六千行。因句句有韵的关系，六千行中颇有长句，若拆散了另行排列，亦可足万行之数——本来是想写成一万行的。</p>
-<p>卅年春初，因贫血，患头晕，一切工作都停顿下来。何时能把此篇写完，简直不敢想，因为直到如今，身体还是不好，而写诗又是极费力气的事。现在，先把已写好的廿七段付印成册，希望有朝一日总会补齐。</p>
-<p>草此诗时，文艺界对“民族形式”问题，讨论甚烈，故用韵设词，多取法旧规，为新旧相融的试验 。诗中音节，或有可取之处，词汇则嫌陈语过多，失去不少新诗的气味。行行用韵，最为笨拙：为了韵，每每不能畅所欲言，时有呆滞之处。为了韵，乃写得很慢，费力而不讨好。句句行韵，弊已如此，而每段又一韵到底，更足使读者透不过气；变化既少，自乏跌宕之致。</p>
-<p class="right">老舍 卅，十一，卅。</p>
+<div class="content"><p>《剑北篇》的设计与写法，略见于致友人函中，附录于后，即不另赘。</p>
+
+<p>此诗于廿九年二月中动笔，至七月初，成二十段，约二千五百行。七八两月写《张自忠》剧本，诗暂停。九十两月复得七段。十一月由乡入城，事忙心乱，无从为诗，又暂放置。时写时停，一年间仅成二十七段，共三千余行。所余材料，仅足再写十几段，连已成之廿七段，或可共得六千行。因句句有韵的关系，六千行中颇有长句，若拆散了另行排列，亦可足万行之数——本来是想写成一万行的。</p>
+
+<p>卅年春初，因贫血，患头晕，一切工作都停顿下来。何时能把此篇写完，简直不敢想，因为直到如今，身体还是不好，而写诗又是极费力气的事。现在，先把已写好的廿七段付印成册，希望有朝一日总会补齐。</p>
+
+<p>草此诗时，文艺界对“民族形式”问题，讨论甚烈，故用韵设词，多取法旧规，为新旧相融的试验 。诗中音节，或有可取之处，词汇则嫌陈语过多，失去不少新诗的气味。行行用韵，最为笨拙：为了韵，每每不能畅所欲言，时有呆滞之处。为了韵，乃写得很慢，费力而不讨好。句句行韵，弊已如此，而每段又一韵到底，更足使读者透不过气；变化既少，自乏跌宕之致。</p>
+
+<p class="right">老舍 卅，十一，卅。</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00895.html">← 上一页</a> ｜ <a href="./文00897.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "序", "itemUrl": "老舍全集/文00896.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷13.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

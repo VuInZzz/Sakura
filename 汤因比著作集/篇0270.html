@@ -28,6 +28,41 @@
 
   <p class="msonormal2">不过，我们前方西面的天空出现什么情况呢？天空变了脸色，一片墨黑，风改变了方向，从东南风变成西南风。我们离阿勒颇还远着呢，大雨就瓢泼而下。圣西缅又在兴风作浪，但这一次他遭到挫败了，因为这一次轮到圣塞尔吉乌斯给激怒了。军人出身的圣徒凝神屏息，等到高柱圣徒将其新卷起的乌云引向西缅堡靠近圣塞尔吉乌斯一边以后，才真正对准西北方向——先是瞄准著名的高柱，而后越过高柱直指远方的斯帕拉托。“接招吧。”圣塞尔吉乌斯一边将西缅的雨水浇到其人头上一边说道。“接招吧，你这坏家伙。”他一边将在达尔马提亚<span class="math-super"><a id="z208" href="part0271.html#bz208" class="calibre1">[208]</a></span>甘蓝地里躬耕的戴克里先淋了个浑身湿透又一边说道。西缅自食其果，如今只好求饶；戴克里先怒不可遏，但自从他将塞尔吉乌斯处以死刑那天起，他就退位了，所以现在他也无能为力。塞尔吉乌斯将西缅的云朵吹回到造云者那里之际，他还留意全程护送我们的轿车行过那危机四伏的最后18英里路。等我们的车轮压上柏油碎石路，他坐下来休息了：“喂，老糊涂西缅，你没能阻挡这几位英国人来看我，现在你也没法阻止他们天黑前到达阿勒颇了。”嗯，这就是全过程。这下，要是你敢于说出来的话，请说说两位圣人当中你更喜欢哪一位。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0269.html">← 上一页</a> ｜ <a href="./篇0271.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "49.圣塞尔吉乌斯和圣西缅", "itemUrl": "汤因比著作集/篇0270.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

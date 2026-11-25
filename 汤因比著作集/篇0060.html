@@ -58,6 +58,41 @@
 
   <p class="msonormal2">那尔迈对上埃及和三角洲实行了最终的政治统一。无独有偶，在底格里斯—幼发拉底两河流域，由卢伽尔扎吉西 <span class="math-super"><a id="z53" href="part0148.html#bz53" class="calibre1">[53]</a></span>将苏美尔和阿卡德合二为一。不过，这个统一大业是在苏美尔文明经历了漫长的7个多世纪之后才完成的，而且，人们对它毫无热情。因为在连绵不断的、令人苦不堪言的国际无政府状态下，人们是在两害相权取其轻的心理状态之下接受这个统一现实的。不论是卢伽尔扎吉西，还是从他手中夺走了由他亲自统一起来的王国的萨尔贡 <span class="math-super"><a id="z54" href="part0148.html#bz54" class="calibre1">[54]</a></span>都同样劳而无功，谁也没有把他们奉为神明。尽管他们的一些后继者，例如纳里姆辛（约公元前2291—前2255年在位）和舒尔吉 <span class="math-super"><a id="z55" href="part0148.html#bz55" class="calibre1">[55]</a></span>（约公元前2095—前2048年在位）都敢于自奉为神，却都未能为人所尊崇。在苏美尔和阿卡德，活着的人间之神只是例外，而非定制。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0059.html">← 上一页</a> ｜ <a href="./篇0061.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第七章 尼罗河流域冲积盆地的开发与法老埃及文明的创立", "itemUrl": "汤因比著作集/篇0060.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

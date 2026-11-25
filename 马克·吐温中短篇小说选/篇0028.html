@@ -28,7 +28,7 @@
 <p>“受苦受难的摩西<a id="w1"></a><sup class="notelink"><a href="#m1">[1]</a></sup>！让我把<span class="em_dot">这一笔</span>也给记下了。一万四千七百五十……八千……二十万。总数吗，我瞧……哎呀，真真想不到，总数大约是二十一万三四千元哪！那<span class="em_dot">真的</span>可能吗？”</p>
 <p>“可能！如果是算错，那只会是算少了。二十一万四千元现钞，那就是我今年的收入，如果我知道怎样计算的话。”</p>
 <p>这时候那位先生站起身来告辞。我心里很不痛快，因为我想到，我也许不但白白地向一个陌生人公开了自己的收入，而且，由于听到他的惊叹时感到得意，还大大地提高了那些数字。可是，那位先生不立即就走，他在最后关头递给我一只大信封，说那里面有他的广告，说我可以在那里面找到一切有关他的业务的细节，说他很欢迎我去光顾——说他有我这样收入优渥的人做主顾，实在感到<span class="em_dot">骄傲</span>；说他以前常常以为市里也有好几位大财主，可是，等到他们去跟他做交易时，他发现他们所有的那点儿钱只勉强够自己糊口；还说，他确实耐着沉闷等候了这么多年，才能面对面看见我这样一位大阔佬，而且能和我交谈，并用手接触了我，终于情不自禁，想要拥抱我——说真的，如果我肯<span class="em_dot">让</span>他拥抱的话，他认为那对他将是一件极大的光荣。</p>
-<p class="center">src="./images/image00258.jpeg"</p>
+<p class="center"><img alt="" src="./images/image00258.jpeg" /></p>
 <p>这一席话说得我心里乐滋滋的，所以我也就不再推拒，尽让这位心地纯洁的陌生人张开双臂抱住我，还在我后颈窝里洒了几滴起镇静作用的眼泪。然后，他就离去了。</p>
 <p>他刚走，我就展开了他的广告。我仔细地研究了四分钟。紧接着我就唤厨子来，说：</p>
 <p>“扶好了我，我这就要晕过去了！让玛丽去翻那烤饼吧。”</p>
@@ -52,6 +52,41 @@
 <div class="notes"><p class="notetitle">注　释</p>
 <p class="noteitem"><span>[1]</span> 《圣经》中领导以色列人逃出埃及，并为之立法的希伯来先知。这里作惊叹语。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0027.html">← 上一页</a> ｜ <a href="./篇0029.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "马克·吐温中短篇小说选", "bookTitle": "马克·吐温中短篇小说选", "itemTitle": "神秘的访问", "itemUrl": "马克·吐温中短篇小说选/篇0028.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

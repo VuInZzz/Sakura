@@ -59,6 +59,41 @@
 <p class="noteitem">[646] <b>拓跋氏</b> 古代鲜卑族的一支。东晋太元十一年（386）拓跋珪自立为魏王，后日益强大，占有黄河以北的土地；公元398年建都平城（今大同），称帝改元，史称北魏。</p>
 <p class="noteitem">[647] <b>刘时中</b>（？—约1324） 名致，字时中，号逋斋，石州宁乡（今山西中阳）人，元代词曲家。曾任翰林待制等职。这里所引见于他的套曲《上高监司·端正好》。曲子中的“好顽劣”，意即很无知。“表德”，即正式名字外的“字”和“号”。“声音多厮称”，即声音相同。子良取音于“粮”。仲甫取音于“脯”。君宝取音于“饱”。德夫取音于“麸”。《乐府新编阳春白雪》，元代杨朝英选辑的一部散曲总集，选录元人散曲六十余家，共十卷。另有九卷本一种，后五卷所收散曲不少为十卷本所无。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00021.html">← 上一页</a> ｜ <a href="./文00023.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "论“他妈的！”", "itemUrl": "鲁迅全集/文00022.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷01.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

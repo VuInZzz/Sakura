@@ -34,6 +34,41 @@
 
   <p class="msonormal2">即便是今日的耶路撒冷也算不上独一无二。耶路撒冷像个原子，被分裂成两座相互敌视的城市，比肩而立、并行发展却并不相期，可同样的命运毕竟也已经降临在柏林身上。约旦独一无二的城市乃是杰里科：文明的诞生之地，几乎在海拔之下八百英尺的低地上。当你站在凯尼恩小姐<span class="math-super"><a id="z321" href="part0271.html#bz321" class="calibre1">[321]</a></span>的壕沟边缘，会看见底部有一个造得相当牢固的圆形石塔。这是建立于新石器时期早期的城市的一座堡垒，该时期已经可见农业的发端，但尚未发明制陶技术。现在，请转过头去，从面朝西方变成面朝东方，此时你会发现自己俯瞰的，是灌溉着杰里科绿洲的泉水。这道以利沙泉之于特拉斯苏坦，即耶利哥古城土堆，正如赛洛姆池之于奥菲尔，古代耶路撒冷的中心。终年不断的活水流动，使得建立人类永久的定居点有了实现可能。杰里科土堆之下的泉水确确实实是人类文明的源泉。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0291.html">← 上一页</a> ｜ <a href="./篇0293.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "71.约旦的城市", "itemUrl": "汤因比著作集/篇0292.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -148,6 +148,41 @@
 <p class="noteitem">[52] <b>钱曾（1629—1701）</b> 字遵王，清常熟（今属江苏）人。钱谦益的族孙。他藏书甚多，所撰<b>《也是园书目》</b>，十卷，分经、史、子、集、三藏、道藏、戏曲小说七类。该书戏曲小说类通俗小说部分，著录《古今演义三国志》、《旧本罗贯中水浒传》、《黎园广记》三种；宋人词话部分著录《灯花婆婆》、《种瓜张老》、《紫罗盖头》、《女报冤》、《风吹轿儿》、《错斩崔宁》、《小（山）亭儿》、《西湖三塔》、《冯玉梅团圆》、《简帖和尚》、《李焕生五阵雨》、《小金钱》、《宣和遗事》、《烟粉小说》、《奇闻类记》及《湖海奇闻》十六种。</p>
 <p class="noteitem">[53] <b>都察院刻本</b> 据明周弘祖《古今书刻》上编，都察院项下列有《三国志演义》和《水浒传》。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00923.html">← 上一页</a> ｜ <a href="./文00925.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "第一篇 史家对于小说之著录及论述", "itemUrl": "鲁迅全集/文00924.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷09.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

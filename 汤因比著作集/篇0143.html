@@ -92,6 +92,41 @@
   <p class="msonormal2">说实在的，“落在永生神的手里，真是可怕的！”<span class="math-super"><a id="z68" href="part0159.html#bz68" class="calibre1">[68]</a></span>因此，甚至当一切粗制滥造的宗教都被证明无效，因而迫使寻求宗教认可的统治者转向某种未受国家利益玷污的现存的宗教时，人性也依然要寻找一种可能接近终极实在令人畏怖的考验法，在这种情形下，从崇拜人类集体的力量（区域性的和世界性的）的幻觉中觉醒的灵魂往往首先求助于有别于这两种形式的另外一种既不是集体的也不是人为的人的崇拜形式。被神化的自我圆成的哲学家有着被神化的区域社团那样的优点，他并非一尊人们造就的冷血偶像；同时又有着被神化的世界性统治者那样的优点，他是一个人而不是一种制度。在这个领域明确地被高级宗教占据之前，对作为一个自我圆成的哲学家的人的崇拜因此也是人们经常尝试和需要的崇拜形式。</p>
 
   </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0142.html">← 上一页</a> ｜ <a href="./篇0144.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第4章 人的崇拜：统一社团的偶像化", "itemUrl": "汤因比著作集/篇0143.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册04.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -27,6 +27,41 @@
 <div class="notes"><p class="notetitle">注　释</p>
 <p class="noteitem">[734] 本篇据手迹编入，原无标题。<br/><b>《凯绥·珂勒惠支版画选集》</b>，鲁迅编选，收德国凯绥·珂勒惠支所作版画二十一幅。前有美国女作家史沫特莱所写的序文及鲁迅所作序目。1936年5月以“三闲书屋”名义出版。<br/><b>季巿</b>，即许寿裳（1883—1948），字季茀，又作季黻（巿），浙江绍兴人，教育家。鲁迅留学日本弘文学院时期的同学。曾在教育部、北京女子师范大学、广东中山大学等处与鲁迅同事多年。抗战胜利后去台湾，任台湾省编译馆馆长、台湾大学文学系主任。1948年2月被刺杀于台北。著有《亡友鲁迅印象记》、《我所认识的鲁迅》等。1936年7月，他从嘉兴回北平，路经上海，于27日往访鲁迅，鲁迅题赠《凯绥·珂勒惠支版画选集》一册。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00898.html">← 上一页</a> ｜ <a href="./文00900.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "题《凯绥·珂勒惠支版画选集》赠季巿", "itemUrl": "鲁迅全集/文00899.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

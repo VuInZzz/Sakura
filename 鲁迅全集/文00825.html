@@ -28,6 +28,41 @@
 <p class="noteitem">[355] 关于《红楼梦》的命意，旧时有各种看法。清代张新之在《石头记读法》中说，《红楼梦》“全书无非《易》道也”。清代梁恭辰在《北东园笔录》中说，“《红楼梦》一书，诲淫之甚者也。”清代花月痴人在《红楼幻梦序》中说：“《红楼梦》何书也？余答曰：情书也。”蔡元培在《石头记索隐》中说：“作者持民族主义甚挚，书中本事在吊明之亡，揭清之失。”清代“索隐派”的张维屏在《国朝诗人征略二编》中说它写“故相明珠家事”，王梦阮、沈瓶庵在《〈红楼梦〉索隐》中则说它写“清世祖与董小宛事”。</p>
 <p class="noteitem">[356] <b>陈梦韶（1903—1984）</b> 名敦仁，字梦韶，福建同安人。1926年毕业于厦门大学教育系。当时在当地中学任教。鲁迅到厦门大学后，他常回校旁听鲁迅的“中国小说史”课，并与鲁迅交往。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00824.html">← 上一页</a> ｜ <a href="./文00826.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "《绛洞花主》小引", "itemUrl": "鲁迅全集/文00825.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

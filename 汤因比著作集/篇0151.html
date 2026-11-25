@@ -24,6 +24,41 @@
   <p class="bodycontent-text_yinwen">那些最激烈地拥护宗教宽容的人们……并不知道中国皇帝的诏谕和人们确信不疑的皇帝的远见卓识是如何联系在一起的。我指的是那份有益于基督徒、受到一位耶稣会神父大加赞赏的关于宗教宽容的诏谕。宗教宽容的拥护者们相信，一个远见卓识的君主，如果教皇的传教士和新入教者，事先没有向他说明从事改变信仰工作的原则以及他们的前辈如何使这些原则付诸实施，原本是不会同意他们享有凭良心而自由传教的特权的。在这一点上，如果他着手弄清事情的原委，这是健全的政治所要求做到的，便永远不会同意他事实上给予传教士们的这种特权。他本该知道，这伙人主张的是，在耶稣基督的指挥下“勉强人进来”<span class="math-super"><a id="z170" href="part0159.html#bz170" class="calibre1">[170]</a></span>——也就是说，用流放、监禁、拷打、屠杀和镇压对付所有不愿皈依基督福音的人，废黜那些反对他们发展的君主。如果皇帝明知如此，还是发布了那条诏谕，那么是不可能看到皇帝总能推卸他不可饶恕的轻率鲁莽的责任的，所以我们假定他对此一无所知，虽然这个辩护使他难逃其咎——他显然没有了解他非常有必要充分了解的一些事情，以此顾全他的面子。看来他是活不到后悔他的疏忽大意的时候了；但是，要说他的后代肯定不会诅咒这位人们还记忆犹新的皇帝，这种保证未免太轻率了一点。因为他们有可能发现自己不久就要被迫仓促抵抗这个新宗教的信徒们煽动起来的危机四伏的暴乱，并且不是割断他们的喉咙，就是被他们割断喉咙。情况可能就是过去日本那样玩起两雄相争必有一伤的游戏。<span class="math-super"><a id="z171" href="part0159.html#bz171" class="calibre1">[171]</a></span></p>
 
   </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0150.html">← 上一页</a> ｜ <a href="./篇0152.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "附录 17世纪两位西方观察家对于作为西方帝国主义工具的西方基督教的观点", "itemUrl": "汤因比著作集/篇0151.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册04.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

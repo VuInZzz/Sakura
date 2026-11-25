@@ -45,6 +45,41 @@
 <p>玉旨一郎紧皱着双眉，手往枪响的方向一指，对塞上萧说：“我才从那边来，我希望您也能去看一看，看看那里发生了什么事情，您看完了，就知道应该写什么，不应该写什么了，”说完，他点点头，转身向响枪的相反方向走去。那边是火车站，玉旨一郎想从那边回道里一中找王一民。</p>
 <p>玉旨一郎一边走着一边想着塞上萧，他眼前又出现了塞上萧那两只像要冒火的眼睛，那涨红的双颊，颤抖的嘴唇，耳边也响起他那激动的声音：“……今天这一天，我已经尝遍了人世间的苦刑和凌辱……我由于一念之差写下了……”玉旨一郎想到这里，不由得又回头向警察厅大楼前边望去。他发现塞上萧还站在原来的地方，向响枪的方向呆呆地望着。这时玉旨一郎已经走到快要拐弯的地方，再往前走就看不见他了。于是便停下脚步，倚身在街树上，向塞上萧望着。他发现他往响枪的方向走了。哎呀！他走得那样艰难，一瘸一拐地向前移动着，有两次像要跌倒，他扶着墙，向前走着……</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./章065.html">← 上一页</a> ｜ <a href="./章067.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "夜幕下的哈尔滨", "bookTitle": "夜幕下的哈尔滨", "itemTitle": "第 66 章 - 夜幕下的哈尔滨", "itemUrl": "夜幕下的哈尔滨/章066.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="navbar"><a href="./index.html">返回本书目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 <br>
 <hr color="#C0C0C0" width="60%%" size="1" align="left">

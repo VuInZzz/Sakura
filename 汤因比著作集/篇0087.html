@@ -78,6 +78,41 @@
 
   <p class="msonormal2">至于罗马，其第一次与迦太基交战的结果，使她的海军占据了地中海西部的海上优势。公元前238年，迦太基迫不得已从西西里抽调到非洲的雇佣军发生了叛乱，正当迦太基为此事措手不及之际，罗马攻占了撒丁岛，迫使迦太基把它割让给罗马。尽管如此，公元前237年，雇佣军叛乱被哈米尔卡尔·巴尔卡 <span class="math-super"><a id="z236" href="part0148.html#bz236" class="calibre1">[236]</a></span>（有“闪电”之称）所镇压，此人是新近与罗马交战的英雄。就在同一年，哈米尔卡尔率领一支远征军出征西班牙。到公元前221年，他和她的女婿，也是他的继承人哈斯德鲁巴 <span class="math-super"><a id="z237" href="part0148.html#bz237" class="calibre1">[237]</a></span>，在伊比利亚半岛建立了一个新的迦太基大陆帝国，这个帝国远比迦太基在西西里岛西北角的海滩上丧失的领土要大得多，也更有价值。公元前221年，哈斯德鲁巴对西班牙的统治，为哈米尔卡尔的儿子汉尼拔 <span class="math-super"><a id="z238" href="part0148.html#bz238" class="calibre1">[238]</a></span>所继承。很久以来，汉尼拔决心从公元前264—前241年与罗马战争的失败中重振旗鼓，此时他的职位使他终于得以一试锋芒。这样，公元前221年，地中海西部的形势就变得与地中海东部同样地扑朔迷离了。在旧大陆文明中心西端的下一个历史阶段中，这两个地区即将联接为一个统一的战场。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0086.html">← 上一页</a> ｜ <a href="./篇0088.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第三十四章 争夺地中海西部地区霸权的斗争", "itemUrl": "汤因比著作集/篇0087.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

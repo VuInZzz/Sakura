@@ -24,6 +24,41 @@
 <p class="noteitem">[342] <b>谭正璧（1901—1991）</b> 江苏嘉定（今属上海）人。曾任上海震旦大学、中国艺术学院等校教授。著有《中国文学史大纲》等。1925年7月8日，他给鲁迅写信，介绍了吴梅《顾曲麈谈》中有关施耐庵的材料。</p>
 <p class="noteitem">[343] <b>吴瞿安（1884—1939）</b> 名梅，字瞿安，江苏长洲（今苏州）人，戏曲理论家。早年加入过南社。著有《中国戏曲概论》、《南北词简谱》等。<b>《顾曲麈谈》</b>，戏曲研究专著，分上、下二卷，1916年上海商务印书馆出版。该书卷下谈及《幽闺记》时说：“按施君美名惠，《水浒记》亦其手笔云。”这一说法，当本于清代无名氏《传奇汇考标目》卷上及其校勘记：“施惠字君美，武林人。《拜月亭》（今名《幽闺》）。”“施耐庵名惠，字君承。杭州人。《拜月亭》，旦。”1930年《中国小说史略》重印时，鲁迅将吴梅的说法补入第十五篇，但认为“未可轻信”。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00822.html">← 上一页</a> ｜ <a href="./文00824.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "《中国小说史略》再版附识", "itemUrl": "鲁迅全集/文00823.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

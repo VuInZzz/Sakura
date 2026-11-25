@@ -48,6 +48,41 @@
 <p class="noteitem">[161] 本篇最初发表于1927年10月22日《语丝》周刊第一五四期，原题《“新时代”的避债法》。</p>
 <p class="noteitem">[162] “世故”及下文若干词句，都是引用高长虹的话。高长虹，参看本卷第401页注〔3〕。他在1924年12月认识鲁迅后，曾得到鲁迅很多指导和帮助。1926年下半年起，他却对鲁迅进行恣意的诬蔑和攻击。他在《狂飙》周刊第五期（1926年11月）发表的《1925北京出版界形势指掌图》中，曾嘲骂鲁迅为“世故老人”。在第六期（1926年11月）《给——》一诗中自比太阳：“如其我是太阳时，我将嫉妒那夜里的星星。”在第九期（1926年12月）《介绍中华第一诗人》内则说：“在恋爱上我虽然像嫉妒过人，然而其实是我倒让步过人。”第十期（1926年12月）《时代的命运》中又有“我对于鲁迅先生曾献过最大的让步，不只是思想上，而且是生活上”等语。在同篇中又说他和鲁迅“曾经过一个思想上的战斗时期”，他所用的“战略”是“同情”。在《指掌图》一文中，又自称与鲁迅“会面不只百次”。第十四期（1927年1月）《我走出了化石的世界》中又咒骂：“鲁迅不特身心交病，且将身败名裂矣！”等等。所以本文中有“太阳”、“爱人”、“同情”、“来一百回”等语。此外，“帮忙”、“新时代的新青年”等，都是高长虹文中常用的词语。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00230.html">← 上一页</a> ｜ <a href="./文00232.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "新时代的放债法", "itemUrl": "鲁迅全集/文00231.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷03.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -26,6 +26,41 @@
 <p class="noteitem">[225] <b>胡适</b>（1891—1962） 字适之，安徽绩溪人。早年留学美国。1917年任北京大学教授。“五四”时期是新文化运动的代表人物之一。当时曾参加《新青年》的编辑工作。</p>
 <p class="noteitem">[226] <b>寄给独秀的信</b> 指胡适于1920年12月间致陈独秀的信。1921年1月12日胡适又将此信交鲁迅等人传阅征求意见。信中胡适为改变《新青年》的性质提出“三个办法”时说：“1.听《新青年》流为一种有特别色彩之杂志，而另创一个哲学文学的杂志，篇幅不求多，而材料必求精。……2.若要《新青年》‘改变内容’，非恢复我们‘不谈政治’的戒约，不能做到。但此时上海同人似不便做此一着，兄似更不便，因为不愿示人以弱，但北京同人正不妨如此宣言。故我主张趁兄离沪的机会，将《新青年》编辑的事，自九卷一号移到北京来，由北京同人于九卷一号内发表一个新宣言，略根据七卷一号的宣言，而注重学术思想艺文的改造，声明不谈政治。孟和说，《新青年》既被邮局停寄，何不暂时停办，此是第三办法。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01295.html">← 上一页</a> ｜ <a href="./文01297.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "210103 致胡适", "itemUrl": "鲁迅全集/文01296.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷11.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

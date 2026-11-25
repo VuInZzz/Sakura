@@ -58,6 +58,41 @@
   <p class="msonormal2">已知的所有潜在世界性国家都是通过征服而建立起来的。它们中的每一个都是一系列愈演愈烈的战事中的最后一击的产物。而在现实世界里，由于我们已步入原子能时代，作为大规模自相残杀的唯一替代品，真正意义上的世界性国家是不能再通过这种野蛮的、代价高昂的冲突方式建立的。在一场用核武器进行的世界大战中，传统的战争模式将不再会出现。这一次，所有的参战者都将会战败倒下；将不再会有哪个胜利者留下来清理战场。因此，在原子能时代，利用战争作为政治工具的传统做法已经行不通了。这一工具所完成的大规模杀戮必然是任何政策都会力图避免的。从现在起，世界性国家（哪怕仅仅是处理最紧迫的两大世界性问题的两个世界性权威机构）的建立只能通过和平手段，即在整个国际社会都表示认同的情况下进行。人们只能通过自我教育来克服由固有习惯和放弃熟悉制度的痛苦感所带来的、对这种革命性变化的情感抵制；在原子能时代里，这种变革是无法通过暴力完成的。人们只能用手指耐心地解开这个高尔狄乌斯之结，而不能像亚历山大大帝那样挥剑将它斩断。那么我们要付出怎样的耐心呢？我们还有多少时间？我们必须克制的感情阻力究竟有多么强大？在引起这种抵制的各种感情中，最强烈的是民族主义情感。我们能有多大把握处理好民族问题，这取决于我们理解民族主义的能力；而为了理解民族主义，我们就必须关注它的发展历史。</p>
 
   </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0208.html">← 上一页</a> ｜ <a href="./篇0210.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第五章 分裂社会结构的推进与阻碍因素", "itemUrl": "汤因比著作集/篇0209.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册06.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

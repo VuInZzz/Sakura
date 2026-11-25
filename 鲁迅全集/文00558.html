@@ -52,6 +52,41 @@
 <p class="noteitem">[91] 施蛰存在《文艺风景》创刊号（1934年6月）《书籍禁止与思想左倾》一文中说：“前一些时候，政府曾经根据于剿除共产主义文化这政策而突然禁止了一百余种文艺书籍的发行。……沈从文先生曾经在天津《国闻周报》第十一卷第九期上发表了一篇讨论这禁书问题的文字。……但是在上海的《社会新闻》第六卷第二十七八期上却连续刊载了一篇对于沈从文先生那篇文章的反驳。……沈从文先生正如我一样地引焚书坑儒为喻，原意也不过希望政府方面要以史实为殷鉴，出之审慎……他并非不了解政府的禁止左倾书籍之不得已，然而他还希望政府能有比这更妥当，更有效果的办法；……然而，在《社会新闻》的那位作者的笔下，却写下了这样的裁决：‘我们从沈从文的……口吻中，早知道沈从文的立场究竟是什么立场了，沈从文既是站在反革命的立场，那沈从文的主张，究竟是什么主张，又何待我们来下断语呢？’”</p>
 <p class="noteitem">[92] <b>《庄子》</b> 战国时道家学派的代表人物庄周及其后学的著作集。<b>《文选》</b>，即《昭明文选》，共三十卷，南朝梁昭明太子萧统编选的自秦汉至齐梁的诗文总集。1933年9月《大晚报》征求“推荐书目”时，施蛰存曾提倡青年读这些书。作者在《准风月谈·重三感旧》等文中曾予批评，可参看。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00557.html">← 上一页</a> ｜ <a href="./文00559.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "隔膜", "itemUrl": "鲁迅全集/文00558.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷06.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

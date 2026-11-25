@@ -79,9 +79,9 @@
 
 <p>儿童习见其父母兄姊，在圣堂领圣餐，今设以此为中心，而引起一切工作，非但能使其明瞭圣餐之理由，且足引其对于圣工之热心。</p>
 
-<p>面包与葡萄汁，为儿童习见之物，但对于一块面包与一瓶酒汁，则不发生兴趣。今儿童常见其父母兄姊，在圣堂领得小杯之酒汁及小块之面包，此种工作，使儿童练习之，一瓶酒汁，如何分为若干杯，一块面包，如何分为若干小块，则当src="./images/Image00268.jpg"
+<p>面包与葡萄汁，为儿童习见之物，但对于一块面包与一瓶酒汁，则不发生兴趣。今儿童常见其父母兄姊，在圣堂领得小杯之酒汁及小块之面包，此种工作，使儿童练习之，一瓶酒汁，如何分为若干杯，一块面包，如何分为若干小块，则当<img alt="" src="./images/Image00268.jpg" />
 
- src="./images/Image00268.jpg"
+ <img alt="" src="./images/Image00268.jpg" />
 
  然有喜色，以从事。盖儿童天性，喜支配事物，聚零为整，或散整为零，无厌烦之感也。练习之时，对于物质，得有切割倾倒之经验，更从而引起其注意工作时之谨慎镇静，以启其为预备圣餐所应有之虔敬，然后以次引起各种工作之兴趣。</p>
 
@@ -146,6 +146,41 @@
  本篇发表时署名“舒舍予”。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文02427.html">← 上一页</a> ｜ <a href="./文02429.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "儿童主日学与儿童礼拜设施之商榷", "itemUrl": "老舍全集/文02428.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷19.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

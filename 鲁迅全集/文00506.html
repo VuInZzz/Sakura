@@ -36,6 +36,41 @@
 <p class="noteitem">[149] 郑板桥作有近似游戏笔墨的道情《老渔翁》等十首。道情原是道士唱的歌曲，后来演变为一种民间曲调。<b>袁中郎</b>，即袁宏道（1568—1610），字中郎，湖广公安（今属湖北）人，明代文学家。他和兄宗道、弟中道，反对文学上的复古倾向，主张“独抒性灵，不拘格套”。袁宏道的作品以小品散文著称。三十年代时，林语堂等在其所办刊物《论语》、《人间世》上极力推崇袁中郎、郑板桥等人的文章。当时上海时代图书公司出版过林语堂校阅的《袁中郎全集》，上海南强书局出版过《袁中郎尺牍全稿》。</p>
 <p class="noteitem">[150] <b>“何所闻而来，何所见而去”</b> 语出《世说新语·简傲》，是三国时魏文学家嵇康对来访的钟会表示简慢的话。又见《晋书·嵇康传》：钟会造访嵇康，康正在打铁，不予理睬，“良久会去，康谓曰：‘何所闻而来，何所见而去。’会曰：‘闻所闻而来，见所见而去。’”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00505.html">← 上一页</a> ｜ <a href="./文00507.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "一思而行", "itemUrl": "鲁迅全集/文00506.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -38,6 +38,41 @@
 <p class="noteitem">[587] 此信原无标点。在《鲁迅书简》（1946年10月鲁迅全集出版社出版）发表时，收信人曾附有说明如下：<br/>“这封信没有收入《两地书》内，大约编辑时此信散存他处，一时未及检出。现出《书简》，正可乘便加入。这信的文笔颇与《书简》体例不同，原因是北平女子师范大学校自从被章士钊杨荫榆之流毁灭了之后，又经师长们以及社会正义人士之助而把它恢复过来了。我们这一班国文系的同学，又得举行毕业，而被开除了之后的我，也能够恢复学籍滥竽其间。到了快要学业结束的时候，我国文系师长们如马幼渔先生，沈士远、尹默、兼士先生，许寿裳先生，鲁迅先生等，俱使人于学业将了，请益不易之际兴无穷感慨！良以学校久经波折，使师长们历尽艰辛，为我们学子仗义执言，在情在理，都不忍使人恝置，因此略表微意，由陆晶清、吕云章和我三人具名肃帖，请各师长，在某饭店略备酒馔，聊表敬意。其后复承许寿裳先生及鲁迅先生分别回请我们，而鲁迅先生的短简，却是模拟我写的原信，大意如下：<br/>××先生函丈程门<br/>立雪承训多时幸<br/>循循之有方愧驽才之难教而乃年届结束南北东西虽尺素之能<br/>通或<br/>请益而不易言念及此不禁神伤吾<br/>师倘能赦兹愚鲁使生等得备薄馔于月×日午十二时假西长安街<br/>××饭店一叙俾罄愚诚不胜厚幸肃请<br/>钧安<br/>学生陆晶清 许广平 吕云章 谨启<br/>又‘四条’一词乃鲁迅先生爱用以奚落女人的哭泣，两条眼泪，两条鼻涕，故云。有时简直呼之曰：四条胡同，使我们常常因之大窘。”</p>
 <p class="noteitem">[588] <b>程门飞雪</b> 语出《宋史·杨时传》：杨时“又见程颐于洛，时盖年四十矣。一日见颐，颐偶瞑坐，时与游酢侍立不去。颐既觉，则门外雪深一尺矣。”旧时常用为尊师重道的故实。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01396.html">← 上一页</a> ｜ <a href="./文01398.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "260815 致许广平", "itemUrl": "鲁迅全集/文01397.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷11.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

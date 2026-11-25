@@ -32,6 +32,41 @@
 <p class="noteitem">[863] 《恶魔》首段中说：“在这人生上，绝无什么常住不变的东西，只有生成和死灭，以及对于目的的永远的追求的不绝的交替罢了。”末段中说：“诸君将知道在生前暗暗地挂在自己之前的一切，便是诸君生前的虚伪和迷谬的罢。”</p>
 <p class="noteitem">[864] 这里一些引语出自《恶魔》。该篇写恶魔在“倦怠”时唤醒了埋在坟场里的“著作家”的骸骨，让他看到自己的太太如何靠卖他的遗著赚了许多钱，书商又如何占有了她，著作家领悟到自己生前原来多半也在给商人工作。此时，“周围都昏暗，在下雨。空中罩着沉重的云。著作家格格地摇着骨骼，开快步跑向他的坟地里去了”。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01115.html">← 上一页</a> ｜ <a href="./文01117.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "《恶魔》译者附记", "itemUrl": "鲁迅全集/文01116.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷10.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

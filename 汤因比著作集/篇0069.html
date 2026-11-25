@@ -44,6 +44,41 @@
 
   <p class="msonormal2">在尼罗河谷地，大自然比在底格里斯—幼发拉底两河盆地表现得要有预见得多。直到公元1902年，即阿斯旺的第一座水坝竣工时，尼罗河的洪水每年都会给埃及带来新的、肥沃的淤泥，不论是大自然还是人类，都无力拒收这一赠礼。底格里斯—幼发拉底两河流域下游灌溉系统的人工性和脆弱性，是否正是苏美尔—阿卡德衰落及亚述崛起的原因？公元1258年蒙古人入侵伊拉克时，其灌溉系统的确变成了废墟，重建工作到第一次世界大战后才开始。不过，公元1258年这场突如其来的、人为的灾难来临之前，大自然的力量是否已经开始使伊拉克的农田逐步贫瘠化了？我们尚未有足够的证据直接回答这一问题，不过，下述事实肯定可以作为间接答案：在亚述崩溃之后，它的土地仍然相当肥沃，足以成为后来许多帝国的经济基础。此后这漫长的帝国系列，以亚述的迦勒底人后继国为起始，以包括巴比伦尼亚境外不那么肥沃的地区在内的阿拔斯王朝的哈里发帝国为终结。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0068.html">← 上一页</a> ｜ <a href="./篇0070.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第十六章 苏美尔—阿卡德世界与埃及", "itemUrl": "汤因比著作集/篇0069.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

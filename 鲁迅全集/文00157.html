@@ -48,6 +48,41 @@
 <p class="noteitem">[103] <b>“知命者不立于岩墙之下”</b> 语出《孟子·尽心（上）》：“知命者不立乎岩墙之下”。岩墙，危墙。<b>“千金之子坐不垂堂”，</b>语出《史记·袁盎传》。意思是有钱的人不坐在屋檐下（以免被坠瓦击中）。<b>“身体发肤受之父母不敢毁伤”，</b>语出《孝经·开宗明义章》。</p>
 <p class="noteitem">[104] 指北京学生纪念国耻的集会遭压迫一事。1925年5月7日，北京各校学生为纪念国耻（1915年5月7日，日本政府向袁世凯提出最后通牒，要求承认“二十一条”）和追悼孙中山，拟在天安门举行集会。但事前北洋政府教育部已训令各校不得放假，当日上午警察厅又派遣巡警分赴各校前后门戒备，禁止学生外出。因此各校学生或行至校门即为巡警拦阻，或在天安门一带被武装警察与保安队马队殴打，多人受伤。午后被迫改在神武门开会，会后结队赴魏家胡同教育总长章士钊住宅，质问压迫学生爱国运动的理由，又与巡警冲突，被捕十八人。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00156.html">← 上一页</a> ｜ <a href="./文00158.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "北京通信", "itemUrl": "鲁迅全集/文00157.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷03.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -24,6 +24,41 @@
 
   <p class="msonormal2">从基多到瓜亚基尔，就任何意义而言，都可谓路途遥远。这段路程我打算从公路走；由于新路还没造好，我又已经安排定下那天晚上六点半要在瓜亚基尔做一场讲座，所以我们得在早上六点就出发。前一天晚上雨下个不停，但清晨五点，我朝卧室窗外一看，星光依然闪烁；黎明骤然到来的时候，天气一片晴好。看见科托帕希火山呈现出完美的锥形，还有着白雪皑皑的山顶，看见星星点点的雪迹遍布在更高的钦博拉索山粗糙不平的半山脚，我心里就激动不已。要是一个人在66岁的时候，由于层层云朵的遮蔽而迟迟无法一睹这两座高山的风采，那他七岁那年就已经将它们的名字熟记于心又有何用呢？现在我们向右一转，上了由意大利建筑公司负责、投入厄瓜多尔劳力和英国设备的新公路。我们盘旋而上，向安第斯山脉的西麓前进。这时候我们到了帕拉莫，草木不生的荒原，当我瞧见生平第一次看到的羊驼（西班牙语念作“雅马”）时——所谓的第一次是指在伦敦动物园以外的头一遭，我差点脱口说出“阿肯加斯谷地”<span class="math-super"><a id="z24" href="part0271.html#bz24" class="calibre1">[24]</a></span>。然后好好的地面突然不复存在了，我们缓慢行进，颠簸在纷乱无章的石灰华构成的群山上，山坡的肥沃土地俨然经过了精耕细作。眼前的角度差不多是60°了，豆茎、马铃薯秧苗和绵羊都成排立着，如同露天体育场陡峭看台上的观众似的。我们穿过一朵云，据测量仪显示到达了海拔12 000英尺的高度，然后开始穿行在树丛中逐步下山，那些树还不尽然是热带植物，不过依我看，这已经表明我们离开了温带。不到一个半小时以后，我见到了生平第一株香蕉树（香蕉和羊驼是不会在同一时空出现的，羊驼在厄瓜多尔这个海拔高度恐怕远不及在摄政公园来得舒服自在）。等我们迂回曲折地下山到了热带低地，只见香蕉种植园延绵无数英里，将我们团团围住，直到最后给甘蔗和水稻田取代了。在车上的11个小时当中，我们从威斯特摩兰<span class="math-super"><a id="z25" href="part0271.html#bz25" class="calibre1">[25]</a></span>的气候开始，经历过爱尔兰的气候，再到西非的气候；每下降一条等高线，我就脱掉一层衣服：一开始是羊毛围巾，接着是布帽，然后是花呢外套，再接着是羊毛马甲，直到脱得只剩下衬衫裤子，气喘吁吁不能再脱了，只能等到酒店再说。这就是厄瓜多尔：在一个国家的范围之内便可以经历整个世界。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0222.html">← 上一页</a> ｜ <a href="./篇0224.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "2.厄瓜多尔", "itemUrl": "汤因比著作集/篇0223.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

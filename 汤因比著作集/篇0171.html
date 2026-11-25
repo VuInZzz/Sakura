@@ -114,6 +114,41 @@
   <p class="msonormal2">神学的牺牲在于为了宗教共同体一部分有知识的人而败坏了自己，正如广为流传的神话的牺牲在于为了宗教共同体本身而败坏了自己一样；但是还有一种比此更为痛苦的牺牲，即自我中心的牺牲。因为自我中心是人类本性固有的，我们多少都倾向于断定自己的宗教是唯一真实正确的宗教；断定我们自己对绝对实在的理解是唯一真实的理解；断定唯有我们得到了启示；断定向我们启示的真理是全部的真理；因而断定我们自己是“选民”、是“光的儿子”，而其他人则是处在黑暗中的异教徒。这些傲慢与偏见乃是原罪的表现，因而在某种程度上人人都有，每个社团都有；只是程度各不相同。而且迄今为止，犹太系宗教显然比印度系宗教更狭隘，这似乎是历史的事实。在当今的历史篇章里，所有高级宗教的信徒相互间有可能结成前所未有的亲密关系，印度系宗教的精神随着意思吹，<span class="math-super"><a id="z347" href="part0159.html#bz347" class="calibre1">[347]</a></span>对于扬去穆斯林、基督徒和犹太教徒内心的传统的法利赛主义可能有所帮助。但是，神赐予自助的人以帮助；为了根治我们自己家族的病症，在心地比较狭隘的犹太型宗教的那半个世界里展开的精神斗争，很可能是人类历史下一篇章至关重要的内容。</p>
 
   </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0170.html">← 上一页</a> ｜ <a href="./篇0172.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第19章 将人类宗教传统的本质与非本质连生物分离开来的任务", "itemUrl": "汤因比著作集/篇0171.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册04.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

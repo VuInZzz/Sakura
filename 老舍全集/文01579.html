@@ -11,11 +11,50 @@
 <p class="title1">心中有了底</p>
 <p class="date">第14卷，散文 杂文</p>
 <br>
-<div class="content"><p>看到毛主席的《关于正确处理人民内部矛盾问题》的文章，使我对国家很多重大问题的来龙去脉，和正当的处理方法，都有了一些认识。我说“一些认识”，因为问题太多太大，一时不能全部明白。我应当再多读几遍，多向朋友们讨教，以期深入地了解，条条明确。这应是一件最愉快的事。</p>
-<p>我是一个作家，所以特别关心文艺创作中的如何辨识香花与毒草的问题。毛主席所提的六个辨识标准，使我心中有了底，非常高兴。有了这六个标准，作家的立场便确定了，文艺应为谁服务，也更明确了。六条之中最重要的是社会主义道路和党的领导两条。有了这两条，在创作中我们作家就应责无旁贷，坚信不渝地为社会主义服务；在文艺团体里必须有党的领导，保证文艺创作的确成为发展社会主义的巨大力量。在最近几天，看到听到不少右派思想的言论，有人甚至企图取消党的领导。今天看到毛主席的文章，我相信作家们必定能在文艺创作上给右派思想和妄想偷梁换柱的右派分子以有力的反击，使社会主义道路的光明照亮全国。</p>
-<p>香花与毒草既有了明确的辨别方法，我切盼作家们能放出一些最美丽的香花来，使“百花齐放”的号召不至落空。</p>
-<p class="right">原载1957年6月20日《文汇报》</p>
+<div class="content"><p>看到毛主席的《关于正确处理人民内部矛盾问题》的文章，使我对国家很多重大问题的来龙去脉，和正当的处理方法，都有了一些认识。我说“一些认识”，因为问题太多太大，一时不能全部明白。我应当再多读几遍，多向朋友们讨教，以期深入地了解，条条明确。这应是一件最愉快的事。</p>
+
+<p>我是一个作家，所以特别关心文艺创作中的如何辨识香花与毒草的问题。毛主席所提的六个辨识标准，使我心中有了底，非常高兴。有了这六个标准，作家的立场便确定了，文艺应为谁服务，也更明确了。六条之中最重要的是社会主义道路和党的领导两条。有了这两条，在创作中我们作家就应责无旁贷，坚信不渝地为社会主义服务；在文艺团体里必须有党的领导，保证文艺创作的确成为发展社会主义的巨大力量。在最近几天，看到听到不少右派思想的言论，有人甚至企图取消党的领导。今天看到毛主席的文章，我相信作家们必定能在文艺创作上给右派思想和妄想偷梁换柱的右派分子以有力的反击，使社会主义道路的光明照亮全国。</p>
+
+<p>香花与毒草既有了明确的辨别方法，我切盼作家们能放出一些最美丽的香花来，使“百花齐放”的号召不至落空。</p>
+
+<p class="right">原载1957年6月20日《文汇报》</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01578.html">← 上一页</a> ｜ <a href="./文01580.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "心中有了底", "itemUrl": "老舍全集/文01579.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

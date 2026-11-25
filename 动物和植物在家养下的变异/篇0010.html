@@ -21,7 +21,7 @@
   <p class="bodytext">驴的肩条纹有时是双重的，勃里斯先生曾经看到过甚至有三条或四条平行条纹的<a id="new-note6" href="part0425.html#new-notef6" class="calibre4"><sup class="calibre6">[6]</sup></a>。我曾在十个例子中观察到肩条纹的下端顿成截形，其前角延长成一个细的尖端，同上述黄棕色得文郡驮马的情形完全一样。关于肩条纹末端部分急骤地而且尖锐地弯曲的情形，我看到过三个例子；关于肩条纹明显地但微小地分叉的情形，我看到和听到过四个例子。关于肩条纹在前腿上部明显地分成两叉的情形，虎克（Hooker）博士一行在叙利亚为我观察了不下五个同样的事例。在普通的骡子中有时也有同样分叉的情形。当我最初注意到肩条纹的分叉和尖锐地弯曲时，我已充分地看过了各个不同马属物种的条纹，这就使我相信甚至如此不重要的一种性状也有其明显的意义，于是我被引导着去注意这个问题。现在我发现在“白氏斑马”和“南非斑马”的身上相当于驴的肩条纹的那些条纹以及颈部的一些条纹都是分成两叉的，并且肩部附近的一些条纹的末端都是尖锐地向后弯曲的。肩条纹的分成两叉以及尖锐地弯曲，显然同体部和颈部两侧的接近垂直的条纹转换方向而成为腿部的横条纹有关。最后，我们知道在马的身上会出现肩条纹、腿条纹和脊条纹——在驴的身上偶尔没有这等条纹——在马和驴的身上会出现两重的或三重的肩条纹，并且这等条纹以同样的方式终止于下方——所有这些都是在马和驴中所发生的相似变异的例子。这等情形大概不是由于同样的环境条件对于同样的体质发生了作用的缘故，而是由于在颜色方面部分地返归了马属的共同祖先的缘故。以后我们还要讨论这个问题，而且要更加充分地予以讨论。</p>
 
   <div class="tupian">
-    src="./images/01312.jpeg"
+    <img alt="" src="./images/01312.jpeg" />
 
     <p class="bodycontent-text-tushuo">不同版本的《物种起源》</p>
   </div>
@@ -38,6 +38,41 @@
 
   <p class="zhusi"><a id="new-notef6" href="part0425.html#new-note6" class="calibre4">[6]</a> 《孟加拉亚细亚学会学报》，第二十八卷，1860年，第231页。马丁，《马》，第205页。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0009.html">← 上一页</a> ｜ <a href="./篇0011.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "驴", "itemUrl": "动物和植物在家养下的变异/篇0010.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

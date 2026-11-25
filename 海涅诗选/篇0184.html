@@ -11,38 +11,104 @@
 <p class="title1">老玫瑰</p>
 <p class="date">乘着歌声的翅膀：海涅诗选 · 1844</p>
 <br>
-<div class="content">
-<h2 class="chapter-two">老玫瑰</h2>
-<p class="bodytext">一朵含苞待放的玫瑰，</p>
-<p class="bodytext">我的心曾为她燃烧；</p>
-<p class="bodytext">可是她渐渐长大了，</p>
-<p class="bodytext">变得来鲜艳又风骚。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">世上最美的玫瑰，</p>
-<p class="bodytext">我希望把她摘取，</p>
-<p class="bodytext">可她用尖刺扎我，</p>
-<p class="bodytext">我只好远远地离去。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">如今她已枯萎凋零，</p>
-<p class="bodytext">还受过风雨的撕咬——</p>
-<p class="bodytext">我却成了最可爱的亨利，</p>
-<p class="bodytext">她殷勤地投入我的怀抱。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">亨利前来亨利后，</p>
-<p class="bodytext">声音叫得实在甜蜜，</p>
-<p class="bodytext">只可惜美人的下巴</p>
-<p class="bodytext">而今仿佛成了野芒刺。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">那装点她下巴上小痣的</p>
-<p class="bodytext">刚毛，真是过于硬扎——</p>
-<p class="bodytext">进修道院去吧，亲爱的，</p>
-<p class="bodytext">要不找理发匠把脸刮刮。</p>
-<p class="bodytext-right">（杨武能 译）</p>
+<div class="content">
+
+<h2 class="chapter-two">老玫瑰</h2>
+
+<p class="bodytext">一朵含苞待放的玫瑰，</p>
+
+<p class="bodytext">我的心曾为她燃烧；</p>
+
+<p class="bodytext">可是她渐渐长大了，</p>
+
+<p class="bodytext">变得来鲜艳又风骚。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">世上最美的玫瑰，</p>
+
+<p class="bodytext">我希望把她摘取，</p>
+
+<p class="bodytext">可她用尖刺扎我，</p>
+
+<p class="bodytext">我只好远远地离去。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">如今她已枯萎凋零，</p>
+
+<p class="bodytext">还受过风雨的撕咬——</p>
+
+<p class="bodytext">我却成了最可爱的亨利，</p>
+
+<p class="bodytext">她殷勤地投入我的怀抱。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">亨利前来亨利后，</p>
+
+<p class="bodytext">声音叫得实在甜蜜，</p>
+
+<p class="bodytext">只可惜美人的下巴</p>
+
+<p class="bodytext">而今仿佛成了野芒刺。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">那装点她下巴上小痣的</p>
+
+<p class="bodytext">刚毛，真是过于硬扎——</p>
+
+<p class="bodytext">进修道院去吧，亲爱的，</p>
+
+<p class="bodytext">要不找理发匠把脸刮刮。</p>
+
+<p class="bodytext-right">（杨武能 译）</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0183.html">← 上一页</a> ｜ <a href="./篇0185.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "海涅诗选", "bookTitle": "乘着歌声的翅膀：海涅诗选", "itemTitle": "老玫瑰", "itemUrl": "海涅诗选/篇0184.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

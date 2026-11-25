@@ -306,6 +306,41 @@
 <p class="noteitem">[76] <b>浙水的涛声</b> 浙水，即钱塘江，涨潮时涛声很大。</p>
 <p class="noteitem">[77] 关于禹同舜和皋陶谈话的情形，《史记·夏本纪》有如下的一段记载：“帝舜谓禹曰：‘女（汝）亦昌言。’禹拜曰：‘於！予何言？予思日孳孳！’皋陶难禹曰：‘何谓孳孳？’禹曰：‘鸿水滔天，浩浩怀山襄陵，下民皆服于水。予陆行乘车，水行乘舟，泥行乘橇，山行乘<img class="inline" alt="" src="./images/image05657.jpeg"/>，行山栞木，与益予众庶稻鲜食；以决九川致四海，浚畎浍致之川，与稷予众庶难得之食；食少，调有余补不足，徙居。众民乃定，万国为治。’皋陶曰：‘然，此而美也！’禹曰：‘於！帝慎乃在位，安尔止，辅德，天下大应。清意以昭待上帝命，天其重命用休！’帝曰：‘吁！臣哉，臣哉！臣作朕股肱耳目，予欲左右有民，女辅之。……女无面谀，退而谤予。……’禹曰：‘然。……’帝曰：‘毋若丹朱傲，维慢游是好，毋水行舟，朋淫于家，用绝其世，予不能顺是。’禹曰：‘予辛壬娶涂山，癸甲（按应作予娶涂山，辛壬癸甲），生启，予不子，以故能成水土功，辅成五服，至于五千里，州十二师，外薄四海，咸建五长，各道有功。苗顽不即功，帝其念哉！’帝曰：‘道吾德，乃女功序之也！’皋陶于是敬禹之德，令民皆则禹。不如言，刑从之。舜德大明。于是夔行乐，祖考至，群后相让，鸟兽翔舞，箫韶九成，凤皇来仪，百兽率舞，百官信谐。”又关于禹的吃喝和衣服，《论语·泰伯》记有孔丘的话：“子曰：‘禹，吾无间然矣。菲饮食而致孝乎鬼神，恶衣服而致美乎黻冕，卑宫室而尽力乎沟洫。’”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00137.html">← 上一页</a> ｜ <a href="./文00139.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "理水", "itemUrl": "鲁迅全集/文00138.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷02.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -34,6 +34,41 @@
 <p class="noteitem">[350] <b>“速死”</b> 1915年章太炎被袁世凯软禁于北京期间，因愤于袁世凯阴谋称帝，以七尺宣纸篆书“速死”二字，悬于壁上。并自跋云：“含识之类，动止则息，苟念念趣死，死则自至，故书此二字，在自观省，不必为士燮之祷也。乙卯孟秋，章炳麟识。”“速死”是春秋时范文子（即士燮）的故事。《左传》成公十七年载：范文子是晋国大夫，曾佐郤克、栾书等率军与齐、秦、楚作战，屡胜建功。因晋厉公骄侈成性，他担心自己会因功招祸，殃及家族，便祈祷“速死”，不再作战。他“祝宗祈死”，说：“爱我者唯祝我使我速死，无及于难，范氏之福也。”</p>
 <p class="noteitem">[351] <b>《汉郊祀歌》</b> 汉乐府歌辞，共十九章。章太炎所作篆书，未详。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文02657.html">← 上一页</a> ｜ <a href="./文02659.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "360925 致许寿裳", "itemUrl": "鲁迅全集/文02658.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

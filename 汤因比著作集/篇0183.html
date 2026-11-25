@@ -106,6 +106,41 @@
 
   <p class="msonormal2">马歇尔计划还解除了我们前面所言欧洲联合之障碍中的另外一个。工业体系持续向世界范围扩展运作规模，这种趋势对仅为区域性的欧洲联合的前景很不利。马歇尔计划要结出果实，它对西欧国家的救助就靠将它们纳入一个围绕美国中心的经济体系。这个体系将包括除苏联范围之外的整个世界，因为那些西欧国家将带来它们的非洲和亚洲领地及从属国，美国会带来拉丁美洲国家和中国，英联邦的海外成员国在这种情况下也可以加入进来。在这样一种规模的经济运作里，一个欧洲联盟即使把整个欧洲都包括进来，也几乎是一个分量不重的经济单位，也就如同法国这种规模的民族国家或中世纪威尼斯这种规模的城邦。在这样一种经济视野中，当我们还没有任何机会来创建它之前，“泛欧”看似就成了一个时代错误。如果得到一个进入几乎是世界范围联合的替代选择，西欧人也不必遗憾于“泛欧”的流产。如果欧洲曾有过的确凿无疑的世界优势被证明是一个注定要熄灭的历史的短暂好奇，马歇尔计划就至少给西欧一种安慰，可以看到它死去的霸权得到了基督教的葬礼。然而，安乐死既不是恢复也不是复活。紧接着第二次世界大战，欧洲的矮化已是一个明明白白的既成事实。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0182.html">← 上一页</a> ｜ <a href="./篇0184.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "欧洲的矮化", "itemUrl": "汤因比著作集/篇0183.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册05.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

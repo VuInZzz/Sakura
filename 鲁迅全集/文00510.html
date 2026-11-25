@@ -36,6 +36,41 @@
 <p class="noteitem">[170] <b>《穆天子传》</b> 晋代从战国时魏襄王墓中发现的先秦古书之一，共六卷。原本是竹简，后因竹简文字剥落，从竹简古文改写楷书时有难辨之处，用□号代替缺文，所以书中多□，如卷二：“仍献白玉□只角之一□三，可以□沐，乃进食□酒姑劓九□。”</p>
 <p class="noteitem">[171] <b>“口生垢，口戕口”</b> 《大戴礼记·武王践阼》中的句子。“垢”当作“<img class="inline" alt="" src="./images/image05756.jpeg"/>”。《大戴礼记》北周卢辩注：“<img class="inline" alt="" src="./images/image05756.jpeg"/>，耻也。”清代周元亮、钱尔弢都说这几个“口”：“乃古方空圈，盖缺文也；今作口字解，大误。”清代经学家王应奎持不同看法，在《柳南随笔》卷一中说：“近予见宋板《大戴礼》，乃秦景旸阅本，口字并非方空圈。景旸讳四麟，系前代邑中藏书家，校订颇精审可据，冯嗣宗《先贤事略》中称之。观此，则周、钱两公之言殆非也。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00509.html">← 上一页</a> ｜ <a href="./文00511.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "“……”“□□□□”论补", "itemUrl": "鲁迅全集/文00510.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

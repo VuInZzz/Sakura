@@ -24,6 +24,41 @@
 
   <p class="msonormal2">但为什么人类松懈了掌控呢？如果能够击退丛林，开辟这些土地，并且规划建造出这些宏伟壮观的建筑，那为什么不继续发扬壮大呢？答案就显示在遍布吴哥窟四方院最外围四周墙壁顶端和贝雍寺（四边形的吴哥王城的中心点）的雕饰上。这些精美的浅浮雕描绘了一些日常生活的场景，但更多的是宗教仪式和政治激辩的场景，不过首要的主题还是战争。从巨大城墙的两头开始，军队自相反方向行进而来。起初一切风平浪静，井然有序：纵队成列的步兵团、庞大的双轮战车队、骑兵们和大象群。但当对立的两军短兵相接，场景就开始混乱不堪，战士们的脸庞变得狂躁不安。此处的场景是一群群囚犯遭到国王棒打，甚至更糟的是，惨受折磨致死。他们身上敲满了长钉，被钉在十字架上处以死刑。定制这件纪实雕塑品的国王以及奉命着手制作的艺术家，正如早于他们两千年的亚述人那样，对于将自身暴行定格保存以实现不朽显然乐在其中。高棉文明与之前以及之后的众多其他文明一样，沉湎于这些疯狂的罪行而最终自我毁灭。人类自作孽让掠夺成性的树木找到机会，向人类的智慧结晶发起复仇行动。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0246.html">← 上一页</a> ｜ <a href="./篇0248.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "26.人树之战", "itemUrl": "汤因比著作集/篇0247.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

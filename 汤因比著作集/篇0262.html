@@ -26,6 +26,41 @@
 
   <p class="msonormal2">我们立足于河流发端之处，抬头凝视着峡谷，而后向开伯尔山口前进；一两个小时之后，我发现自己到了著名的山口西脚，正好极目远眺阿富汗。当我侧身移向作为边境标志的那条石灰水粉刷过的石头界线、伸长脖子略微窥探耸立在卡菲里斯坦之上的兴都库什山脉时，阿富汗边防检查站的一名士兵粗暴地朝我喝叱，让我保持距离。与此同时，他倒是殷勤地放下横跨道路的锁链，好让一头骆驼通过，那家伙昂着头，一点都没受到盘问就过去了，抬脚从锁链上经过时，那副架势简直不屑一顾。这当然完全符合规定。我没有阿富汗签证，而那头骆驼，毫无疑问，早就拿出三张护照照片（正面照和侧面照，两英寸乘以两英寸半大小），并且填写好公开其父亲及祖父姓名和出生地的表格。实际上，它遵守了规定，而我却没有，所以我没有立场抱怨。尽管如此，我还是倍感委屈，甚至更确切地说，是感到妒忌。我对自己发誓，总有一天，我要循着那头骆驼的脚步，要像它那样趾高气扬地踢开那放低的锁链。没错，在有生之年，我也要踏上犍陀罗。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0261.html">← 上一页</a> ｜ <a href="./篇0263.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "41.犍陀罗", "itemUrl": "汤因比著作集/篇0262.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

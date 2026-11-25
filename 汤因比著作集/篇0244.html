@@ -22,6 +22,41 @@
 
   <p class="msonormal2">一百年前，日本人民的领导者决定放弃他们先辈的闭关政策，毫无保留地全盘采纳现代西方文明实用的一面，那时候他们尚未准备好放弃他们传统的精神生活。他们要如何处理这分层沉积的异教（神道教）、佛教和儒教呢？他们融合儒家伦理道德和神道教仪式，形成一种相当人为造作的新混合体，其忠诚奉献的中心要点就是崇拜天皇。古代仙人神话说日本是“神国”，永远不受侵犯，命中注定有朝一日会统治世界，这些神话都被赋予了官方学说的地位。对所谓的日本国家命运的崇拜契合了1930年代日本军国主义者的思想倾向，在偷袭珍珠港之后的那一两年时间里，这些政治神话当中哪怕是最荒唐夸张的部分，也似乎正逐步成真。因此当军事时运急转直下之后，最终一败涂地的结局给在世的日本人造成了前所未有的最强烈震动。神话被事实驳倒了。日本武装强人激怒了比他更强的人，并且终究向其低头认输。天皇本人告诉他的国民，自己并不是神。不出多少时日，整个精神世界便化作云烟。取而代之的会是什么新的精神愿景呢？这是日本人如今仍在努力解决的心灵问题。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0243.html">← 上一页</a> ｜ <a href="./篇0245.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "23.日本的过去与未来", "itemUrl": "汤因比著作集/篇0244.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

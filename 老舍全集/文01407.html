@@ -11,11 +11,50 @@
 <p class="title1">三</p>
 <p class="date">第14卷，散文 杂文 · 滇行短记</p>
 <br>
-<div class="content"><p>靛花巷是条只有两三人家的小巷，又狭又脏。可是，巷名的雅美，令人欲忘其陋。</p>
-<p>昆明的街名，多半美雅。金马碧鸡等用不着说了，就是靛花巷附近的玉龙堆，先生坡，也都令人欣喜。</p>
-<p>靛花巷的附近还有翠湖，湖没有北平的三海那么大，那么富丽，可是，据我看：比什刹海要好一些。湖中有荷蒲；岸上有竹树，颇清秀。最有特色的是猪耳菌，成片的开着花。此花叶厚，略似猪耳，在北平，我们管它叫做凤眼兰，状其花也；花瓣上有黑点，像眼珠。叶翠绿，厚而有光；花则粉中带蓝，无论在日光下，还是月光下，都明洁秀美。</p>
-<p>云南大学与中法大学都在靛花巷左右，所以湖上总有不少青年男女，或读书，或散步，或划船。昆明很静，这里最静；月明之夕，到此，谁仿佛都不愿出声。</p>
+<div class="content"><p>靛花巷是条只有两三人家的小巷，又狭又脏。可是，巷名的雅美，令人欲忘其陋。</p>
+
+<p>昆明的街名，多半美雅。金马碧鸡等用不着说了，就是靛花巷附近的玉龙堆，先生坡，也都令人欣喜。</p>
+
+<p>靛花巷的附近还有翠湖，湖没有北平的三海那么大，那么富丽，可是，据我看：比什刹海要好一些。湖中有荷蒲；岸上有竹树，颇清秀。最有特色的是猪耳菌，成片的开着花。此花叶厚，略似猪耳，在北平，我们管它叫做凤眼兰，状其花也；花瓣上有黑点，像眼珠。叶翠绿，厚而有光；花则粉中带蓝，无论在日光下，还是月光下，都明洁秀美。</p>
+
+<p>云南大学与中法大学都在靛花巷左右，所以湖上总有不少青年男女，或读书，或散步，或划船。昆明很静，这里最静；月明之夕，到此，谁仿佛都不愿出声。</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01406.html">← 上一页</a> ｜ <a href="./文01408.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "三", "itemUrl": "老舍全集/文01407.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

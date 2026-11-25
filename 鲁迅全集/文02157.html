@@ -42,6 +42,41 @@
 <p class="noteitem">[568] 指《文学青年与道德》，杜谈作，载《新语林》第五期（1934年10月）。该文指责一些文艺青年打击别人、抬高自己的恶劣作风，但却引用了别人攻击鲁迅的话说：“不久以前申报上就有某文艺社声讨某某‘二文妖’的宣言，对这事，我是极其赞同的，如此文坛，早应使此辈‘文妖’绝迹才好。”</p>
 <p class="noteitem">[569] <b>微风社骂我为“文妖”</b> 微风社，即微风文艺社，由国民党上海市党部主持，1934年7月成立于上海，主要成员有朱小春、林庚白、林众可、章衣萍等。该社在7月25日举行的第一次社务会议上，议决“声讨鲁迅”等各项提案，有关提案中谩骂鲁迅为“文妖”，并议决“呈请党政机关严厉制裁”（据1934年7月26日《申报》）。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文02156.html">← 上一页</a> ｜ <a href="./文02158.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "341101", "itemUrl": "鲁迅全集/文02157.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷13.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

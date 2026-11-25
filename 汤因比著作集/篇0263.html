@@ -26,6 +26,41 @@
 
   <p class="msonormal2">我参观了位于白沙瓦和科哈特山口之间无人管理地带中著名的兵工厂。那里的枪炮工仍在使用由脚踏轮驱动运转的车床，不过他们的工场如今由白沙瓦的电站提供电力照明，因此，未来对擦枪走火事件的反击报复行动，将不会是惩罚性的征战，而是采取诸如威胁要切断电源这种对付逾期不缴季度电费给电力局的做法。由于仰赖了电灯、医院和学校，部落人确实只能乖乖听凭现代文明的摆布。不久以后，那些车床将由电力驱动运转而不必再用脚蹬了，工匠将生产出自行车和公共汽车，而不再是目前他们库存待销的步枪、左轮手枪、刀具和战斧。他们的子女将去上白沙瓦大学（那里已经建好学生宿舍，伙食、住宿和学费全免）。他们的孙子将成为汽修工，孙女则成为速记打字员。这是浪漫故事的平淡结局吗？好吧，假如故事如此般完结，那可了无遗憾，因为真要细究起来，表面看来浪漫的边境故事原来是那么野蛮不堪。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0262.html">← 上一页</a> ｜ <a href="./篇0264.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "42.消弭的边境", "itemUrl": "汤因比著作集/篇0263.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

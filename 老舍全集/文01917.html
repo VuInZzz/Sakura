@@ -21,9 +21,9 @@
 
 <p>（一）以单字释辞：《易》曰：“物相杂，故曰文。”《说文》曰：“文错画也，像交文。”这一类的话是中国文人当谈到文学，最喜欢引用的。中国人对于“字”有莫大的信仰，《说文》等书是足以解决一切的。一提到文学，赶快去翻字典：啊，文，错画也。好了，一切全明白了。章太炎先生也不免此病：“文学者，以有文字著于竹帛，故谓之文；论其法式，谓之文学。”这前半句便是“文，错画也。”的说明；后半句为给“学”字找个地位，所以补上“论其法式”四个字。文学是借着文字表现的，不错；但是，单单找出一个“字”的意思，怎能拿它来解释一个“辞”呢！“文学”是一个辞。辞——不拘是由几个字拼成的——就好像是化学配合品，配合以后自成一物，分析开来，此物即不存在。文学便是文学，是整个的。单把“文”字的意思找出来，怎能明白什么是文学？果然凡有“文”的便是文学，那么铺户的牌匾，“天德堂”与“开市大吉，万事亨通”当然全是文学了！</p>
 
-<p>再说，现在学术上的名辞多数是由外国文字译过来的，不明白译辞的原意，而勉强翻开中国字书，去找本来不是我们所有的东西的定义，岂非费力不讨好。就以修辞学说吧，中国本来没有这么一种学问，而在西洋已有两千多年的历史，亚里士多德是第一个有系统而科学的写《修辞学》的。那么，我们打算明白什么是修辞学，是应当整个的研究自亚里士多德至近代西洋的修辞专书呢？还是应当只看《说文》中的“辞：说也，从src="./images/Image00230.jpg"
+<p>再说，现在学术上的名辞多数是由外国文字译过来的，不明白译辞的原意，而勉强翻开中国字书，去找本来不是我们所有的东西的定义，岂非费力不讨好。就以修辞学说吧，中国本来没有这么一种学问，而在西洋已有两千多年的历史，亚里士多德是第一个有系统而科学的写《修辞学》的。那么，我们打算明白什么是修辞学，是应当整个的研究自亚里士多德至近代西洋的修辞专书呢？还是应当只看《说文》中的“辞：说也，从<img alt="" src="./images/Image00230.jpg" />
 
- 辛，src="./images/Image00230.jpg"
+ 辛，<img alt="" src="./images/Image00230.jpg" />
 
  辛犹理辜也。修：饰也，从彡，攸声”？或是引证《易经》上的“修辞立其诚，所以居业也”，就足以明白“修辞学”呢？名不正则言不顺，用《易经》上的修辞二字来解释有两千多年历史的修辞学，是张冠李戴，怎能有是处呢？</p>
 
@@ -82,6 +82,41 @@
  英文，意为：没有斗争，便没有戏剧。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01916.html">← 上一页</a> ｜ <a href="./文01918.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "第一讲 引言", "itemUrl": "老舍全集/文01917.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷16.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

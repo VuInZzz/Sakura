@@ -38,6 +38,41 @@
 <p class="noteitem">[133] 指日本安冈秀夫著《从小说看来的支那民族性》（1926年4月东京聚芳阁出版）一书中对中国人的随意诬蔑。该书《耽享乐而淫风炽盛》一篇中甚至说：“彼国人的嗜笋……也许是因为那挺然翘然的姿势，引起想像来的罢。”参看《华盖集续编·马上支日记（七月二日、四日）》。</p>
 <p class="noteitem">[134] <b>“亲善”、“提携”</b> 1935年1月日本外相广田弘毅在议会发表“中日亲善”、“经济提携”的演说，以欺骗中日人民。蒋介石于2月1日就此发表谈话：“此次日本广田外相在其议会所发表对我国之演词，吾人认为亦具诚意，吾国朝野对此当有深刻之谅解……制裁一切冲动及反日行为，以示信谊。”在这以前，1934年5月间日本公使有吉明已经与黄郛在上海进行“中日亲善”谈判；6月间有吉明又到南京见汪精卫，商谈“中日提携”问题。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00594.html">← 上一页</a> ｜ <a href="./文00596.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "内山完造作《活中国的姿态》序", "itemUrl": "鲁迅全集/文00595.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷06.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -52,6 +52,41 @@
 
   <p class="msonormal2">人们已经注意到，彼得大帝对瑞典人的胜利，实际上是对他将俄国技术提高到同时代西方水平的一种奖励。然而，西方技术尚未达到可以战胜装备虽不精良但占有有利地形的敌手的程度。莫卧儿人的大炮，尽管部分是由西方雇佣军所操纵，但仍征服不了马拉塔人在高止山脉的天然要塞。奥斯曼人一直掌握着能与西方人、俄国人和伊朗人的武装力量相抗衡的军事实力，但却无法避免瓦哈比教派在阿拉伯半岛中部的兴起。阿卜杜勒·瓦哈比（1703—1792年）是逊尼派伊斯兰教中清教徒式的罕百里教派的狂热信奉者；1745年他在被沙漠与奥斯曼帝国隔开的阿拉伯半岛中部使沙特家族的当政者改宗，从而为这一小块绿洲上名不见经传的统治者带来了好运。到1773年，信奉瓦哈比教的沙特人已征服和统治了阿拉伯半岛中部的其他地区。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0130.html">← 上一页</a> ｜ <a href="./篇0132.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第七十八章 伊斯兰教世界", "itemUrl": "汤因比著作集/篇0131.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

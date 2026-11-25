@@ -415,6 +415,41 @@
   <p class="msonormal2">例如，在公元前<span xml:lang="EN-US">2</span>世纪末叶，马加比家族本来是犹太教的军事拥护者，他们反对强制的希腊化，现在却转变为一个塞琉古王国后继国家的建立者和统治者，这些受迫害的暴力反抗者反过来成为迫害者，并且把犹太教强加到被他们征服的非犹太民族身上。这个政策成功地把犹太民族的领地扩展到了以土买地区，扩展到“异教徒的加利利”地区，还扩展到外约旦狭窄的皮瑞阿地区。虽然如此，武力的胜利还是彻底受到了限制，因为它没能征服撒马利坦会的特殊神宠论，也没有征服马加比家族统治区域两侧希腊化城邦中市民的自尊，其中一侧城邦沿着巴勒斯坦的地中海海岸，另一侧的城邦沿着沙漠的边缘一直到戴克波利斯。实际上通过武力获得的胜利是微不足道的，而且也证明它丧失了犹太教全部的精神未来。因为这是犹太民族历史上最具讽刺意味的事情，不出一百年的时间，在亚历山大·詹尼阿斯<span xml:lang="EN-US">(</span>公元前<span xml:lang="EN-US">102</span>年<span xml:lang="EN-US">—</span>前<span xml:lang="EN-US">76</span>年<span xml:lang="EN-US">)</span>为犹太民族夺取的新土地上诞生了一位加利利的先知，他的教义是犹太教以前所有经验的总结，这位受到神灵启示强行改宗加利利异教的犹太子孙却受到他同时代朱迪亚犹太领袖的抵制。因此犹太教不仅愚弄了自己的过去，还丧失了自己的未来。</p>
 
   </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0019.html">← 上一页</a> ｜ <a href="./篇0021.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第十九章灵魂的分裂", "itemUrl": "汤因比著作集/篇0020.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册01.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

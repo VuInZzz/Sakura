@@ -38,6 +38,41 @@
 <p class="noteitem">[395] <b>抽毁</b> 清代乾隆间纂修《四库全书》时，凡被视为有“违碍”的书，都要加以全毁或抽毁。在各省缴送的禁书目中，有的就注有：“有悖谬语，应请抽毁”字样。参看《且介亭杂文·病后杂谈之余》。</p>
 <p class="noteitem">[396] <b>钱谦益</b>（1582—1664） 字受之，江苏常熟人。明崇祯时的礼部侍郎，南明弘光时又任礼部尚书；清军占领南京时，他率先迎降，故为人所不齿。清乾隆时将他列入“贰臣传”中。著有《初学集》、《有学集》等。乾隆四十一年（1776）十一月十七日上谕中，有“钱谦益在明已居大位，又复身事本朝，……其人实不足齿，其书岂可复存。自应逐细查明，概行毁弃，以励臣节，而正人心”（《四库全书总目》卷首）的话。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01888.html">← 上一页</a> ｜ <a href="./文01890.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "331120", "itemUrl": "鲁迅全集/文01889.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷12.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

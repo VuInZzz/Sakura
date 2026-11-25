@@ -43,6 +43,41 @@
 <p class="noteitem">[184] <b>“没齿而无怨言”</b> 语出《论语·宪问》：管仲“夺伯氏骈邑三百，饭疏食，没齿无怨言。”没齿，终身之意。</p>
 <p class="noteitem">[185] 《Le Jeu de L＇Amour et de La Mort》 《爱与死的搏斗》，罗曼罗兰以法国大革命为题材的剧本之一，作于1924年。其中有这样的情节：国约议会议员库尔跋齐因反对罗伯斯庇尔捕杀丹东，在议会投票判决丹东死刑时，他放弃投票，并中途退出会场；同时他的妻子又在家中接待一个被通缉的吉隆德派分子（她的情人），被人告发。他的朋友政治委员会委员加尔来到他家，告以委员会要他公开宣布对被通缉者的态度；在他拒绝以后，加尔便给予两张事先准备好的假名假姓的护照，劝他带着妻子一同逃走，并告诉他已得到罗伯斯庇尔的默许。鲁迅这里所举的是加尔在这时候对库尔跋齐所说的话。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00190.html">← 上一页</a> ｜ <a href="./文00192.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "“死地”", "itemUrl": "鲁迅全集/文00191.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷03.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

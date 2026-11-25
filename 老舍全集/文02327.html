@@ -11,14 +11,56 @@
 <p class="title1">看迎春画展</p>
 <p class="date">第18卷，文论工作报告译文 · 文论</p>
 <br>
-<div class="content"><p>春天来了，迎春画展开放着鲜丽的国画花朵，万紫千红。展览品都是国画家们的最近新作。看来，此次的作品比之往年又有所提高，可喜可贺！</p>
-<p>一进展览室（在北海公园的画舫斋），第一个印象是画家们的笔墨放开了，画面舒展了，分明是画家们根据自己的生活经验与技法特长，画出了自己的作品。因而，个人的风格更加鲜明，不看标签也能知道是谁的笔墨。因此，这次的展览品虽不甚多，却能有丰富多彩之感。</p>
-<p>细看看，差不多每幅画都争取立意新颖，构图别致，以见独创之妙。如惠孝同与林冠明同画黄山，王雪涛和娄师白都写南国花木，而各有各的立意，各有各的风格。是的，其他作品，无论是山水、人物，还是花鸟，都有强烈的时代感与生活气息，绝对不是古画的摹本。</p>
-<p>画家们所以能够如此推陈出新，是因为不断去深入民间，广览高山大川，奇花异草，眼界开阔了，心中爽朗了，思想感情都有了变化，才得心应手地把新内容与传统技法结合起来，百花齐放，面貌一新。</p>
-<p>青年学员的一些作品，也有很可爱的，如李颖的《丰沙线野溪》就很不错。青年们若能在传统技法上多下功夫，坚持勤学苦练，将来的成就定有可观，敢为预祝！</p>
-<p>这次展览令人满意。愿国画家们继续努力，不断提高，争取今年创作上的更大丰收！</p>
-<p class="right1">原载1962年2月17日《光明日报》</p>
+<div class="content"><p>春天来了，迎春画展开放着鲜丽的国画花朵，万紫千红。展览品都是国画家们的最近新作。看来，此次的作品比之往年又有所提高，可喜可贺！</p>
+
+<p>一进展览室（在北海公园的画舫斋），第一个印象是画家们的笔墨放开了，画面舒展了，分明是画家们根据自己的生活经验与技法特长，画出了自己的作品。因而，个人的风格更加鲜明，不看标签也能知道是谁的笔墨。因此，这次的展览品虽不甚多，却能有丰富多彩之感。</p>
+
+<p>细看看，差不多每幅画都争取立意新颖，构图别致，以见独创之妙。如惠孝同与林冠明同画黄山，王雪涛和娄师白都写南国花木，而各有各的立意，各有各的风格。是的，其他作品，无论是山水、人物，还是花鸟，都有强烈的时代感与生活气息，绝对不是古画的摹本。</p>
+
+<p>画家们所以能够如此推陈出新，是因为不断去深入民间，广览高山大川，奇花异草，眼界开阔了，心中爽朗了，思想感情都有了变化，才得心应手地把新内容与传统技法结合起来，百花齐放，面貌一新。</p>
+
+<p>青年学员的一些作品，也有很可爱的，如李颖的《丰沙线野溪》就很不错。青年们若能在传统技法上多下功夫，坚持勤学苦练，将来的成就定有可观，敢为预祝！</p>
+
+<p>这次展览令人满意。愿国画家们继续努力，不断提高，争取今年创作上的更大丰收！</p>
+
+<p class="right1">原载1962年2月17日《光明日报》</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文02326.html">← 上一页</a> ｜ <a href="./文02328.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "看迎春画展", "itemUrl": "老舍全集/文02327.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷18.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

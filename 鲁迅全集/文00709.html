@@ -96,6 +96,41 @@
 <p class="noteitem">[313] <b>平楚</b> 南朝齐谢朓《宣城郡内望远》：“寒城一以眺，平楚正苍然。”明代杨慎《升庵诗话》：“楚，丛木也。登高望远，见木杪如平地，故云平楚，犹所谓平林也。”<b>高岑</b>，三国魏王粲《登楼赋》：“平原远而极目兮，蔽荆山之高岑。”</p>
 <p class="noteitem">[314] <b>将军岳</b> 指岳飞（1103—1142），字鹏举，相州汤阴（今属河南）人，南宋抗金将领。后被主和派赵构（宋高宗）、秦桧谋害。杭州西湖畔有岳坟。<b>处士林</b>，指林逋（967—1028），字君复，谥号和靖先生，钱塘（今浙江杭州）人，宋代诗人。隐居西湖孤山，喜种梅养鹤。著有《和靖诗集》。孤山有他的坟墓、鹤塚和放鹤亭。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00708.html">← 上一页</a> ｜ <a href="./文00710.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "一九三三年", "itemUrl": "鲁迅全集/文00709.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷07.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

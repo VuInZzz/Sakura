@@ -55,6 +55,41 @@
 
   <p class="msonormal2">中心位于大和（位于主要岛屿本州的西南角）的日本帝国，公元3世纪时已经存在并正在向外扩张。或许早在公元前3世纪，中国文化就已开始渗入和影响日本。5世纪和6世纪，中国文化的影响由于朝鲜人大量移入日本而强化。这些朝鲜人自称是汉人的后裔。无论他们是否真是汉朝时到朝鲜居住的汉人的后裔，他们确实随身带来了中国文明。早在5世纪，日本人就已开始了解汉字。那时，中国文明，包括佛教，经由朝鲜传入了日本。而且，在587年之前的半个世纪里，日本人采纳了朝鲜形态的大乘佛教的中国版。589年以后，当政治上重新获得统一的中国恢复了汉武帝开创的行政体制时，日本人才开始借用中国的政治制度。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0099.html">← 上一页</a> ｜ <a href="./篇0101.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第四十七章 中国的政治分裂与她对佛教的容纳", "itemUrl": "汤因比著作集/篇0100.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

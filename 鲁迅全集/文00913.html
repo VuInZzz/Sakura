@@ -73,6 +73,41 @@
 <p class="noteitem">[824] 本篇最初印入1934年12月翻印的《十竹斋笺谱》第一卷扉页后，原无标题、标点。<br/><b>《十竹斋笺谱》</b>，木版彩色水印的诗笺图谱，明末胡正言（曰从）编，共四卷，收图二百八十余幅，明崇祯十七年（1644）印行。1934年12月，鲁迅和西谛（郑振铎）以“版画丛刊会”的名义翻印。鲁迅生前只印出一卷，其余各卷直至1941年7月才全部印成。<b>牌记，</b>又称书牌、牌子，我国古代线装书刊行时标明版权内容的文字。鲁迅在1934年10月8日致郑振铎信中说：“中国现行之版权页，仿自日本，……我想这回不如另出新样，于书之最前面加一页，大写书名，更用小字写明借书人及刻工等事，如所谓‘牌子’之状，亦殊别致也。”</p>
 <p class="noteitem">[825] <b>王孝慈（1883—1936）</b> 名立承，字孝慈，河北通县（今属北京）人，古籍收藏家。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00912.html">← 上一页</a> ｜ <a href="./文00914.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "一九三四年", "itemUrl": "鲁迅全集/文00913.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

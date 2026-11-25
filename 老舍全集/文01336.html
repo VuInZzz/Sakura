@@ -11,16 +11,60 @@
 <p class="title1">且在生活上表现点爱国样子吧，哪怕是假的也可以！</p>
 <p class="date">第14卷，散文 杂文</p>
 <br>
-<div class="content"><p>“七七”，“八一三”，都纪念过了！又到了“九一八”。</p>
-<p>空空纪念有什么用呢？</p>
-<p>“七七”，在汉口我看见公务人员在家中凑小牌，因为那天放假，而无有大戏与电影可看。</p>
-<p>“八一三”，妇女并没有不擦粉，并没有不烫头发。男人也并没少吸一支香烟，或真吃素食。</p>
-<p>“九一八”到了，我想象得到，大家还是自在逍遥，不过街上挂起国旗，机关里开开会而已。</p>
-<p>这没有意义，先别提那些大的好听的话吧，且在生活上表现一点爱国的样子吧，哪怕是假装的呢！女的硬停止擦粉一天，男的硬减食一日，把省下的钱捐给政府。</p>
-<p>且先别在嘴上挂着天下兴亡，匹夫有责吧，能为国受一天委屈，不以鸡肉代替猪肉即名之为吃素，不以两个八块的酒饭即作为不违犯节约的劝戒，而真的吃顿简单的饭，也就算是有心胸的了。</p>
-<p>话说得太不高明，而且也似乎刻薄了一些。可是连一顿什么饭的委屈都不能受，还提收复失地呢？甘心能受一饭之屈的又有过几位呢？拍着心口，大家点点看吧！</p>
-<p class="right">原载1938年9月18日《新蜀报》</p>
+<div class="content"><p>“七七”，“八一三”，都纪念过了！又到了“九一八”。</p>
+
+<p>空空纪念有什么用呢？</p>
+
+<p>“七七”，在汉口我看见公务人员在家中凑小牌，因为那天放假，而无有大戏与电影可看。</p>
+
+<p>“八一三”，妇女并没有不擦粉，并没有不烫头发。男人也并没少吸一支香烟，或真吃素食。</p>
+
+<p>“九一八”到了，我想象得到，大家还是自在逍遥，不过街上挂起国旗，机关里开开会而已。</p>
+
+<p>这没有意义，先别提那些大的好听的话吧，且在生活上表现一点爱国的样子吧，哪怕是假装的呢！女的硬停止擦粉一天，男的硬减食一日，把省下的钱捐给政府。</p>
+
+<p>且先别在嘴上挂着天下兴亡，匹夫有责吧，能为国受一天委屈，不以鸡肉代替猪肉即名之为吃素，不以两个八块的酒饭即作为不违犯节约的劝戒，而真的吃顿简单的饭，也就算是有心胸的了。</p>
+
+<p>话说得太不高明，而且也似乎刻薄了一些。可是连一顿什么饭的委屈都不能受，还提收复失地呢？甘心能受一饭之屈的又有过几位呢？拍着心口，大家点点看吧！</p>
+
+<p class="right">原载1938年9月18日《新蜀报》</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01335.html">← 上一页</a> ｜ <a href="./文01337.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "且在生活上表现点爱国样子吧，哪怕是假的也可以！", "itemUrl": "老舍全集/文01336.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

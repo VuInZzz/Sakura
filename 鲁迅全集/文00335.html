@@ -57,6 +57,41 @@
 <p class="noteitem">[159] <b>萧伯纳</b>（1856—1950） 英国剧作家、批评家。出生于爱尔兰都柏林。早年参加过英国改良主义政治组织“费边社”。他在第一次世界大战爆发后，谴责帝国主义战争，同情俄国十月社会主义革命。1931年曾访问苏联。主要作品有剧本《华伦夫人的职业》、《巴巴拉少校》、《真相毕露》等，大都揭露和讽刺资本主义的伪善和罪恶。1933年他乘船周游世界，2月12日到香港，17日到上海。</p>
 <p class="noteitem">[160] <b>牛兰</b>（Naulen，1894—1963） 原名亚可夫·马特维耶维奇·鲁尼克（Яков Матвеевич Луник），生于乌克兰。1918年进入苏联“契卡”。1927年11月被共产国际派来中国从事秘密工作，化名牛兰，公开身分为“泛太平洋产业同盟”上海办事处秘书。1931年6月15日牛兰夫妇同在上海被公共租界警务处逮捕，8月移交国民党当局，关押于南京监狱。翌年5月以“危害民国”罪受审。牛兰于7月2日起进行绝食斗争。宋庆龄、蔡元培等曾组织“牛兰夫妇营救委员会”营救。1937年8月，侵华日军炮轰南京时逃出监狱，于1939年回国，曾任苏联红十字会对外联络部部长，大学教授等职。其夫人达吉亚娜·玛依仙柯（1891—1964）回国后从事语言研究和翻译工作。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00334.html">← 上一页</a> ｜ <a href="./文00336.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "谁的矛盾", "itemUrl": "鲁迅全集/文00335.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

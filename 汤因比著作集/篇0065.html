@@ -28,6 +28,41 @@
 
   <p class="msonormal2">欧亚大草原上游牧生活的发明者很有可能就是那一批大草原南端以外的操原始梵语的民族，他们对巴比伦尼亚和美索不达米亚施予了短暂的冲击，却给印度打上了永久性的烙印。但是，游牧生活一旦发明，就不可能维持任何单一民族的垄断地位。欧亚大草原在不同的时期被讲不同语言的民族所占领，这些语言相继有原始梵语、伊朗语、突厥语、通古斯语、蒙古语和芬兰语（马扎尔人的语言）。伴随着公元前二千纪末叶单峰骆驼在阿拉伯草原的驯化以及基督纪元前夕马匹对那里气候环境的适应，游牧生活的范围扩展到阿拉伯，又从阿拉伯扩展到北非。游牧民族从公元前18世纪开始创造历史，直至今天仍存留于人们鲜活的记忆之中。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0064.html">← 上一页</a> ｜ <a href="./篇0066.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第十二章 马的驯化与欧亚草原游牧生活的创造", "itemUrl": "汤因比著作集/篇0065.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

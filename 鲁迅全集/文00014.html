@@ -42,6 +42,41 @@
 <p class="noteitem">[498] <b>《义妖传》</b> 演述关于白蛇娘娘的民间神话故事的弹词，清代陈遇乾著，共二十八卷五十四回，又《续集》二卷十六回。同治八年（1869）刊行。“水满金山”和“白状元祭塔”，都是白蛇故事中的情节。金山在江苏镇江，山上有金山寺，东晋时所建。白状元是故事中白蛇娘娘和许仙所生的儿子许士林，他后来中了状元回来祭塔，与被法海和尚镇在雷峰塔下的白蛇娘娘相见。</p>
 <p class="noteitem">[499] 本文最初发表时，篇末有作者的附记说：“这篇东西，是一九二四年十月二十八日做的。今天孙伏园来，我便将草稿给他看。他说，雷峰塔并非就是保俶塔。那么，大约是我记错的了，然而我却确乎早知道雷峰塔下并无白娘娘。现在既经前记者先生指点，知道这一节并非得于所看之书，则当时何以知之，也就莫名其妙矣。特此声明，并且更正。十一月三日。”保<img class="inline" alt="" src="./images/image05598.jpeg"/>塔在西湖宝石山顶，今仍存。一说是吴越王钱俶入宋朝贡时所造。明代朱国桢《涌幢小品》卷十四中有简单记载：“杭州有保俶塔，因俶入朝，恐其被留，作此以保之……今误为保叔。”另一传说是宋咸平（998—1003）时僧永保化缘所筑。明代郎瑛《七修类稿》：“咸平中，僧永保化缘筑塔，人以师叔称之，遂名塔曰保叔。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00013.html">← 上一页</a> ｜ <a href="./文00015.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "论雷峰塔的倒掉", "itemUrl": "鲁迅全集/文00014.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷01.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

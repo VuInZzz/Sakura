@@ -21,6 +21,41 @@
 <p>我把它读了五六遍；如果我真能够弄懂它的意思，那我非受嘉奖不可。它没法让你进行分析。对它所提到的某些事情，我根本莫名其妙。它始终没交代威廉·斯凯勒的下文。它刚刚约略涉及那个人，让读者开始对他的事发生兴趣，紧接着就把他一笔带过了。威廉·斯凯勒这个人究竟是谁呀？他住在城南公园区的哪儿呀？如果他是六点钟到市区去，最后他走到那儿了吗？如果是走到了，他又遇到什么事情了吗？难道那遭到“令人痛心的飞来横祸”的就是他本人不成？虽然新闻报道中的详情细节写得那么复杂，但是我觉得，除了已经交代的以外，它还有更多的事情必须仔细谈清楚。在另一方面，它写得很含糊——非但含糊而已，它根本就叫你没法理解。难道就是十五年前斯凯勒先生折了腿这件“令人痛心的飞来横祸”使布洛克先生陷入无法用言语形容的悲哀，激动得在深更半夜里赶到这里，要我们暂停开印报纸，好让社会人士都知道这条新闻不成？要不，所谓“令人痛心的飞来横祸”，指的是斯凯勒的岳母早年家产付之一炬的事吧？要不，它指的是三年前那个妇人去世的事吧（然而看来她并非死于飞来横祸之中）？总之，那件“令人痛心的飞来横祸”<span class="em_dot">究竟</span>指的是什么呀？如果那个大笨驴斯凯勒是要拦住那匹脱了缰的马，那么他又为什么跑过去紧站在马屁股<span class="em_dot">后边</span>，大叫大喊，挥舞双手呢？既然马已经远远跑到他前面，他又怎么可能被它撞倒和踏伤了呢？我又怎么可能将这件事引以为“戒”呢？我们又能从这篇离奇不经、不可思议的文章中吸取什么“教训”呢？再有一点，也是我们最要知道的一点，那个会使人喝得烂醉的“大酒盅”究竟跟这件事情有什么关系呢？报道中并没提到斯凯勒喝醉酒，也没提到他妻子喝醉酒，也没提到他岳母喝醉酒，更没提到他的马喝醉酒——那么，他又为什么去提到那个会使人喝得烂醉的大酒盅呢？我倒有这么一个想法，只要布洛克先生本人不去碰那会使人喝得烂醉的大酒盅，他就决不会为这种惹人恼恨的、想入非非的飞来横祸招惹这么多的麻烦。我把这条荒谬的新闻报道读了一遍又一遍，它写得那么委婉曲折，说得那么头头是道，到后来，我却看得头脑发晕了；然而，我仍旧一点儿也弄不明白那究竟是怎么一回事儿。毫无疑问，看来确实是发生了一件什么不幸的事故，但是我们不可能判断，它的经过究竟是什么情形，它的受害者又是什么人物。我不想提出这个要求，然而我又感到非提出这个要求不可，那就是：下一次如果布洛克先生有一个朋友遭到了什么飞来横祸，这位先生最好是给他所写的报道附上一段注解说明，让我们能够摸索出发生的究竟是一件什么事故，出了事故的又是一个什么人。我宁愿他所有的朋友都死绝了，也不愿为了再一次试图解释另一篇类似以上的杰作而差点儿把自己给急疯了。</p>
 <p class="right">一八六五年</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0016.html">← 上一页</a> ｜ <a href="./篇0018.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "马克·吐温中短篇小说选", "bookTitle": "马克·吐温中短篇小说选", "itemTitle": "布洛克先生写的新闻报道", "itemUrl": "马克·吐温中短篇小说选/篇0017.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

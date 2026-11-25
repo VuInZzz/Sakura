@@ -11,10 +11,48 @@
 <p class="title1">后记</p>
 <p class="date">第9卷，戏剧 · 国家至上</p>
 <br>
-<div class="content"><p>《国家至上》这剧本不是灵感的果实，而是我们受回教救国协会的委托才慢慢想起一切来的。为促进回汉的团结，为引起国人对于回民生活以及回教文化的注意，回教协会请之的与我编个剧本，以事宣传。我们答应下来。就着我们自幼在北方所见过的回胞的生活习惯，掺以抗战中的实事与想象，商量了半天，即由我动手写故事。故事编好，交与之的去分场，场分好，我写一二两幕，他写三四两幕。四幕写全，拿到回教协会朗读一遍。协会中友人把意思与词汇上的不妥之处一一提出，我们从头儿修正一遍，交卷。</p>
-<p>交卷不久，回教协会即商请中国万岁剧团给演出；剧团即以之为打炮戏，上演于重庆的国泰戏院。演出以后的话，即须由批评家们去说，我们就此住口。</p>
-<p class="right1">老舍二十九年，五，十八。</p>
+<div class="content"><p>《国家至上》这剧本不是灵感的果实，而是我们受回教救国协会的委托才慢慢想起一切来的。为促进回汉的团结，为引起国人对于回民生活以及回教文化的注意，回教协会请之的与我编个剧本，以事宣传。我们答应下来。就着我们自幼在北方所见过的回胞的生活习惯，掺以抗战中的实事与想象，商量了半天，即由我动手写故事。故事编好，交与之的去分场，场分好，我写一二两幕，他写三四两幕。四幕写全，拿到回教协会朗读一遍。协会中友人把意思与词汇上的不妥之处一一提出，我们从头儿修正一遍，交卷。</p>
+
+<p>交卷不久，回教协会即商请中国万岁剧团给演出；剧团即以之为打炮戏，上演于重庆的国泰戏院。演出以后的话，即须由批评家们去说，我们就此住口。</p>
+
+<p class="right1">老舍二十九年，五，十八。</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00624.html">← 上一页</a> ｜ <a href="./文00626.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "后记", "itemUrl": "老舍全集/文00625.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷09.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

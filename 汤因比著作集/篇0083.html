@@ -48,6 +48,41 @@
 
   <p class="msonormal2">通过这些散布于各地的众多的传播载体，到公元前221年，希腊文明已遍布于除埃及之外的、前波斯帝国的整个版图之内。在埃及，托勒密王朝像与其同时代的秦王朝那样，实行了直接的行政统治，他们只在底比斯建立了一个新城——托勒密城，再加上他们从前辈那里继承的另外两个城市——亚历山大里亚和诺克拉提斯。公元前334年，波斯帝国境内的希腊居民点只有小亚细亚西海岸的一些城邦，还有少数城邦散布在小亚细亚的南部和北部沿岸，以及昔兰尼加、诺克拉提斯和远在东北方向的一些希腊流放人的殖民地。在接下来的一个世纪中，城邦的发展所达到的范围是令人印象深刻的，但也仅是表面现象。新建的希腊殖民城市尽管数量不少，但对于由非希腊人口汇成的汪洋大海来说，仅只是一些散布其中的孤岛。这些城市周围农业地区的农民都是非希腊人，甚至在城墙之内也有一些非希腊人的居住区。在叙利亚，阿拉米共同语作为日常生活用语成功地取代了迦南语（希伯来语），而希腊共同语在这方面则显得逊色得多。希腊共同语曾一度取代阿拉米共同语，成为各地通用的官方用语，而在伊朗东北部地区，希腊字母系统则被用来镌刻一些官方的碑铭，以表达伊朗的地方方言。尽管如此，阿拉米字母系统最终战胜了希腊文而普遍流行于幼发拉底河以东的前波斯帝国统治下的广大地区。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0082.html">← 上一页</a> ｜ <a href="./篇0084.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第三十章 希腊文明的发展与传播", "itemUrl": "汤因比著作集/篇0083.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

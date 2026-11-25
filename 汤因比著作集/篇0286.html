@@ -22,6 +22,41 @@
 
   <p class="msonormal2">“日间云柱，夜间火柱。”<span class="math-super"><a id="z278" href="part0271.html#bz278" class="calibre1">[278]</a></span>在沙特阿拉伯东部的油田上，这样的高柱不计其数，有如前伊斯兰教“蒙昧时代”异教的神癨数目之众。从石油中分离释放出来的天然气因无人需要，便以如此极端彻底的方式被处理掉。夜间游走在任何一条将三座阿拉伯的美国城市连接在一起的公路上，只见整个地貌似乎都在熊熊燃烧。那来自地下的摇曳的地狱之火骤然发出烈焰，直入繁星密布的幽蓝夜空。日上中天时，树荫底下的气温也可能高达——现在是7月——华氏120度<span class="math-super"><a id="z279" href="part0271.html#bz279" class="calibre1">[279]</a></span>。不过，在子夜前的最后一个小时，天气却又凉爽得足以让人平心静气地进行冥想。西方工业技术和组织体制创造的业绩如斯惊人，而正在其中上演美国戏剧的舞台又如此充满异域风情！三座城市对山高水远的问题不以为意：它们的山间避暑胜地在黎巴嫩和厄立特里亚；它们的医院护士从印度引进的，出租车司机来自索马里。我们何去何从<span class="math-super"><a id="z280" href="part0271.html#bz280" class="calibre1">[280]</a></span>？未来潜藏着什么呢？但愿既是穆斯林的真主，又是基督徒的上帝的那位天主，能引领人类奔忙的脚步离开毁灭之路，走出迷途。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0285.html">← 上一页</a> ｜ <a href="./篇0287.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "65.美式的特里波利斯", "itemUrl": "汤因比著作集/篇0286.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

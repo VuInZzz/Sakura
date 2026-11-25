@@ -15,12 +15,12 @@
   <h1 class="bodycontent-first-title" id="calibre_pb_0"><span class="content-word-small1">第十一章</span><br class="calibre5"/>
   论芽变，论繁殖和变异的某些变常方式</h1>
 
-  <div class="tupian">src="./images/01407.jpeg"</div>
+  <div class="tupian"><img alt="" src="./images/01407.jpeg" /></div>
 
   <p class="bodytext-kt-only-np">由变异了的果实所表明的桃、李、樱桃、葡萄、醋栗、穗状醋栗、香蕉的芽变——花卉植物：山茶花、落叶杜鹃花、菊花、蔷薇等的芽变——香石竹的颜色变化——在叶上所表现的芽变——由吸根、块茎、鳞茎所发生的变异——郁金香的变色——由生活条件所引起的芽变的逐渐变化——嫁接杂种——由芽变所引起的实生杂种中的亲代性状的分离——异花粉对于母本的直接作用——雌性动物的前受胎对于以后的后代的影响——结论和提要</p>
 
   <div class="tupian">
-    src="./images/01408.jpeg"
+    <img alt="" src="./images/01408.jpeg" />
 
     <p class="bodycontent-text-tushuo">樱桃。</p>
   </div>
@@ -233,7 +233,7 @@
 
   <p class="bodytext">最后，本章所举出的事实证明了：受精种子的胚同形成芽的一小块细胞组织在它们的所有机能上——在遗传的能力及其偶然的返祖上——在遵循着同一法则的同样一般性质的变异能力上——多么密切而显著地彼此相似。这种性状的相似性，毋宁说它们的同一性，非常显著地被下面的事实阐明了；即把一个物种或变种的细胞组织芽接在或枝接在另一个物种或变种之上时，就可能产生一个具有中间性状的芽。我们已经看到变异性并不依靠有性生殖，虽然有性生殖远比芽的生殖更能常常发生变异。我们已经看到芽变并不完全依靠返祖，即返归长久消失了的性状或那些以前在杂交中所获得的性状，而常常是自发地出现的。但是当我们自问任何一个具体的芽变是什么原因时，我们就会陷入疑云之中，在某些场合里我们被迫把它看成是完全由于外界生活条件的直接作用，在其他场合里，我们又深深地相信它们起了一种完全从属的作用，但并不比燃着一块可燃物的火花的性质更为重要。</p>
 
-  <div class="tupian">src="./images/01409.jpeg"</div>
+  <div class="tupian"><img alt="" src="./images/01409.jpeg" /></div>
 
   <p class="zhusi"><a id="new-notef1" href="part0460.html#new-note1" class="calibre4">[1]</a> 自从本书第一版问世以后，我发现“博物馆附属养成所所长”卡瑞埃尔在他的一篇优秀论文《变种的产生和固定》（Production et Fixation des Variéteés，1865）里列举了许多芽变的例子，要比我的广泛很多；但这些主要是同法国所发生的情形有关，所以我还保留我的，只是添加少数从卡瑞埃尔和其他人那里引用的事实。愿意充分研究这个问题的任何人都应当看一看卡瑞埃尔的论文。</p>
 
@@ -553,6 +553,41 @@
 
   <p class="zhusi"><a id="new-notef159" href="part0460.html#new-note159" class="calibre4">[159]</a> 卡瑞埃尔：《变种的产生》，第39页。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0036.html">← 上一页</a> ｜ <a href="./篇0038.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "第十一章 论芽变，论繁殖和变异的某些变常方式", "itemUrl": "动物和植物在家养下的变异/篇0037.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

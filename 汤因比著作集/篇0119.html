@@ -70,6 +70,41 @@
 
   <p class="msonormal2">物质生活的富裕及都市化的生活使人类远离了大地母亲。在圣方济各时代，这两种弊病都开始困扰西方基督教世界。后世应感激圣方济各，不仅因为他提倡清贫的生活，更因为他那种对所有生命的内在的同情心。从流传甚广的传说故事中，我们了解到圣方济各与野生鸟类和动物建立了一种良好的信任关系，虽然传说并非对历史事实的权威性的记录。这种人与动物之间的相互信任关系，在印度以西的旧大陆文明中心是很难见到的。圣方济各的赞美诗如同一个日本神道教徒一般赞美上帝赐予人类大地母亲，赐予人类动物和植物。圣方济各本人的赞美诗原文至此突然中断了。赞美上帝赐予人类不事报复的德行和肉体灭绝的诗节，都是后人附会的思想。赞美上帝赐予人类阳光的诗篇可能是阿肯那顿信徒的杰作，赞美上帝赐予人类各种元素的诗篇可能出自琐罗亚斯德教徒之手。出自于一个犹太教的一神论信徒之口，这些赞美显得尤为难得。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0118.html">← 上一页</a> ｜ <a href="./篇0120.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第六十六章 西方基督教世界", "itemUrl": "汤因比著作集/篇0119.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

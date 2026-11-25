@@ -60,6 +60,41 @@
 
   <p class="msonormal2">因此，中国人曾经认为，他们的文明是世界上唯一的文明。到1126年，中国已成了半个世界的“中央王国”，为一些文化上的卫星国所拱卫。这些卫星国都在一定程度上采纳了中国文明，但又将其转化为与众不同的东亚型汉文化。此外，东亚作为一个整体，当时已经与旧大陆的其他部分相互影响。起源于印度的一种宗教，即大乘佛教，已经经由中国传播到了日本、朝鲜，以及今天称为北越 <span class="math-super"><a id="z291" href="part0148.html#bz291" class="calibre1">[291]</a></span>的那个国家。而且，所有的东亚国家，通过海洋和陆地，不仅与东南亚和印度保持着联系，而且与印度次大陆另一遥远的伊斯兰世界保持着联系。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0111.html">← 上一页</a> ｜ <a href="./篇0113.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第五十九章 东亚", "itemUrl": "汤因比著作集/篇0112.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

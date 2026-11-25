@@ -31,6 +31,41 @@
 <p class="noteitem">[294] <b>电通社的消息</b> 电通社，即日本电报通信社，1901年在东京创办。1936年与日本新闻连合社合并为同盟通信社。电通社于1920年在中国上海设分社。此则消息的原文是：“东京十七日电通电：关于中国方面之停战交涉问题，日军中央部意向如下，虽有停战交涉之情报，然其诚意可疑。中国第一线军队，尚执拗继续挑战，华北军政当局，且发抵抗乃至决战之命令。停战须由军事责任者，以确实之方法堂堂交涉，若由不承认为责任者之第三者，用不合理之方法，以口头交涉，此不过谋一时和缓日军之锋锐而已。中国当局，达观东亚大势，清算无益之抗日，乃其急务，因此须先实际表示诚意。”（据1933年5月17日《大晚报》）</p>
 <p class="noteitem">[295] <b>“好读书不求甚解”</b> 语出陶渊明《五柳先生传》：“好读书不求甚解，每有会意，便欣然忘食。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00416.html">← 上一页</a> ｜ <a href="./文00418.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "不求甚解", "itemUrl": "鲁迅全集/文00417.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -11,18 +11,64 @@
 <p class="title1">To Chao Cha-pi</p>
 <p class="date">第15卷，散文 杂文 书信 · 附录</p>
 <br>
-<div class="content"><h3 id="c261">1948.7.26</h3>
-<p class="left">（Telex）</p>
-<p class="left">Mr.Chao Cha-pi</p>
-<p class="left">Zung Kwlng Publishing Company</p>
-<p class="left">Two Fifteen Szechan Road</p>
-<p class="left">（Central）</p>
-<p>Shanghai，China</p>
-<p class="right">July26，1948</p>
-<p>Important to establisth validity of copyright on <i>Divorce</i>
- .Please cable reply prepaid to me care my American publishers address Harbrace New York following information after check with ministry of interior where necessary and possible:were all formalities requisite Chinese copyright nineteen thirtythree edition complied with，if so please state various steps taken to secure copyright，also whether title page of nineteen thirtythree edition contained notice of copyright and if so exact wording and whether in English or Chinese.Also please state what similar steps taken in connection with nineteen fortyseven edition and any other edition issued.Plesse supply any other pertinent information you may have.</p>
-<p class="right">S.Y.ShuTo Henriette Herz</p>
+<div class="content"><h3 id="c261">1948.7.26</h3>
+
+<p class="left">（Telex）</p>
+
+<p class="left">Mr.Chao Cha-pi</p>
+
+<p class="left">Zung Kwlng Publishing Company</p>
+
+<p class="left">Two Fifteen Szechan Road</p>
+
+<p class="left">（Central）</p>
+
+<p>Shanghai，China</p>
+
+<p class="right">July26，1948</p>
+
+<p>Important to establisth validity of copyright on <i>Divorce</i>
+
+ .Please cable reply prepaid to me care my American publishers address Harbrace New York following information after check with ministry of interior where necessary and possible:were all formalities requisite Chinese copyright nineteen thirtythree edition complied with，if so please state various steps taken to secure copyright，also whether title page of nineteen thirtythree edition contained notice of copyright and if so exact wording and whether in English or Chinese.Also please state what similar steps taken in connection with nineteen fortyseven edition and any other edition issued.Plesse supply any other pertinent information you may have.</p>
+
+<p class="right">S.Y.ShuTo Henriette Herz</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01904.html">← 上一页</a> ｜ <a href="./文01906.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "To Chao Cha-pi", "itemUrl": "老舍全集/文01905.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷15.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

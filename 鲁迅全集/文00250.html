@@ -48,6 +48,41 @@
 <p class="noteitem">[76] 本篇在收入本书前未在报刊上发表过。<br/><b>顾颉刚（1893—1980）</b>，江苏吴县人，历史学家。1926年与作者同在厦门大学任教，1927年作者到广州不久，他也往中山大学任教，这年暑假出差杭州为学校购书。<br/>1927年5月11日汉口《中央日报》副刊第四十八号发表编者孙伏园的《鲁迅先生脱离广东中大》一文，其中引用谢玉生和鲁迅给编者的两封信。谢玉生信中说：“迅师本月二十号，已将中大所任各职，完全辞卸矣。中大校务委员会及学生方面，现正积极挽留，但迅师去志已坚，实无挽留之可能了。迅师此次辞职之原因，就是因顾颉刚忽然本月十八日由厦来中大担任教授的原故。顾来迅师所以要去职者，即是表示与顾不合作的意思。原顾去岁在厦大造作谣言，诬蔑迅师；迄厦大风潮发生之后，顾又背叛林语堂先生，甘为林文庆之谋臣，伙同张星烺、张颐、黄开宗等主张开除学生，以致此项学生，至今流离失所，这是迅师极伤心的事。”鲁迅信中说：“我真想不到，在厦门那么反对民党，使兼士愤愤的顾颉刚，竟到这里来做教授了，那么，这里的情形，难免要变成厦大，硬直者逐，改革者开除。而且据我看来，或者会比不上厦大，这是我所得的感觉。我已于上星期四辞去一切职务，脱离中大了。”</p>
 <p class="noteitem">[77] <b>谢君</b> 谢玉生，湖南耒阳人，作者在厦门大学和中山大学任教时的学生。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00249.html">← 上一页</a> ｜ <a href="./文00251.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "辞顾颉刚教授令“候审”", "itemUrl": "鲁迅全集/文00250.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

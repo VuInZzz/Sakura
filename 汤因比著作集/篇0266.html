@@ -28,6 +28,41 @@
 
   <p class="msonormal2">距离右手路边不足投石之遥、仅有一步远的那块白色塔糖是什么呢？肯定是边界标记，再瞧瞧，这里接二连三地出现了。不为人所察的眼睛可能正在远处透过双筒望远镜跟踪着我们，所以我无意擅自进入，哪怕是踏入一个脚趾头的长度。不过这是条分岔路，跨过边界延伸到了右边，通往那头大约四分之三英里开外的一座村庄。那座村庄肯定属于以色列，事实确实如此：那是位于以色列最北端的麦图拉。现在再看看侧道：你会注意到，路上杂草覆盖了大半。就像加来—开罗铁路的贝鲁特—海法路段，这条路已经长达九年时间不能使用了。曾几何时，人可以沿着这条路从黎巴嫩径直进入巴勒斯坦。可是，如今已经不再有称作巴勒斯坦的国家了，原先进入巴勒斯坦的道路也就破败了。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0265.html">← 上一页</a> ｜ <a href="./篇0267.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "45.绕游以色列", "itemUrl": "汤因比著作集/篇0266.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

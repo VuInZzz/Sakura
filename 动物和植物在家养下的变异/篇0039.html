@@ -16,6 +16,41 @@
 
   <p class="bodytext">在本章的前一部分里已经阐明了具有极其多样性质的新性状，不论正常的或不正常的，有害的或不利的，也不论对于最重要器官发生影响的或对最不重要器官发生影响的，都是多么普通地可以遗传下去。对于只是亲本一方所具有的某种特殊性状的遗传，常常是充分的，例如在比较罕见的畸形被遗传的大多数场合里就是如此。不过遗传力是变化多端的。在一些从相同双亲传下来的，而且受到相同处理的个体中，有些完全表现了这种力量，有些则完全缺少这种力量；关于这种差异，没有理由可以举出。损伤或残废的效果偶尔是遗传的；在将来的一章里我们将看到器官的长期不断的使用或不使用会产生一种遗传的效果。甚至那些被看做最容易变化的性状，例如颜色，除了稀有的例外，也会远比我们一般所想象的能够更有力地遗传下去。在所有场合里，值得奇怪的确实不是任何性状的可以遗传，而是遗传力的失去作用。对于遗传有抑制作用的，根据我们所能知道的：第一是不利于某一性状的环境条件；第二是生活条件不断地诱发新的变异性；最后是不同变种在以前某一世代中的杂交以及返祖现象——这就是说，子代有一种不像自己直接亲代而像祖代或更远祖先的倾向。后一问题将在下一章加以讨论。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0038.html">← 上一页</a> ｜ <a href="./篇0040.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "结论", "itemUrl": "动物和植物在家养下的变异/篇0039.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

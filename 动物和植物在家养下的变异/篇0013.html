@@ -24,7 +24,7 @@
 
   <p class="bodytext">从前认为妊娠期是如此不变的一种性状，以致把狼同狗之间的这种假定的差异看做是一个物种间区别的确切标志；不过我们已经知道改良品种的猪以及大型品种的牛在妊娠期方面比这两种动物的其他品种为短。现在我们根据冯·那修西亚斯<a id="new-note19" href="part0429.html#new-notef19" class="calibre4"><sup class="calibre6">[19]</sup></a>的卓越的权威意见得知，当美利奴羊和南丘羊（Southdownsheep）长期被养在完全一样的生活条件之下时，它们的妊娠期的平均天数还是有差异的，下表指出了这一点：</p>
 
-  <div class="tupian">src="./images/01319.jpeg"</div>
+  <div class="tupian"><img alt="" src="./images/01319.jpeg" /></div>
 
   <p class="bodytext">从具有不同比例的南丘羊血统的杂种动物所表现的级进差异看来，我们知道这两种妊娠期多么严格地得到遗传了。那修西亚斯指出，因为南丘羊在降生之后便以显著快的速度成长起来，所以莫怪它的胎内发育期间就要缩短了。当然这两个品种之间的这种差异可能是由于它们从不同的亲种传下来的缘故；但是，因为南丘羊的早熟性长期以来就受到了育种者们的仔细注意，所以这种差异更可能是这种注意的结果。最后，若干品种之间在妊娠力上有很大差异，有些一般在一胎中能产两头、甚至三头羊羔，关于这一点，最近在动物园中展览过的引人注意的上海绵羊（它们具有截形而痕迹的耳以及罗马式的大鼻子）提供了一个显著的事例。</p>
 
@@ -90,6 +90,41 @@
 
   <p class="zhusi"><a id="new-notef25" href="part0429.html#new-note25" class="calibre4">[25]</a> 《皇家学会会报》，伦敦，1813年，第88页。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0012.html">← 上一页</a> ｜ <a href="./篇0014.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "绵羊", "itemUrl": "动物和植物在家养下的变异/篇0013.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

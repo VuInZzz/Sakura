@@ -20,6 +20,41 @@
 <p class="noteitem">[126] 本篇据手稿编入，原无标题、标点。鲁迅手写的《大云寺弥勒重阁碑》释文前署：“乙卯（按即1915年）十一月十八日以精拓本校”。<br/><b>《大云寺弥勒重阁碑》</b>，碑高三尺七寸，宽二尺三寸五分，碑文共三十四行，行六十五字至六十八字不等，正书。题“前校书郎杜登撰”，“前□□□□县荆师善书”。碑文称：“天授二年（按即公元691年）二月二十四日准 制置为‘大云寺’；至三年正月十八日，准 制劻换额为‘仁寿寺’。”</p>
 <p class="noteitem">[127] <b>胡聘之</b> 字蕲生，清代湖北天门人。<b>《山右石刻丛编》</b>，四十卷，共收后魏正光四年（523）至元代至正二十七年（1367）间山右（今山西）石刻七百余通。前有胡氏光绪戊戌（1898）、辛丑（1901）序及缪荃荪光绪戊戌序。《大云寺弥勒重阁碑》全文，见于该书卷五。胡聘之对此碑的按语说：“碑文闳丽严整，四杰之遗，而专颂武周革命，竟无思唐之语”。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00786.html">← 上一页</a> ｜ <a href="./文00788.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "《大云寺弥勒重阁碑》校记", "itemUrl": "鲁迅全集/文00787.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

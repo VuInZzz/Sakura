@@ -60,6 +60,41 @@
 
   <p class="msonormal2">巴西勒和本尼狄克的宗教历史与佛陀相类似，他们都是从隐士的禁欲主义生涯开始，然后成为修道团体的创建者。巴西勒和本尼狄克从圣安东尼的禁欲主义形式向帕科米乌斯禁欲主义形式的转变，是他们各自精神体验的反应，也是帕科米乌斯才智的一种证明。帕科米乌斯创建集体性的修道院机构是一项卓越的业绩。因为普遍说来，埃及人和爱尔兰人一样，更受隐士生活方式的强烈吸引，而事实上，这种生活方式的吸引力是那种集体生活方式所不能提供的，隐居修道是一种让自身得以解脱的宽限期，而一个人的自由又为他发挥自己杰出的宗教才能提供了机会，尽管这也使他面临着陷入枯燥无味的自我禁欲主义或自私自利的表现欲中的危险。在任何实行禁欲主义的时空中，一个禁欲主义者的声望通常取决于他禁欲的程度。虽然上埃及的帕科米乌斯式的修道院很快就闻名于基督教世界，但这种集体性的修道院生活形式并不那么引人注目，反倒是西部荒漠中的隐士更为出名。圣安东尼成为他那个时代中旧大陆文明中心西端最有成就的人。其次是“柱头”圣西米恩，他之所以得到这个称号，是因为他在一根大柱顶上生活了47年。一个基督教苦行者固然能够激发民众，但集体修道生活对社会的影响则更为深远，也更为富有成效。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0097.html">← 上一页</a> ｜ <a href="./篇0099.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第四十五章 基督教会的建立与分裂", "itemUrl": "汤因比著作集/篇0098.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

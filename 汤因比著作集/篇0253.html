@@ -28,6 +28,41 @@
 
   <p class="msonormal2">英国在印度的统治正式结束后，正如此前莫卧儿王朝统治的清盘告终一样，随之而来的是争权夺利的斗争，但当今的获胜之质既非马拉地人的骁勇善战，也非孟加拉人的生花妙笔，尽管在18世纪这样的资质为两族人民赢得了财富。20世纪的赢家是商业意识浓厚的古吉拉特人。古吉拉特的实业家其实是英国老爷的主要继承人；孟加拉因分治而折断双翼，或许只能听命于地位失势。但生性老练手段高明、往昔政治辉煌难以磨灭的马哈拉施特拉人呢？想想希瓦吉<span class="math-super"><a id="z131" href="part0271.html#bz131" class="calibre1">[131]</a></span>、戈卡莱<span class="math-super"><a id="z132" href="part0271.html#bz132" class="calibre1">[132]</a></span>和提拉克<span class="math-super"><a id="z133" href="part0271.html#bz133" class="calibre1">[133]</a></span>吧！他们的后裔会听任自己成为古吉拉特人的奴隶吗？今天，马哈拉施特拉人来势汹汹，到底忿忿难平。我敢大胆预言，不久就会听到他们的新消息了。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0252.html">← 上一页</a> ｜ <a href="./篇0254.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "32.印度新版图", "itemUrl": "汤因比著作集/篇0253.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

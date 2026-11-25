@@ -26,6 +26,41 @@
 
   <p class="msonormal2">在自然力量依旧占据上风、足以压倒人类的大陆上，这可是一项敢于冒险的事业。印第安人在安第斯山脉的大自然中听天由命以求得生计。西班牙征服者和他们的马匹迄今为止都还是唯一能够在安第斯山大本营之中免于遭到伤害、经受得住自然力量摧残的生灵。要不是天降瘟疫，夺去较之死于西班牙人手中更多的英军士兵生命，纵然这里有意大利技术和西班牙勇气的紧密结合，恐怕也无法在卡塔赫纳战胜弗农上将。今日的南美，大自然虽然受到热带医学、飞机以及既能夷平山岳又能填满谷地的造路机等一系列的冲击，但是她困兽犹斗，退让之余仍然在发威。当飞机翱翔在雪山之巅时，她会扑向它们，撕扯下其中的一些飞机。当工程师们穿透峡谷推进所造的道路时，她发起一场雪崩，将他们埋葬——连同他们的造路机一起吞噬。最终，大自然在这里也逐渐被驯服了，正如很久以前在埃及和荷兰那样；但是在南美，人依然会感受到她可怕的力量。人们会在这里发现自己面对着令人望而生畏的猫科女神——沙漠里的美洲狮、森林里的美洲豹，这可是秘鲁境内前哥伦布时期艺术的永恒主题。野兽在走投无路之时往往是最最危险的。所以，到安第斯山脉的鲁莽来客，要小心为妙。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0221.html">← 上一页</a> ｜ <a href="./篇0223.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "1.卡塔赫纳", "itemUrl": "汤因比著作集/篇0222.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

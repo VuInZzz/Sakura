@@ -11,13 +11,54 @@
 <p class="title1">自序</p>
 <p class="date">第12卷，戏剧 · 三四一</p>
 <br>
-<div class="content"><p>这本小书里有三篇大鼓书词，四出二黄戏，和一篇旧型的小说，故名之曰《三四一》。</p>
-<p>三篇鼓词里，我自己觉得《王小赶驴》还下得去。《张忠定计》不很实在。《打小日本》既无故事，段又太长，恐怕不能演唱，只能当小唱本念念而已。</p>
-<p>四出戏的好歹，全不易晓；非经演唱不能知道好在哪里，坏在何处。印出来权当参考，若要上演，必须大家修改；有愿排演者请勿客气。</p>
-<p>旧型小说一篇，因忙，写得不十分像样儿。</p>
-<p>这八篇东西，都是用“旧瓶装新酒”的办法写成。旧瓶新酒这问题的讨论已有不少，我不想再说什么。我只愿作出几篇，看看到底有无好处。不动手制作而专事讨论，恐怕问题就老悬在那里，而且还许越说离题越远了。</p>
-<p class="right">民国廿七年六月四日老舍序于武昌</p>
+<div class="content"><p>这本小书里有三篇大鼓书词，四出二黄戏，和一篇旧型的小说，故名之曰《三四一》。</p>
+
+<p>三篇鼓词里，我自己觉得《王小赶驴》还下得去。《张忠定计》不很实在。《打小日本》既无故事，段又太长，恐怕不能演唱，只能当小唱本念念而已。</p>
+
+<p>四出戏的好歹，全不易晓；非经演唱不能知道好在哪里，坏在何处。印出来权当参考，若要上演，必须大家修改；有愿排演者请勿客气。</p>
+
+<p>旧型小说一篇，因忙，写得不十分像样儿。</p>
+
+<p>这八篇东西，都是用“旧瓶装新酒”的办法写成。旧瓶新酒这问题的讨论已有不少，我不想再说什么。我只愿作出几篇，看看到底有无好处。不动手制作而专事讨论，恐怕问题就老悬在那里，而且还许越说离题越远了。</p>
+
+<p class="right">民国廿七年六月四日老舍序于武昌</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00817.html">← 上一页</a> ｜ <a href="./文00819.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "自序", "itemUrl": "老舍全集/文00818.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷12.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

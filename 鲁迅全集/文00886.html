@@ -31,6 +31,41 @@
 <p class="noteitem">[695] <b>废名</b> 即冯文炳（1901—1967），笔名废名，湖北黄梅人，小说家。当时在北京大学任教。著有短篇小说集《竹林的故事》、《桃园》等。他在《人间世》第十三期（1934年10月）发表的《知堂先生》一文中说：“古今一切的艺术，无论高能的低能的，总而言之都是道德的，因此也就是宣传的，……当下我很有点闷窒，大有呼吸新鲜空气之必要。这个新鲜空气，大约就是科学的。”<b>《人间世》</b>，小品文半月刊，林语堂主编。1934年4月5日创刊于上海，1935年12月出至第四十二期停刊。该刊主要提倡“以自我为中心，以闲适为格调”的小品文。</p>
 <p class="noteitem">[696] <b>“弃文就武”</b> 知堂（周作人）在1935年1月6日《独立评论》第一三四期上发表《弃文就武》一文，其中说：“我自己有过一个时候想弄文学，不但喜读而且还喜谈，差不多开了一间稻香村的文学小铺，一混几年，不惑之年倏焉已至，忽然觉得不懂文学，赶快下匾歇业，预备弃文就武。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00885.html">← 上一页</a> ｜ <a href="./文00887.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "势所必至，理有固然", "itemUrl": "鲁迅全集/文00886.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -20,6 +20,41 @@
 
   <p class="bodytext">生理学者们一般承认身体的诸单位是自律的。我进一步假定它们放出生殖的芽球。这样，一个有机体并不是整体地产生它的种类，而是各个分离的单位产生它的种类。博物学者们常常说，植物的各个细胞具有产生整个植株的潜在能力，但它具有这种能力只是靠着它含有来自每一个部分的芽球。如果一个细胞或单位由于某种原因改变了，来自这个细胞或单位的芽球也以同样的方式发生改变。如果我们暂时地接受这个假说，那么我们必须把所有型式的无性生殖——无论是在成熟期发生的或是在幼年期发生的——看做是同有性生殖基本上相同的，并且取决于芽球的相互集合和增殖。被切除的肢的再生以及创伤的癒合是局部完成的同一程序。芽显然含有初发细胞，这等细胞属于出芽的那一发育阶段，并且它们随时可以同来自以次接续细胞的芽球相结合。另一方面，性生殖要素不含有这等初发细胞；除了孤雌生殖的场合以外，雄性生殖要素或雌性生殖要素单独地都不含有适于独立发育的足够数量的芽球。包含着所有型式的变态和后形成的各个生物的发育取决于在各个生命期间放出的芽球，并且取决于它们在相应时期同先在细胞相结合而进行的发育。这等细胞可以说由在正常发育次序中以次发生的芽球而受精了。因此，普通受精的作用同各个生物的各个部分的发育是密切近似的程序。严格地说，小孩并没有长成大人，而是前者所含有的胚种缓慢而连续地发育起来而形成了大人。在小孩以及在大人中都是各个部分产生同样的部分。遗传必须被看做仅仅是一种生长的形式，就像低等体制的单细胞有机体的自我分裂那样。返祖取决于祖先把休眠芽球传递给它的后代，这等休眠芽球偶尔在某些已知的或未知的条件下发育起来了。每一种动物和植物都可以比拟为一个充满种子的苗床，其中有些种子很快地发芽了，有些种子休眠一个时期，还有些种子死去了。当我们听说一个人在他的体质中含有一种遗传的疾病种子时，上面的说法就非常正确了。就我所能知道的来说，还没有人做过其他试图把这几人类事实联系在一个观点之下，哪怕像我这种显然不完善的试图也没有人做过。一个生物就是一个小宇宙，由一群自我繁殖的有机体形成，它们是难以想象地那样微小并且多得像天上的星星一样。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0065.html">← 上一页</a> ｜ <a href="./篇0067.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "结论", "itemUrl": "动物和植物在家养下的变异/篇0066.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

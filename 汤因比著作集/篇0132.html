@@ -48,6 +48,41 @@
 
   <p class="msonormal2">1793年，英王乔治三世的一名专使向乾隆递交了一封英王写给乾隆的信件。这位皇帝的复信显示出，他心目中的中国依然是世界上最有势力的“中央王国”，自给自足，坚不可摧。乾隆显然并不了解，自从550年前西方人第一次出现于中国之后，军事力量的天平就已向有利于西方的一侧倾斜了。另一方面，在日本至少有一个人——林子平 <span class="math-super"><a id="z381" href="part0148.html#bz381" class="calibre1">[381]</a></span>（1738—1793年）已经多少意识到了这一点。他于1786年出版了一本名为《海国兵谈》的书。林子平为俄国人在北太平洋海面上的活动而感到不安。那时，与荷兰人同种的英国人、法国人和美国人，尚未出现在日本南方的海平线上，俄国人被看作是仅有的西方人。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0131.html">← 上一页</a> ｜ <a href="./篇0133.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第七十九章 东亚", "itemUrl": "汤因比著作集/篇0132.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

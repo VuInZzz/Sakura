@@ -48,6 +48,41 @@
 <p class="noteitem">[158] <b>“流弊流弊”</b> 陈百年在《现代评论》第一卷第二十二期（1925年5月9日）发表的《答章周二先生论一夫多妻》一文中，连用了十多个“流弊”批评章、周的主张。</p>
 <p class="noteitem">[159] <b>章先生</b> 即章锡琛（1889—1969），字雪村，浙江绍兴人。当时是《妇女杂志》的主编。1926年秋创办开明书店，任董事兼经理。这里说的“驳文”，指他的《驳陈百年教授“一夫多妻的新护符”》一文，其中说：“我们中国人往往有一种牢不可破的最坏的下流脾气，就是喜欢崇拜博士，教授，以及所谓名流，因为陈先生是一位教授，特别是所谓‘全国最高学府’北京大学的有名的教授，所以他对于我们一下了批评，就好像立刻宣告了我们的死罪一般，这篇文章发表以后，从各方面袭来的种种间接直接的指斥，攻击，迫害，已经使我们够受……而我们向《现代评论》所提起的反诉，等了一个多月，不但未见采纳，简直也未见驳回……并不是为什么，只为了我们不曾做大学教授。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00692.html">← 上一页</a> ｜ <a href="./文00694.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "编完写起", "itemUrl": "鲁迅全集/文00693.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷07.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

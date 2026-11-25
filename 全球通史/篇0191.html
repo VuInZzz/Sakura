@@ -46,6 +46,41 @@
   <p class="kindle-cn-kai">许多关于当代全球趋势的研究都考虑了第一和第三世界之间的意想不到的相互影响。值得注意的著作有：J. Hough所著的<span class="kindle-cn-italic">The Struggle for the Third World</span>（Brookings Institution，1985）；L. S. Stavrianos所著的<span class="kindle-cn-italic">Global Rift</span>：<span class="kindle-cn-italic">The Third World Comes of Age</span>（William Morrow出版社，1981）；P. Worsley所著的<span class="kindle-cn-italic">The Three Worlds</span>：<span class="kindle-cn-italic">Culture and World Development</span>（University of Chicago出版社，1984）和G. Chaliand所著的<span class="kindle-cn-italic">Revolution in the Third World</span>：<span class="kindle-cn-italic">Myths and Prospects</span>（Viking出版社，1977）。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0190.html">← 上一页</a> ｜ <a href="./篇0192.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "全球通史", "bookTitle": "全球通史：从史前到21世纪", "itemTitle": "历史对今天的启示 马克思的预期与世界历史的发展", "itemUrl": "全球通史/篇0191.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

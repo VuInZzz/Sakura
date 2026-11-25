@@ -88,6 +88,41 @@
 <p class="noteitem">[77] <b>邓析</b>（前545—前501） 春秋时郑国大夫。曾编刑书《竹刑》，已佚。《汉书·艺文志》著录《邓析》二篇，亦佚。今存《邓析子》一卷，系伪作。<b>申不害</b>（约前385—前337），战国时郑国人，曾任韩昭侯相。《汉书·艺文志》著录《申子》六篇，现仅存《大体》一篇。<b>公孙鞅</b>（约前390—前338），即商鞅，战国时卫国人。秦孝公时，任左庶长、大良造，两次进行变法。《汉书·艺文志》著录《商君》二十九篇，今存二十四篇；又有《公孙鞅》二十七篇，已佚。<b>慎到</b>（约前395—约前315），战国时赵国人，曾在齐国讲学。《汉书·艺文志》著录《慎子》四十二篇，今存五篇。<b>公孙龙</b>（约前320—前250），战国时赵国人，曾为平原君门客。《汉书·艺文志》著录《公孙龙子》十四篇，今存六篇。<b>韩非</b>（约前280—前233），战国时韩国人，受业于荀况。《汉书·艺文志》著录《韩子》五十五篇。</p>
 <p class="noteitem">[78] <b>驺衍</b>（约前305—前240） 号谈天衍，战国时齐国人，曾任燕昭王之师。《汉书·艺文志》著录《邹子》四十九篇，又《邹子终始》五十六篇。清马国翰《玉函山房辑佚书》有《邹子》一卷。<b>驺奭</b>，号雕龙奭，战国时齐国人，曾为列大夫。《汉书·艺文志》著录《邹奭子》十二篇，已佚。<b>田骈</b>，又名陈骈子，号天口骈，战国时齐国人，宣王时曾在稷下讲学。《汉书·艺文志》著录《田子》二十五篇，已佚。<b>接子</b>，又名捷子，战国时齐国人。宣王时曾游稷下讲学。《汉书·艺文志》著录《捷子》二篇，已佚。《汉书·艺文志》将驺衍、驺奭归入阴阳家，田骈、接子归入道家。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00960.html">← 上一页</a> ｜ <a href="./文00962.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "第三篇 老庄", "itemUrl": "鲁迅全集/文00961.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷09.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

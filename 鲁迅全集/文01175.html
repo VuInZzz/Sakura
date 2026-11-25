@@ -37,6 +37,41 @@
 <p class="noteitem">[219] <b>沉钟社和创造社口角</b> 沉钟社，文学团体。1925年秋成立于北京，主要成员有林如稷、陈炜谟、陈翔鹤、杨晦、冯至等。创造社，文学团体，1921年6月成立于日本东京，在上海活动，主要成员有郭沫若、郁达夫、成仿吾等。1926年6月，《洪水》半月刊第二卷第十九期，登有《创造社出版部为〈沉钟〉半月刊启事》，声明因“事务浩繁”，原定由该部代印的《沉钟》半月刊，一时难以出版；同年8月，《沉钟》半月刊第一期也登有《〈沉钟〉半月刊为创造社出版部启事》，说明该刊第一、二期交稿五月，而创造社出版部未能印行，故特改由北新书局出版。9月中，《洪水》第二卷第二十三、二十四合期又发表了周全平的《出版部的幸不幸二事》，针对《沉钟》的启事说：“出版部成立不久，就有不少的友人来托我们帮他的刊物出版的忙”，但因资本不多，所以便“得罪了不少的友人”，“《沉钟》半月刊便是失望而归的一个”；接着《沉钟》第四期也发表陈炜谟的《“无聊事”——答创造社的周全平》，列举事实，辨明《沉钟》之委托创造社出版部代印，系先由周全平致函沉钟社社员愿意“帮助出版”，因此，“便同他接洽印半月刊”，“沉钟社并不曾‘来托’创造社帮忙”等等。</p>
 <p class="noteitem">[220] <b>柯仲平</b>（1902—1964） 云南广南人，诗人。曾是狂飙社成员，参加过后期的创造社，当时在创造社出版部工作。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01174.html">← 上一页</a> ｜ <a href="./文01176.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "五〇", "itemUrl": "鲁迅全集/文01175.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷11.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -11,10 +11,48 @@
 <p class="title1">“七七”抗战五周年纪念</p>
 <p class="date">第15卷，散文 杂文 书信 · 散文 杂文</p>
 <br>
-<div class="content"><p>因为生活不大安定，时间上精力上都不允许我写长篇小说，所以从《骆驼祥子》“杀锅”后，就没有较长的小说问世。四年来，剧本倒写了几个，不是长于写剧，只是抽一点工夫，对付着能成篇而已。</p>
-<p>颇想以“五个七七”为题，写个五幕剧，一幕写一个“七七”。但是，故事也许不大容易想出，表现什么也未易决定，至今八字还没有一撇儿。希望能在今年夏天把它写成，假若不成呢，别人取用此题也并不追究“版权所有”。</p>
-<p class="right1">原载1942年7月7日重庆《新华日报》</p>
+<div class="content"><p>因为生活不大安定，时间上精力上都不允许我写长篇小说，所以从《骆驼祥子》“杀锅”后，就没有较长的小说问世。四年来，剧本倒写了几个，不是长于写剧，只是抽一点工夫，对付着能成篇而已。</p>
+
+<p>颇想以“五个七七”为题，写个五幕剧，一幕写一个“七七”。但是，故事也许不大容易想出，表现什么也未易决定，至今八字还没有一撇儿。希望能在今年夏天把它写成，假若不成呢，别人取用此题也并不追究“版权所有”。</p>
+
+<p class="right1">原载1942年7月7日重庆《新华日报》</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01775.html">← 上一页</a> ｜ <a href="./文01777.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "“七七”抗战五周年纪念", "itemUrl": "老舍全集/文01776.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷15.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

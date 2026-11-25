@@ -30,6 +30,41 @@
 
   <p class="msonormal2">西阿塞拜疆省位于礼萨伊耶湖和将波斯同土耳其分割而开的山脉之间，与吉兰省或者爱尔兰一样遍地苍翠；不过，当你南下往马哈巴德而去，一切都发生了变化。崎岖不平的山坡取代了绿色的原野，库尔德语取代了土耳其语，逊尼派取代了什叶派。向马拉盖前进！但我们绕行湖泊南端以回到大不里士的尝试遭到了挫败。原来，在米扬道阿卜，有座桥梁最近垮了，即便是在六月，那河水对于轿车而言也太深了开不过去。且让我们为我们已有的好运感恩吧，都到达了这么远的地方。我们饱览了苍翠碧绿的伊朗，这绿意将深深地印刻在我们的记忆之中。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0281.html">← 上一页</a> ｜ <a href="./篇0283.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "61.伊朗苍翠的北方", "itemUrl": "汤因比著作集/篇0282.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

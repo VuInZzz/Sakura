@@ -11,12 +11,52 @@
 <p class="title1">改编说明</p>
 <p class="date">第12卷，戏剧 · 十五贯</p>
 <br>
-<div class="content"><p>《十五贯》原是一出昆曲，以“访鼠测字”一折为最有名。原剧很长，今改编为京剧，缩减到八场。</p>
-<p>在情节上，改编本与原本大致相同，没有太大的改动；涉及迷信的一概删去。</p>
-<p>在文字上，原本在歌唱部分用的是文言，在对白部分往往运用苏白，不适用于京剧；因此，改编本的戏词全部从新写过，不是原文的普通话翻译。改编本所用的语言是照顾到京剧传统的，如“适才间”、“待我看来”等等都依样保存，未加改变，以期便于说唱；不大像话的陈词滥调，如“地流平”，“马走战”等等，则加淘汰。有些历史上的称呼与用语，因改编者工作忙，无暇找参考，就一律采用了京剧中通用的名词。</p>
-<p>在人物性格上，原本似乎没能加意描写，改编本稍加润色，使人物略较生动。</p>
-<p>改编本删去了旧剧本里的自报家门、定场诗等不必要的东西，而且尽可能地减少上场下场、出来进去的烦琐。这样减少了过场，一定需要音乐的适当配合，以期舞台上的歌舞动作贯串，不至于上下不接气；我对京剧音乐是外行，这就须请文场同志费费脑筋，想想办法了！</p>
+<div class="content"><p>《十五贯》原是一出昆曲，以“访鼠测字”一折为最有名。原剧很长，今改编为京剧，缩减到八场。</p>
+
+<p>在情节上，改编本与原本大致相同，没有太大的改动；涉及迷信的一概删去。</p>
+
+<p>在文字上，原本在歌唱部分用的是文言，在对白部分往往运用苏白，不适用于京剧；因此，改编本的戏词全部从新写过，不是原文的普通话翻译。改编本所用的语言是照顾到京剧传统的，如“适才间”、“待我看来”等等都依样保存，未加改变，以期便于说唱；不大像话的陈词滥调，如“地流平”，“马走战”等等，则加淘汰。有些历史上的称呼与用语，因改编者工作忙，无暇找参考，就一律采用了京剧中通用的名词。</p>
+
+<p>在人物性格上，原本似乎没能加意描写，改编本稍加润色，使人物略较生动。</p>
+
+<p>改编本删去了旧剧本里的自报家门、定场诗等不必要的东西，而且尽可能地减少上场下场、出来进去的烦琐。这样减少了过场，一定需要音乐的适当配合，以期舞台上的歌舞动作贯串，不至于上下不接气；我对京剧音乐是外行，这就须请文场同志费费脑筋，想想办法了！</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00757.html">← 上一页</a> ｜ <a href="./文00759.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "改编说明", "itemUrl": "老舍全集/文00758.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷12.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -44,6 +44,41 @@
   <p class="msonormal2">因此，我们为西方化世界感到焦虑的理由着实不少。它以原子武器为武装。它在一生中已经历了两次毁灭性的前原子弹战争。而它的政治力量如今既不如欧洲议会和国际联盟时期那样涣散，也不如在希特勒、拿破仑和路易十四曾企图做到的那样集中，而是在两个仅有的列强间的两极分化。在这样的环境里，我们的焦虑是不无理由的。因为，尽管我们可以预见在自然距离“消失”的原子时代，原子武器的控制迟早必定集于某一个权力机构之手；但我们不能预见，我们是否在达到这个必将实现的世界政府的目标以前不会遭到一次巨大灾难的打击。然而，我们能够预见，当世界政府实现的时候，人类对于世界政府的需要早已变成极度的渴望，以致人类甚至不仅准备付出失去自由的高昂代价而接受世界政府，而且将神化这个世界政府及其代表人物，就像备受折磨的希腊—罗马世界一度神化罗马和奥古斯都那样。对于拿破仑、墨索里尼、斯大林、希特勒的事实上的崇拜预示着这种程度的偶像化，将是给那些以任何代价成功地赋予世界永久和平的美国恺撒或俄国恺撒的奖赏。这种不祥的运思似乎表明，统一的福利国家可能是树立在抛弃了基督教的土地上的下一个偶像。</p>
 
   </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0160.html">← 上一页</a> ｜ <a href="./篇0162.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第16章 两种希腊罗马偶像的重建", "itemUrl": "汤因比著作集/篇0161.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册04.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

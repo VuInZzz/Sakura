@@ -24,6 +24,41 @@
 
   <p class="msonormal2">在这个治国的关键时刻，正当他就此种种难题冥思苦想之际，这位现代的所罗门王无意间摩擦到了他的戒指。在遥远的法兰克海洋当即就响起了一阵飞机螺旋桨的嗡嗡声，一位精灵——素不相识的庞大巨人，立正站到国王的面前。“尊敬的陛下，”这位令人肃然起敬的来客彬彬有礼地开口，“尊敬的陛下，请允许我来替您采掘开挖吧。我将要挖掘的不是水，而是更为宝贵的液体。我不会因为花费了工夫而索取酬金，恰恰相反，我希望付给尊敬的陛下您一份可观的企业利润提成。不管我们最终达成的分红百分比是多少，我敢向您保证，这将会缓解您的财政忧虑。”“行。”国王说道。他把戒指掷入油田，正如威尼斯共和国的总督将戒指投入大海<span class="math-super"><a id="z275" href="part0271.html#bz275" class="calibre1">[275]</a></span>一般。贫困不堪的土地便再次同带来财富的元素相结合，结出了累累硕果。美国石油工业和沙特阿拉伯王国至今已合作了二十四年，没有哪一方对这一协议感到懊悔。阿拉伯美国石油公司对双方而言一直都是获利丰厚的企业。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0284.html">← 上一页</a> ｜ <a href="./篇0286.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "64.国王和精灵", "itemUrl": "汤因比著作集/篇0285.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

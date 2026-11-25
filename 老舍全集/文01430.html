@@ -11,12 +11,52 @@
 <p class="title1">二十六</p>
 <p class="date">第14卷，散文 杂文 · 滇行短记</p>
 <br>
-<div class="content"><p>由喜洲回下关，并没在大理停住，虽然华中的友人给了我们介绍信，在大理可以找到住处。大理是游苍山的最合适的地方。我们所以直接回下关者，一来因为不愿多打扰生朋友，二来是车子不好找，须早为下手。</p>
-<p>回到下关，范会逄先生来访，并领我们去洗温泉。云南这一带温泉很多，而且水很热。我们洗澡的地方，安有冷水管，假若全用泉水，便热得下不去脚了。泉下，一个很险要的地方，两面是山，中间是水，有一块碑，刻着汉诸葛武侯擒孟获处。碑是光绪年间立的，不知以前有没有？</p>
-<p>范先生说有小车子回昆明，教我们乘搭。在这以前，我们已交涉好滇缅路交通车，即赶紧辞退，可是，路局的人员约我去演讲一次。他们的办公处，在湖边上，一出门便看见山水之胜。小小的一个聚乐部，里面有些书籍。职员之中，有些很爱好文艺的青年。他们还在下关演过话剧。他们的困难是找不到合适的剧本。他们的人少，服装道具也不易置办，而得到的剧本，总嫌用人太多，场面太多，无法演出。他们的困难，我想，恐怕也是各地方的热心戏剧宣传者的困难吧，写剧的人似乎应当注意及此。</p>
-<p>讲演的时候，门外都站满了人。他们不易得到新书，也不易听到什么，有朋自远方来，当然使他们兴奋。</p>
-<p>在下关旅舍里，遇见一位新由仰光回来的青年，他告诉我：海外是怎样的需要文艺宣传。有位“常任侠”——不是中大的教授——声言要在仰光等处演戏，需钱去接来演员。演员们始终没来一个，而常君自己已骗到手十多万！</p>
+<div class="content"><p>由喜洲回下关，并没在大理停住，虽然华中的友人给了我们介绍信，在大理可以找到住处。大理是游苍山的最合适的地方。我们所以直接回下关者，一来因为不愿多打扰生朋友，二来是车子不好找，须早为下手。</p>
+
+<p>回到下关，范会逄先生来访，并领我们去洗温泉。云南这一带温泉很多，而且水很热。我们洗澡的地方，安有冷水管，假若全用泉水，便热得下不去脚了。泉下，一个很险要的地方，两面是山，中间是水，有一块碑，刻着汉诸葛武侯擒孟获处。碑是光绪年间立的，不知以前有没有？</p>
+
+<p>范先生说有小车子回昆明，教我们乘搭。在这以前，我们已交涉好滇缅路交通车，即赶紧辞退，可是，路局的人员约我去演讲一次。他们的办公处，在湖边上，一出门便看见山水之胜。小小的一个聚乐部，里面有些书籍。职员之中，有些很爱好文艺的青年。他们还在下关演过话剧。他们的困难是找不到合适的剧本。他们的人少，服装道具也不易置办，而得到的剧本，总嫌用人太多，场面太多，无法演出。他们的困难，我想，恐怕也是各地方的热心戏剧宣传者的困难吧，写剧的人似乎应当注意及此。</p>
+
+<p>讲演的时候，门外都站满了人。他们不易得到新书，也不易听到什么，有朋自远方来，当然使他们兴奋。</p>
+
+<p>在下关旅舍里，遇见一位新由仰光回来的青年，他告诉我：海外是怎样的需要文艺宣传。有位“常任侠”——不是中大的教授——声言要在仰光等处演戏，需钱去接来演员。演员们始终没来一个，而常君自己已骗到手十多万！</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01429.html">← 上一页</a> ｜ <a href="./文01431.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "二十六", "itemUrl": "老舍全集/文01430.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

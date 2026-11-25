@@ -40,6 +40,41 @@
 
   <p class="msonormal2">匈族人的侵略，对印度和中国的影响不像对西罗马帝国那样严重，但他们所受的打击比东罗马帝国和波斯帝国更为惨重。在印度和中国，匈族人的入侵并不仅仅是滚滚而过的暴风雨，侵略者还在这两个次大陆永久地居住下来。在印度西北部，匈族人现在依然以拉杰普特人为代表。这些部族很快皈依印度教，并融入刹帝利种姓之中，就像过去侵入印度的欧亚游牧部族一样（例如塞人和帕拉瓦人）。在中国，蛮族入侵者最终也被同化了。但是，匈奴对中国的打击格外沉重。渭河流域和黄河下游，是4世纪及后来被匈奴和其他蛮族占领的中国土地。这一地区曾经是中国文明的发祥地。同它相比，西罗马帝国崩溃时，希腊—罗马文明所失去的地区，仅仅是可以牺牲掉的殖民兼并地。然而，由于面积广大，中国和印度次大陆得以避免崩溃之灾。在这两个国家里，当侵略者从北部攻入时，逃难的人们都可以跑到南方求得安宁。大自然和人类的工程，保护了中国的南部。在淮河和长江下游，还有人工运河，这些河网水路，对更加习惯于在华北平原生活和征战的欧亚游牧民族的骑兵，形成了巨大的障碍。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0094.html">← 上一页</a> ｜ <a href="./篇0096.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第四十二章 4—5世纪来自欧亚大草原的匈奴冲击波", "itemUrl": "汤因比著作集/篇0095.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

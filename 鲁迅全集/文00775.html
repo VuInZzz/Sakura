@@ -1021,6 +1021,41 @@
 <div class="notes"><p class="notetitle">注　释</p>
 <p class="noteitem">[500] 本篇最初刊载于1936年11月20日《中流》第一卷第六期，原题《〈海上述林〉上卷出版》。<br/><b>《海上述林》</b>，瞿秋白的译文集。在瞿秋白牺牲后由鲁迅收集、编辑。分上、下两卷于1936年5月和10月先后出版。上卷《辨林》收马克思、恩格斯、列宁、普列汉诺夫、拉法格等人的文学论文以及高尔基论文选集和拾补等。因国民党当局的压迫，该书出版时，仅署“诸夏怀霜社校印”。<br/><b>瞿秋白</b> （1899—1935），江苏常州人，中国共产党早期领导人之一。1927年冬至1928年春担任中共中央政治局临时书记。1931年至1933年在上海从事革命文化工作，与鲁迅结下很深的友谊。1935年2月在福建游击区被国民党逮捕，同年6月18日被杀害于长汀。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00774.html">← 上一页</a> ｜ <a href="./文00776.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "一九三六年", "itemUrl": "鲁迅全集/文00775.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷07.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

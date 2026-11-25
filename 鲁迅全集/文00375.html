@@ -40,6 +40,41 @@
 <p class="noteitem">[12] <b>“负弩前驱”</b> 语出《逸周书》：“武王伐纣，散宜生、闳夭负弩前驱。”当时国民党政府对日本侵略采取不抵抗政策，每当日军进攻，中国驻守军队大多奉命后退，如1933年1月3日日军进攻山海关时，当地驻军在四小时后即放弃要塞，不战而退。而远离前线的大小军阀却常故作姿态，扬言“抗日”，如山海关沦陷后，在四川参加军阀混战和“剿匪”反共的田颂尧于1月20日发通电说：“准备为国效命，候中央明令，即负弩前驱。”</p>
 <p class="noteitem">[13] <b>“爱和平”</b> 当时国民党当局经常以“爱和平”这类论调掩盖其不抵抗政策，如1931年九一八事变后，蒋介石9月22日在南京市国民党党员大会上演讲时称：“此刻必须上下一致，先以公理对强权，以和平对野蛮，忍痛含愤，暂取逆来顺受态度，以待国际公理之判断。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00374.html">← 上一页</a> ｜ <a href="./文00376.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "观斗", "itemUrl": "鲁迅全集/文00375.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

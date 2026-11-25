@@ -88,6 +88,41 @@
 
   <p class="msonormal2">人类的迁移以及不同人种之间的繁衍，并不是人类文明世界的联结对生物圈的动物群体和植物群体所产生的唯一影响。毫无顾忌地把人工驯育的动植物，从以前曾经互相隔绝的两半球的一边移到另一边，会得到很多有益的收获。但也会造成细菌和病毒的有害传播。天花病毒尾随哥伦布的航波，通过人的载体西行到了美洲。如果说天花就是夺取印加皇帝瓦伊纳·卡帕克生命的疾病的话，那么，这些病毒就是皮萨罗率领入侵南美洲的为数不多的侵略者的肉眼看不见的先锋。反过来说，性病在西欧首次为人所知是1495年，即在哥伦布首次登上美洲的3年之内。这大概是“新大陆”惩罚“旧大陆”入侵它的错误的回报。16世纪期间，西欧出现的始于1519年的大灾难所造成的代价，无疑是对西班牙人掠夺阿兹台克人和印加人的金银，以及后来他们雇用美洲土著劳动力开采美洲矿藏并把它们运回欧洲的报应。这样，人类文明世界连为一体的结果之一便是：天花、性病和通货膨胀。这三位可怕的来客，每一位都拥有一个帝国，它使查理五世 <span class="math-super"><a id="z368" href="part0148.html#bz368" class="calibre1">[368]</a></span>那幅员辽阔的帝国也相形见绌。这些新的帝国，同样也是“日不落”的帝国。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0127.html">← 上一页</a> ｜ <a href="./篇0129.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第七十五章 人类文明世界的联接", "itemUrl": "汤因比著作集/篇0128.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

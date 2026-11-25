@@ -24,6 +24,41 @@
 
   <p class="msonormal2">曾几何时，缅甸一度和泰国一样繁荣兴旺，现在也依然颇具富裕的潜质。除了出产大量稻米，富余可供出口之外，缅甸还可种植更好的柚木，并且拥有令泰国人艳羡的矿物储藏。然而，如今从物质角度来看，缅甸却很贫穷。祸根在于公共安全的崩塌。即便是在铁路和主要公路上，目前尚且无法冒险夜行；整个区域，就算在首都近距离的范围内，政府都控制不住。因此，缅甸的经济生活跛足难行，货币一直在贬值下挫。但是当下暗不见天日的物质前景，却并未熄灭发自缅甸人心灵的熊熊燃烧的精神之火。不管路途多么坎坷，缅甸必定会为世界作出宝贵的贡献。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0249.html">← 上一页</a> ｜ <a href="./篇0251.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "29.缅甸掠影", "itemUrl": "汤因比著作集/篇0250.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

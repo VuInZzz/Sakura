@@ -11,38 +11,104 @@
 <p class="title1">乘着歌声的翅膀</p>
 <p class="date">乘着歌声的翅膀：海涅诗选 · 1822</p>
 <br>
-<div class="content">
-<h2 class="chapter-two">乘着歌声的翅膀</h2>
-<p class="bodytext">乘着歌声的翅膀，</p>
-<p class="bodytext">心爱的人，我带你飞翔，</p>
-<p class="bodytext">向着恒河的原野，</p>
-<p class="bodytext">那里有最美的地方。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">一座红花盛开的花园，</p>
-<p class="bodytext">笼罩着寂静的月光；</p>
-<p class="bodytext">莲花在那儿等待</p>
-<p class="bodytext">它们亲密的姑娘。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">紫罗兰轻笑调情，</p>
-<p class="bodytext">抬头向星星仰望；</p>
-<p class="bodytext">玫瑰花把芬芳的童话</p>
-<p class="bodytext">偷偷地在耳边谈讲。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">跳过来暗地里倾听</p>
-<p class="bodytext">是善良聪颖的羚羊；</p>
-<p class="bodytext">在远的地方喧腾着</p>
-<p class="bodytext">圣洁的河水的波浪。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">我们要在那里躺下，</p>
-<p class="bodytext">在那棕榈树的下面，</p>
-<p class="bodytext">吸饮爱情和寂静，</p>
-<p class="bodytext">沉入幸福的梦幻。</p>
-<p class="bodytext-right">（冯至 译）</p>
+<div class="content">
+
+<h2 class="chapter-two">乘着歌声的翅膀</h2>
+
+<p class="bodytext">乘着歌声的翅膀，</p>
+
+<p class="bodytext">心爱的人，我带你飞翔，</p>
+
+<p class="bodytext">向着恒河的原野，</p>
+
+<p class="bodytext">那里有最美的地方。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">一座红花盛开的花园，</p>
+
+<p class="bodytext">笼罩着寂静的月光；</p>
+
+<p class="bodytext">莲花在那儿等待</p>
+
+<p class="bodytext">它们亲密的姑娘。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">紫罗兰轻笑调情，</p>
+
+<p class="bodytext">抬头向星星仰望；</p>
+
+<p class="bodytext">玫瑰花把芬芳的童话</p>
+
+<p class="bodytext">偷偷地在耳边谈讲。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">跳过来暗地里倾听</p>
+
+<p class="bodytext">是善良聪颖的羚羊；</p>
+
+<p class="bodytext">在远的地方喧腾着</p>
+
+<p class="bodytext">圣洁的河水的波浪。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">我们要在那里躺下，</p>
+
+<p class="bodytext">在那棕榈树的下面，</p>
+
+<p class="bodytext">吸饮爱情和寂静，</p>
+
+<p class="bodytext">沉入幸福的梦幻。</p>
+
+<p class="bodytext-right">（冯至 译）</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0033.html">← 上一页</a> ｜ <a href="./篇0035.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "海涅诗选", "bookTitle": "乘着歌声的翅膀：海涅诗选", "itemTitle": "乘着歌声的翅膀", "itemUrl": "海涅诗选/篇0034.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -11,32 +11,92 @@
 <p class="title1">五 赠小海燕评剧团</p>
 <p class="date">第13卷，曲艺 诗文 · 诗五首</p>
 <br>
-<div class="content"><p class="center">风光如此最多情，山海关头山海明。</p>
-<p class="center">西去长城一万里，南来大地几千程。</p>
-<p class="center">田园无际丰生产，烽火高台忆战争。</p>
-<p class="center">更喜翩翩小海燕，青云白浪任飞鸣。</p>
-<p class="block">一九六三年夏登山海关时小海燕评剧团寓此。</p>
-<p class="right1">原载1963年《河北文学·戏剧增刊》第一期</p>
-<hr/>
-<p class="note"><a id="m1"></a>
- [1]
- 本篇据手迹收入。申凤梅（1927—1995），河南临颍人。越调表演艺术家。</p>
-<p class="note"><a id="m2"></a>
- [2]
- 本篇据手迹收入。关山月（1912—2000），广东阳江县人。国画家。</p>
-<p class="note"><a id="m3"></a>
- [3]
- 本篇据手迹收入。沈柔坚（1919—1998），福建诏安人。画家。</p>
-<p class="note"><a id="m4"></a>
- [4]
- 当时该团曾公演《宝莲灯》。——作者</p>
-<p class="note"><a id="m5"></a>
- [5]
- 当时该团曾公演《拦马》。——作者</p>
-<p class="note"><a id="m6"></a>
- [6]
- 当时该团曾在秦皇岛演出由郭沫若同志的《虎符》改编的豫剧。——作者</p>
+<div class="content"><p class="center">风光如此最多情，山海关头山海明。</p>
+
+<p class="center">西去长城一万里，南来大地几千程。</p>
+
+<p class="center">田园无际丰生产，烽火高台忆战争。</p>
+
+<p class="center">更喜翩翩小海燕，青云白浪任飞鸣。</p>
+
+<p class="block">一九六三年夏登山海关时小海燕评剧团寓此。</p>
+
+<p class="right1">原载1963年《河北文学·戏剧增刊》第一期</p>
+
+<hr/>
+
+<p class="note"><a id="m1"></a>
+
+ [1]
+
+ 本篇据手迹收入。申凤梅（1927—1995），河南临颍人。越调表演艺术家。</p>
+
+<p class="note"><a id="m2"></a>
+
+ [2]
+
+ 本篇据手迹收入。关山月（1912—2000），广东阳江县人。国画家。</p>
+
+<p class="note"><a id="m3"></a>
+
+ [3]
+
+ 本篇据手迹收入。沈柔坚（1919—1998），福建诏安人。画家。</p>
+
+<p class="note"><a id="m4"></a>
+
+ [4]
+
+ 当时该团曾公演《宝莲灯》。——作者</p>
+
+<p class="note"><a id="m5"></a>
+
+ [5]
+
+ 当时该团曾公演《拦马》。——作者</p>
+
+<p class="note"><a id="m6"></a>
+
+ [6]
+
+ 当时该团曾在秦皇岛演出由郭沫若同志的《虎符》改编的豫剧。——作者</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01179.html">← 上一页</a> ｜ <a href="./文01181.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "五 赠小海燕评剧团", "itemUrl": "老舍全集/文01180.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷13.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -86,6 +86,41 @@
 <p class="noteitem">[103] <b>杨慎（1488—1559）</b> 字用修，号升庵，明新都（今属四川）人，官翰林学士。著作多至百余种，明万历间张士佩将其主要者编为《升庵集》八十一卷。</p>
 <p class="noteitem">[104] <b>沈德符（1578—1642）</b> 字景倩，又字虎臣，明秀水（今浙江嘉兴）人。万历举人，潜心著述，所撰<b>《野获编》</b>，二十卷，续编十二卷。多记明开国至万历年间朝章国故及街谈琐语，并保存一些戏曲小说资料。关于杨慎伪作《杂事秘辛》的事，《野获编》卷二十三载：“近日刻《杂事秘辛》记后汉选阅梁冀妹事，因中有约束如禁中一语，遂以为始于东汉。不知此书本杨用修伪撰，托名王忠文得之士酋家者，杨不过一时游戏，后人信书太真，遂为所惑耳。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00926.html">← 上一页</a> ｜ <a href="./文00928.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "第四篇 今所见汉人小说", "itemUrl": "鲁迅全集/文00927.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷09.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

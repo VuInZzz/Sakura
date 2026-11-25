@@ -11,11 +11,50 @@
 <p class="title1">儿童节感言</p>
 <p class="date">第14卷，散文 杂文</p>
 <br>
-<div class="content"><p>中华民族在历史上大致是重文轻武的，因此，“文弱”便有了赞美的意思；一个手无缚鸡之力的白面书生，中了状元，是最理想的人物与际遇。反之，一个侠肝义胆，力举千斤的武士，却只能在民间文艺里博得景仰，而永不能登大雅之堂。我们太重视了“智”，而太轻视了“勇”。智而无勇，在事实上，往往是言而不信，谋而不忠，嘴强身子弱，见硬就缩头也。这是无可讳言的毛病。也是急须矫正的。</p>
-<p>首先，我们要注意我们的儿童。“娇生惯养”一定须换成“身粗胆大”。“掌上明珠”必要改成“民族的战士”。我们的儿童不只专为继续一家一姓的香烟，而也是能捍卫国家的武士。他不必一定去打仗，中华民族根本不是想侵略别人的民族。可是当别人来侵犯我们的时候，他必须有杀上前去的肝胆与体格，就是太平无事之秋，他也须身强志勇的惨作研究，尽心尽力为全体同胞谋幸福。在抗战中我们需要武士，在建设中我们也需要武士，武士不必都执枪，要在有识有胆，有心有力，职守纵有不同，而精神则一致。</p>
-<p>作父母的，在今天，应当细想一想教养儿女的方法。要记得，溺爱一小孩，就是害了一个国不！</p>
-<p class="right">原载1939年4月20日《抗战画刊》第二十六期</p>
+<div class="content"><p>中华民族在历史上大致是重文轻武的，因此，“文弱”便有了赞美的意思；一个手无缚鸡之力的白面书生，中了状元，是最理想的人物与际遇。反之，一个侠肝义胆，力举千斤的武士，却只能在民间文艺里博得景仰，而永不能登大雅之堂。我们太重视了“智”，而太轻视了“勇”。智而无勇，在事实上，往往是言而不信，谋而不忠，嘴强身子弱，见硬就缩头也。这是无可讳言的毛病。也是急须矫正的。</p>
+
+<p>首先，我们要注意我们的儿童。“娇生惯养”一定须换成“身粗胆大”。“掌上明珠”必要改成“民族的战士”。我们的儿童不只专为继续一家一姓的香烟，而也是能捍卫国家的武士。他不必一定去打仗，中华民族根本不是想侵略别人的民族。可是当别人来侵犯我们的时候，他必须有杀上前去的肝胆与体格，就是太平无事之秋，他也须身强志勇的惨作研究，尽心尽力为全体同胞谋幸福。在抗战中我们需要武士，在建设中我们也需要武士，武士不必都执枪，要在有识有胆，有心有力，职守纵有不同，而精神则一致。</p>
+
+<p>作父母的，在今天，应当细想一想教养儿女的方法。要记得，溺爱一小孩，就是害了一个国不！</p>
+
+<p class="right">原载1939年4月20日《抗战画刊》第二十六期</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01358.html">← 上一页</a> ｜ <a href="./文01360.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "儿童节感言", "itemUrl": "老舍全集/文01359.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

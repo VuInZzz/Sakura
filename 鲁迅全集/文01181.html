@@ -40,6 +40,41 @@
 <p class="noteitem">[240] 据鲁迅日记，这次演说在1926年10月14日。星期日应为星期四。同年10月23日出版的《厦大周刊》第一六○期曾记有讲词大要，“略谓世人对于好事之徒，每致不满，以为好事二字，一若有遇事生风之意，其实不然。我以为今之中国，却欲好事之徒之多，盖凡社会一切事物，惟其有好事之人，而后可以推陈出新，日渐发达。试观科仑布之探新大陆，南生之探北极、及各种科学家之种种新发明，其成绩何一非由好事而得来。……惟各人之思想境遇不同，我不敢劝人人皆为甚大之好事者，但小小之好事，则不妨一尝试之。譬如对于凡可遇见之事物，小小匡正，小小改良便是，但虽此种小事，亦非平时常常留心不为功。万一不能，则吾人对于好事之徒，当不随俗而加以笑骂，尤其是对于失败之好事之徒云云”。按鲁迅此次演说中关于“少读中国书”部分，因与尊孔的校长见解相悖，故《厦大周刊》未载。</p>
 <p class="noteitem">[241] <b>陈嘉庚</b>（1874—1961） 福建集美（今属厦门）人，长期侨居新加坡，爱国华侨领袖。1912年创办集美学校，1921年创办厦门大学。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01180.html">← 上一页</a> ｜ <a href="./文01182.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "五六", "itemUrl": "鲁迅全集/文01181.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷11.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

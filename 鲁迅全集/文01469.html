@@ -35,6 +35,41 @@
 <p class="noteitem">[3] 鲁迅裁附的孙伏园信如下：“许广平君已搬出学校，表示辞职决心，我乃催问骝先，据他说校中职员大概几十块钱，是不适宜的。我便问他：‘你从前说李遇安君可作鲁迅之助教，现在遇安不在，鲁迅助教可请广平了。’他说助教也不过百元，平常只有八十。那末我说百元就百元罢。（好在从下月起，因为财政略微充裕，可以不搭公债。）骝先说，‘鲁迅一到，即送聘书可也。’许君处尚未同她说过，一二天内我当写信给她，以免她再去弄别的事。先生能早来最好。”</p>
 <p class="noteitem">[4] <b>“挑剔风潮”的学匪</b> 陈西滢在《现代评论》第一卷第二十五期（1925年5月30日）的《闲话》中，曾指责鲁迅、马裕藻等同情和支持北京女师大学生反对校长杨荫榆的教员是“暗中挑剔风潮”。国家主义派杂志《国魂》第九期（1925年12月30日）发表姜华的《学匪和学阀》一文，攻击鲁迅、马裕藻等为“学匪”。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01468.html">← 上一页</a> ｜ <a href="./文01470.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "270105 致许广平", "itemUrl": "鲁迅全集/文01469.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷12.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -34,6 +34,41 @@
 <p class="noteitem">[232] <b>张献忠</b>（1606—1646） 延安柳树涧（今陕西定边东）人，明末农民起义领袖。崇祯三年（1630）起义，转战陕西、河南等地。崇祯十七年（1644）入川，在成都建立大西国。旧史书中常有关于他杀人的记载。《明史·张献忠传》载：“顺治三年（1646），献忠尽焚成都宫殿庐舍，夷其城，率众出川北，……至盐亭界，大雾，献忠晓行，猝遇我兵于凤凰坡，中矢坠马，蒲伏积薪下。于是我兵禽献忠出，斩之。”</p>
 <p class="noteitem">[233] <b>杨太真</b>（719—756） 即杨贵妃，名玉环，法号太真，蒲州永乐（今山西永济）人。初为唐玄宗子寿王妃，后入宫得玄宗宠爱。她的堂兄杨国忠因她得宠而擅权跋扈，败坏朝政。天宝十四年（755）安禄山以诛国忠为名，于范阳起兵反唐，进逼长安，玄宗仓惶奔蜀，至马嵬驿，将士归罪杨家，杀国忠，玄宗为安定军心，令杨妃缢死。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01037.html">← 上一页</a> ｜ <a href="./文01039.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "《三浦右卫门的最后》译者附记", "itemUrl": "鲁迅全集/文01038.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷10.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

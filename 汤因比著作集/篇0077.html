@@ -72,6 +72,41 @@
 
   <p class="msonormal2">的确，这些泛希腊的公共机构成为了传达以“Hellas”和“Hellenes”称谓表达出来的文化实体观念的媒介物。尽管如此，这种文化实体并不是实质上的公共机构，而是存诸于人们的心中的公共机构。“希腊文化”的心理基础，根植于共同的视野、共同的思想抱负、共同关切的事物和共同的生活方式与风俗习惯。例如，在个别希腊城邦中用本地方言创作出来的诗歌，很快便成为所有希腊人共同的财富。最后完成其创作于爱奥尼亚地区的两部荷马史诗，逐渐在整个希腊世界传诵，而希腊各地方言母语各不相同的诗人们（例如彼奥提亚的赫西奥德）逐渐使用荷马的语言和韵律进行诗歌创作。于是，希腊方言便成为比各地土语重要得多的语言，也成为独特的泛希腊文学各种流派的通用语言。希腊文化在理智、情感和精神上的结合或许是难以捉摸的，但这种结合却超越经济和政治的派别分歧，把希腊人结合成为一个整体。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0076.html">← 上一页</a> ｜ <a href="./篇0078.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第二十四章 希腊文明", "itemUrl": "汤因比著作集/篇0077.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -34,6 +34,41 @@
 
   <p class="msonormal2">维金时代斯堪的纳维亚人在海外建立的社区中，冰岛社区的人是口头表达能力最强的。在改宗基督教以前，斯堪的纳维亚的诗歌正是在冰岛得以全部保存下来。冰岛传说中的男女英雄们都是前基督教时代，以及直到并包括改信基督教的那一代人中的冰岛人。尽管如此，前基督教时代冰岛文学都是经12和13世纪冰岛的基督教徒之手编辑之后才流传下来的。挪威在9世纪时发明了一种新的诗歌形式。在文化上，冰岛和挪威是维金时代斯堪的纳维亚世界第一流的国家。政治上，维金时代的瑞典给世界历史留下了更深刻、更为持久的影响。在诺夫哥罗德和基辅定居的罗斯瑞典人是俄罗斯国家的缔造者，而且，当989年俄罗斯改宗东正教时，局限于旧大陆欧洲半岛一隅的西方基督教世界，已处于东正教世界的包围之中。在922年之前的某一时期，东正教世界又被得到伏尔加河的保加利亚人忠诚支持的伊斯兰世界所包围。但是，俄罗斯人在数量上则是伏尔加保加利亚人无法企及的。这样，公元989年俄罗斯的宗东正教就为东正教世界最终向北扩展到北冰洋沿岸，向东扩展到北太平洋沿岸开辟了道路。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0109.html">← 上一页</a> ｜ <a href="./篇0111.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第五十七章 斯堪的纳维亚人的崛起", "itemUrl": "汤因比著作集/篇0110.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

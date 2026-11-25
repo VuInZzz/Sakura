@@ -70,6 +70,41 @@
 <p>这喊声也惊醒了敌人，警笛声在人群后面嘶叫起来。领头的笛声一叫，远近的笛声就跟着响起，就像那荒郊野外的狼群，一个障叫所有的就都随上了。但有的笛声才起，又戛然而止。原来有的警察已被我们的人盯住了。他们刚一吹笛，用纸包着的白灰和里面裹着磨得锋快的铜大钱就向他们脸上摔去，于是一张张白脸上就流下来鲜红的血道子。有的眼睛被眯住，眼泪从紧闭的双眼里涌流出来，泪水和着血水在白灰垫底的脸上一搅和，真比小鬼还难看。他们嚎叫着，盲目地奔跑着……有几个被白灰摔得轻的警察拔出了手枪，枪响了，一场混战开始了。</p>
 <p>李汉超的呐喊声还在继续：“同胞们！投入战斗吧！以牙还牙！以血还血！不愿当亡国奴的同胞们！奋起抗争吧！”</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./章025.html">← 上一页</a> ｜ <a href="./章027.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "夜幕下的哈尔滨", "bookTitle": "夜幕下的哈尔滨", "itemTitle": "第 26 章 - 夜幕下的哈尔滨", "itemUrl": "夜幕下的哈尔滨/章026.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="navbar"><a href="./index.html">返回本书目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 <br>
 <hr color="#C0C0C0" width="60%%" size="1" align="left">

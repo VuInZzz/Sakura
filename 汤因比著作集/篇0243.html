@@ -24,6 +24,41 @@
 
   <p class="msonormal2">香港的建筑师（其中大多数是华人）已经通过解决技术问题，展开了各项工作。那些技术问题怕是会让他们活跃在世界其他大城市的同行们都望而却步。不过，摆在面前的可不仅仅是技术问题而已。在位于大陆上的一座新兴的纺织小镇，我参观了一个现代公寓街区，该街区是为几个因新建水库而搬迁至此的村庄兴建的，街区最高点是一座寺庙，供奉着村民的祖先，要求必须朝着原先寺庙的方向，正对隔水相望的岛上那座特定的山峰。如果达不到这一要求，那村民是不会让步的，香港短缺的供水也就无法增加。寺庙能对着村民要求的方向而又不给新城规划造成破坏吗？建筑师们设法做到了既满足城市规划当局又满足村中风水先生的要求。这是一项体现中国智慧的典型成就，也是西方模式下重铸中式生活的典型案例。这就是香港工业最基本的内容。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0242.html">← 上一页</a> ｜ <a href="./篇0244.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "22.重访香港", "itemUrl": "汤因比著作集/篇0243.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

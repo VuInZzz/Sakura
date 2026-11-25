@@ -39,6 +39,41 @@
 <p class="noteitem">[23] <b>伊索</b>（Aesop，约前六世纪） 相传是古希腊寓言作家，奴隶出身，因机智博学获释为自由民。所编寓言经后人加工和补充，集成现在流传的《伊索寓言》。该书《蝙蝠与黄鼠狼》一篇，说一只蝙蝠被与鸟类为敌的黄鼠狼捉住时，自称是老鼠，后来被另一只仇恨鼠类的黄鼠狼捉住时，又自称是蝙蝠，因而两次都被放了。鲁迅文中所说的情节与这一篇相近。</p>
 <p class="noteitem">[24] 梁实秋在《论第三种人》一文中曾说：“鲁迅先生最近到北平，做过数次演讲，有一次讲题是《第三种人》。……这一回他举了一个譬喻说，胡适之先生等所倡导的新文学运动，是穿着皮鞋踏入文坛，现在的普罗运动，是赤脚的也要闯入文坛。随后报纸上就有人批评说，鲁迅先生演讲的那天既未穿皮鞋亦未赤脚，而登着一双帆布胶皮鞋，正是‘第三种人。’”（据《偏见集》）按鲁迅曾于1932年11月27日在北京师范大学讲演，讲题为《再论“第三种人”》。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00423.html">← 上一页</a> ｜ <a href="./文00425.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "谈蝙蝠", "itemUrl": "鲁迅全集/文00424.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -11,38 +11,104 @@
 <p class="title1">旧曲</p>
 <p class="date">乘着歌声的翅膀：海涅诗选 · 1824</p>
 <br>
-<div class="content">
-<h2 class="chapter-two">旧曲</h2>
-<p class="bodytext">你已经死了，糊里糊涂，</p>
-<p class="bodytext">你的眼光已经混浊，</p>
-<p class="bodytext">红红的嘴唇色泽全消，</p>
-<p class="bodytext">长眠的姑娘，你已经死了。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">在一个凄凉可怕的夏夜，</p>
-<p class="bodytext">我亲自把你送往墓地；</p>
-<p class="bodytext">夜莺唱出挽歌的哀音，</p>
-<p class="bodytext">星星也出来参加送殡。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">送丧的队伍走过森林，</p>
-<p class="bodytext">那儿传出连祷的声音；</p>
-<p class="bodytext">浑身披着丧服的枞树，</p>
-<p class="bodytext">它们也念起了安魂曲。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">送葬的队伍走过柳湖，</p>
-<p class="bodytext">爱尔芬围成一圈跳舞；</p>
-<p class="bodytext">她们突然间停了下来，</p>
-<p class="bodytext">像望着我们默默致哀。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">当我们来到你的墓旁，</p>
-<p class="bodytext">月亮也亲自从天而降。</p>
-<p class="bodytext">他发表悼词。一阵哭声，</p>
-<p class="bodytext">在远处响起丧钟之声。</p>
-<p class="bodytext-right">（钱春绮 译）</p>
+<div class="content">
+
+<h2 class="chapter-two">旧曲</h2>
+
+<p class="bodytext">你已经死了，糊里糊涂，</p>
+
+<p class="bodytext">你的眼光已经混浊，</p>
+
+<p class="bodytext">红红的嘴唇色泽全消，</p>
+
+<p class="bodytext">长眠的姑娘，你已经死了。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">在一个凄凉可怕的夏夜，</p>
+
+<p class="bodytext">我亲自把你送往墓地；</p>
+
+<p class="bodytext">夜莺唱出挽歌的哀音，</p>
+
+<p class="bodytext">星星也出来参加送殡。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">送丧的队伍走过森林，</p>
+
+<p class="bodytext">那儿传出连祷的声音；</p>
+
+<p class="bodytext">浑身披着丧服的枞树，</p>
+
+<p class="bodytext">它们也念起了安魂曲。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">送葬的队伍走过柳湖，</p>
+
+<p class="bodytext">爱尔芬围成一圈跳舞；</p>
+
+<p class="bodytext">她们突然间停了下来，</p>
+
+<p class="bodytext">像望着我们默默致哀。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">当我们来到你的墓旁，</p>
+
+<p class="bodytext">月亮也亲自从天而降。</p>
+
+<p class="bodytext">他发表悼词。一阵哭声，</p>
+
+<p class="bodytext">在远处响起丧钟之声。</p>
+
+<p class="bodytext-right">（钱春绮 译）</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0104.html">← 上一页</a> ｜ <a href="./篇0106.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "海涅诗选", "bookTitle": "乘着歌声的翅膀：海涅诗选", "itemTitle": "旧曲", "itemUrl": "海涅诗选/篇0105.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

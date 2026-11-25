@@ -29,7 +29,7 @@
 <p>听了这番话，老人就站起来，把他那张报纸撕得粉碎，还在碎报纸上面踏了一阵，再用他的手杖砸碎了几件东西，说我所懂得的还不及一头牛多；然后他走了出去，随手砰地关上了门，总之，他那番举动使我想象到他是对什么事感到不满。但是，由于不知道那问题究竟出在哪里，我对他也就无能为力了。</p>
 <p>刚过了不多一会儿，一个身材瘦长、模样像具死尸的人，他那一绺绺细长的头发一直披到肩上，那张七高八低的脸上留下了一星期没剃光的胡子茬，这人一下子冲进了门，突然间停下了，一动不动，手指放在唇边，躬身俯首，做出一副留心倾听的姿势。他听不出一点声响。他仍旧去听。仍旧没有声响。于是他就锁上了门，小心翼翼地踮起脚向我走过来，一直走到距离我不太远的地方，然后止住步，先十分关心地向我反复仔细地端详了一会儿，然后从怀里掏出了折叠好的一份我们出的报纸，说：</p>
 <p>“瞧呀，这是你写的。读给我听听——快！救救我吧。我难受极啦。”</p>
-<p class="center">src="./images/image00259.jpeg"</p>
+<p class="center"><img alt="" src="./images/image00259.jpeg" /></p>
 <p>于是我开始读以下的文章；随着我逐句读出时，我可以看出他的情绪开始缓和，我可以看出他那紧张的肌肉放松了，脸上的焦急神情消失了，宁静与安逸悄悄地笼罩了他的面容，好似柔和的月光照耀在一片荒凉的景物上：</p>
 <p class="block">鸟粪<a id="w2"></a><sup class="notelink"><a href="#m2">[2]</a></sup>是一种优质的禽鸟，但是饲养时必须十分当心。不可以早于六月，或晚于九月，将其从产地输入。冬天应当将其安置在温暖的地方，可以让它在那里孵出小鸟。</p>
 <p class="block">我们今年的谷物收成肯定是晚的。因此农民最好是在七月里，而不是在八月里，开始插他们的玉米秆，种他们的荞麦饼。</p>
@@ -59,6 +59,41 @@
 <p class="noteitem"><span>[5]</span> 阿尔发Alpha是希腊字母表中的第一个字母，奥米加Omega是最后的一个字母，“从阿尔发到奥米加，”意思是“从头到尾”，或彻底精通之意，这里将Omega说成了奥马哈Omaha，即是一个美国城市名。</p>
 <p class="noteitem"><span>[6]</span> 可以入药的大黄，这里显然用作骂人话。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0028.html">← 上一页</a> ｜ <a href="./篇0030.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "马克·吐温中短篇小说选", "bookTitle": "马克·吐温中短篇小说选", "itemTitle": "我如何主编农业报", "itemUrl": "马克·吐温中短篇小说选/篇0029.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

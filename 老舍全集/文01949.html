@@ -11,11 +11,50 @@
 <p class="title1">序</p>
 <p class="date">第16卷，文论 · 福星集</p>
 <br>
-<div class="content"><p>我们管苏联放射的两颗人造卫星叫作人类的福星。我即以福星命名这本散文集。我不敢以这么微薄的劳动果实纪念这件惊天动地的大事，不过是表示我的兴奋与狂喜而已。</p>
-<p>这里所选用的文章都是我在解放后写出来的。解放后，我写了不少或长或短的散文，可是我并没把它们收存起来，编为集子。我不大重视自己的作品。我总愿多写新的，不愿重读发表过的旧货。这次，北京出版社的朋友们代为搜集了八年来在各处发表的小品，并愿代为刊印。我无法不逐一重读一遍，把过了时的和文字不很好的都删去，只留下我自己认为还差不多的三四十篇，并大概地分类编排了一下。</p>
-<p>似乎不必再多说什么。好，就这么办。</p>
-<p class="right1">老舍 一九五八年元旦后二日</p>
+<div class="content"><p>我们管苏联放射的两颗人造卫星叫作人类的福星。我即以福星命名这本散文集。我不敢以这么微薄的劳动果实纪念这件惊天动地的大事，不过是表示我的兴奋与狂喜而已。</p>
+
+<p>这里所选用的文章都是我在解放后写出来的。解放后，我写了不少或长或短的散文，可是我并没把它们收存起来，编为集子。我不大重视自己的作品。我总愿多写新的，不愿重读发表过的旧货。这次，北京出版社的朋友们代为搜集了八年来在各处发表的小品，并愿代为刊印。我无法不逐一重读一遍，把过了时的和文字不很好的都删去，只留下我自己认为还差不多的三四十篇，并大概地分类编排了一下。</p>
+
+<p>似乎不必再多说什么。好，就这么办。</p>
+
+<p class="right1">老舍 一九五八年元旦后二日</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01948.html">← 上一页</a> ｜ <a href="./文01950.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "序", "itemUrl": "老舍全集/文01949.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷16.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -55,6 +55,41 @@
 <p class="noteitem">[114] <b>长虹</b> 高长虹（1898—约1956），山西盂县人，狂飙社主要成员。他曾经一度和鲁迅接近，鲁迅离京到厦门后，他在上海利用《狂飙》周刊对鲁迅肆意进行攻击和诽谤。</p>
 <p class="noteitem">[115] <b>非宗教大同盟</b> 1922年初，世界基督教学生同盟曾决定在北京召开第十一次大会，引起中国一部分知识分子的强烈反对，上海、北京等地成立“非基督教学生同盟”。它在中国社会主义青年团的领导下，于1922年3月15日在上海《先驱》半月刊上发表宣言、通电和章程，并在群众中散发传单，组织讲演会，反对帝国主义利用基督教对中国进行文化侵略。当时北京大学周作人、钱玄同、沈士远等五教授反对“同盟”的意见，在同年3月31日《晨报》发表《主张信教自由者的宣言》，认为“人们的信仰，应当有绝对的自由，不受任何人的干涉”。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00253.html">← 上一页</a> ｜ <a href="./文00255.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "吊与贺", "itemUrl": "鲁迅全集/文00254.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

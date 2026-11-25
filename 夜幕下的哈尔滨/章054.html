@@ -57,6 +57,41 @@
 <p>这时圈里面的玉旨雄一正在打小原大住的嘴巴，戏剧性的冲突已经发展到顶点，所以没有一个人发现她往外跑。而她也没听见圈里那清脆的巴掌声。她跑到门外，整个前厅里没有一个人，空荡荡静悄悄的。人都跑到宴会厅里看那精彩的武打去了。她一个人孤零零地站在高大的前厅里发愣，正在她不知上哪里去找塞上萧的时候，塞上萧在二楼楼梯拐角的地方出现了。两个人同时互相发现，同时往一块奔跑……两个人都经过了一场突然袭来的风暴，风暴的表现形式虽然不同，猛烈的程度却差不多，所以都憋着一肚子话要说，都有满腔心事要倾诉。因此两人跑的速度都是那么猛，情绪的节奏都是那么快。当塞上萧跑到楼梯最末一级的时候，柳絮影恰好跑到级下。于是两人互相一张臂膀，紧紧地拥抱在一块了。他俩拥抱的热烈程度，真像是经过多年生死离乱，才又相逢的一对恋人。不同的是他们拥抱的时间很短促，不一会就又分开了。因为两人都同时想到：此地不宜久留，要赶快走开！两人对看了一眼，柳絮影从塞上萧那紧锁的愁眉中看出他内心里隐藏着无限的痛苦；塞上萧从柳絮影那蓬乱的头发（她鬓边那枝斜插着的六月雪已经不见了），红色的眼圈以及腮边未干的泪痕，联想到何占鳌报告时的惊慌样子，马上断定餐厅里发生的事情一定和她有关。他怜惜地握紧了柳絮影的手，说了一句：“走，离开这个鬼地方，到我住处去。”</p>
 <p>柳絮影点点头。两个人手拉手向门外跑去。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./章053.html">← 上一页</a> ｜ <a href="./章055.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "夜幕下的哈尔滨", "bookTitle": "夜幕下的哈尔滨", "itemTitle": "第 54 章 - 夜幕下的哈尔滨", "itemUrl": "夜幕下的哈尔滨/章054.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="navbar"><a href="./index.html">返回本书目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 <br>
 <hr color="#C0C0C0" width="60%%" size="1" align="left">

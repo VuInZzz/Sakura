@@ -46,7 +46,7 @@
 
   <p class="bodytext">让我们把以上有关鸽子的两章概略地总结一下。我们可以有信心地作出这样的结论：尽管所有家养族有着巨大程度的差异，它们都是从包含着某些野生族的岩鸽传下来的。但是野生族之间的差异对于区别家养族的性状并没有提供任何见解。各品种或亚品种中的个体比处于自然状态下的个体容易发生变异；它们有时以突然的或强烈显著的方式发生变异。体制的这种可塑性显然是由生活条件的变化所引起的。不使用使身体的某些部分退化了。生长相关如此紧密地把体制联系在一起，以致某一部分发生变异，其他部分也会同时发生变异。当几个品种一旦形成了之后，它们之间的杂交，对于变异的过程就会有所帮助，甚至会产生新的亚品种。但是，建筑一座房屋，如果没有建筑师的技术，只有石和砖也是没有什么用处的，同样的，在产生新的族中，选择是主要的力量。饲养者用选择的方法可以对非常微小的个体差异发生作用，也可以对那些叫做突然变异的较大差异发生作用。当饲养者按照一个特点的既定标准来试图改良和改变一个品种时，选择就是有计划地进行的；当他们只试图育成尽可能优良的鸽子而没有任何改变品种的希求或意愿时，选择就是无计划地和无意识地进行的。选择的进行几乎不可避免地要导致早期的和改良较少的类型以及各个悠长系统中的许多中间环节遭到忽视和最终的灭绝。这样，我们大多数的现存族彼此之间以及它们同原种岩鸽之间便出现了如此显著的差异。</p>
 
-  <div class="tupian">src="./images/01371.jpeg"</div>
+  <div class="tupian"><img alt="" src="./images/01371.jpeg" /></div>
 
   <p class="zhusi"><a id="new-notef1" href="part0442.html#new-note1" class="calibre4">[1]</a> 伊顿：《鸽论》，1858年，第86页。</p>
 
@@ -54,6 +54,41 @@
 
   <p class="zhusi"><a id="new-notef3" href="part0442.html#new-note3" class="calibre4">[3]</a> 关于印度的地面翻飞鸽，慕尔过充分的记载（《印度医学新报》，Indian Medical gazette，一月号和二月号，1873年），他并且说道，刺戳脑的基部，同时施以氢氰酸（hydro-cyanic acid）和番木鳖碱（Stry-chnine），就可使一只正常的鸽子发生同翻飞鸽完全一样的痉挛性运动。有一只被刺戳过脑子的鸽子，它虽然完全复原了，但此后还有时翻筋斗。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0021.html">← 上一页</a> ｜ <a href="./篇0023.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "主要族的形成途径", "itemUrl": "动物和植物在家养下的变异/篇0022.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

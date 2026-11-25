@@ -58,6 +58,41 @@
 <p class="noteitem">[55] <b>彼彖飞</b>（Petöfi Sándor，1823—1849） 通译裴多菲，匈牙利诗人。参加1848年匈牙利反抗奥地利统治的民族革命，1849年在与协助奥国的沙俄军队作战中牺牲。一说在当年瑟什堡战役中与一批匈牙利士兵被俘，押至西伯利亚，约于1856年病卒。著有《勇敢的约翰》、《民族之歌》等。<b>题B.Sz.夫人照像的诗</b>，指《题在瓦·山夫人的纪念册上》：“我知道，你使你的丈夫过上幸福的生活；但是我希望你不要那样去做，最低限度，你不要作得太过火。他是一只苦恼的夜莺，自从他获得了幸福，他绝少歌唱……折磨他吧，让我们谛听他甜蜜而痛苦的歌。1844年12月25日，佩斯。”按B.Sz.夫人应为 V.S.夫人，原名乔鲍·马丽亚（Csapo Maria，1830—1896），匈牙利作家。著有长篇小说《晴天与阴天》等。V.S.是她丈夫、诗人瓦豪特·山陀尔（Vachott Sándór，1818—1861）名字的缩写。</p>
 <p class="noteitem">[56] <b>勃朗宁</b> （R.Browning，1812—1889） 英国诗人，著有诗剧《巴拉塞尔士》、长诗《指环与书》等。他的夫人伊丽莎白·芭雷特·勃朗宁（E.B.Browning，1806—1861），也是英国诗人，著有《卡萨桂提之窗》、抒情诗集《葡萄牙十四行诗》等。他们不顾女方家庭的反对而结婚，长期旅居意大利。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00714.html">← 上一页</a> ｜ <a href="./文00716.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "诗歌之敌", "itemUrl": "鲁迅全集/文00715.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷07.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

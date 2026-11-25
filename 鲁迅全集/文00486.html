@@ -35,6 +35,41 @@
 <p class="noteitem">[16] <b>伐扬古久列</b>（P.Vaillant-Couturier，1892—1937） 通译伐扬—古久里，法国作家、社会活动家。曾任法共中央委员、法共中央机关报《人道报》主笔。1933年9月，他曾来上海出席世界反对帝国主义战争委员会召开的远东会议。</p>
 <p class="noteitem">[17] <b>“外国文氓”</b> 德哥派拉于1933年11月29日在上海参加中法文艺界、报界茶话会时，中国新闻记者曾问他“对日本侵略中国之感想如何”，他回答说：“此问题过于严重，非小说家所可谈到。”又请他谈“对中国之感想”，他回答说：“来华后最使我注意的，（一）是中国菜很好，（二）是中国女子很美。”后来他从南京到北平，一路受国民党政府官员以及文人们的迎送，都是以这类话应付。当时曾有人在报上发表谈话说：“德氏来平，并未谈及文学，仅讥笑中国女子，中国女子认为德氏系一文氓而已。”（见1933年12月11日《申报·北平特讯》）</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00485.html">← 上一页</a> ｜ <a href="./文00487.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "未来的光荣", "itemUrl": "鲁迅全集/文00486.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -40,6 +40,41 @@
 <p class="noteitem">[20] <b>工人作者</b> 林克多在《苏联闻见录》中自称五金工人，先后在法国和苏联做工。</p>
 <p class="noteitem">[21] <b>《譬喻经》</b> 即《百句譬喻经》，简称《百喻经》。印度僧伽斯那撰，南朝齐求那毗地译，是佛教宣讲大乘教义的寓言性作品。这里所引的故事见该书的《三重楼喻》：“往昔之世，有富愚人，痴无所知。到馀富家，见三重楼，高广严丽，轩敞疏朗。心生渴仰，即作是念：我有财钱，不减于彼，云何顷来而不造作如是之楼。即唤木匠而问言曰：解作彼家端正舍不？木匠答言：是我所作。即便语言，今可为我造楼如彼。是时木匠，即便经地垒墼作楼，愚人见其垒墼作舍，犹怀疑惑，不能了知。而问之言：欲作何等。木匠答言：作三重屋。愚人复言：我不欲下二重之屋，先可为我作最上屋。木匠答言：无有是事。何有不作最下重屋，而得造彼第一之屋；不造第二，云何得造第三重屋。愚人固言：我今不用下二重屋，必可为我作最上者。时人闻已，便生怪笑。咸作此言：何有不造下第一屋而得上者。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00322.html">← 上一页</a> ｜ <a href="./文00324.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "林克多《苏联闻见录》序", "itemUrl": "鲁迅全集/文00323.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

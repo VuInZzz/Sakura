@@ -24,6 +24,41 @@
 
   <p class="msonormal2">在我的纳贾夫之行几个星期后，我造访了鲁德萨尔和赞詹。鲁德萨尔和巴厘岛或者爱尔兰一样绿意盎然；6月里的赞詹几乎和同样时节的法国北部或者德国南部一样凉爽舒适。或许来自酷热的海湾沿岸地区的波斯人可能会因为出生地气候区的关系而适应纳贾夫的生活，但生长在葱茏湿润的吉兰省或者是苍翠凉爽的阿塞拜疆省的人如何能忍受阿拉伯沙漠的热与尘呢？一种答案是，如果能有左右人心的力量，那么任何地方都甚至可以感觉舒坦宜人；由于对穆圣家族的忠诚热爱，波斯人的内心都被伊拉克的圣城吸引住了。另一种答案是波斯人的天才早就发现如何通过改变人所处的海拔来躲避高温。在波斯，人通过爬高1 000英尺来实现这一目的，假如1 000英尺没能产生他所要求的凉爽程度，就再往上爬1 000英尺、2 000英尺。旅居纳贾夫和卡尔巴拉的波斯人以相反方向改变海拔，借此来确保达到同样的效果。我拜访出身赞詹的教长那天是5月24日，还不到时节，因此他在一间高于地面的房间接待了我。要是我晚一个月时间前来访问，他很可能会把我带到地下一层，到最热的时候可能要到地下二层，甚至三层。在纳贾夫一家神学院，我还真下到了地下三层。走到阿拉伯沙漠地表以下30英尺和在法尔斯<span class="math-super"><a id="z228" href="part0271.html#bz228" class="calibre1">[228]</a></span>的高原上往上走1 000英尺差不多是一样的效果。所以，在纳贾夫，享受天国之福的死者在他们位于地下的陵寝尝到了《古兰经》向天堂中的灵魂所承诺的清凉舒爽。在纳贾夫，死者的数量大大超过了活人。这是一座由学院和墓穴组成的城市。死者和生者都灵巧地避开了阿拉伯太阳的恶意，在此安宁生活。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0274.html">← 上一页</a> ｜ <a href="./篇0276.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "54.纳贾夫", "itemUrl": "汤因比著作集/篇0275.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

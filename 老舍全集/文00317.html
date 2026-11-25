@@ -143,7 +143,7 @@
 
 <p>韵梅无可如何的，又回到厨房的北边，拿起铁通条。她不敢用力，怕出了响声被那两个枪手听见。不用力，她又没法活动开一块砖。她出了汗。她一边挖墙，一边轻轻的叫：“文先生！文先生！”这里离小文的屋子最近，她希望小文能听见她的低叫。没有用。她的声音太低。她不再叫，而手上加了劲。半天，她才只活动开一块砖。叹了口气，她楞起来。小妞子叫她呢。她急忙跑到屋中。她必须嘱咐小妞子不要到大门那溜儿去。</p>
 
-<p>小妞子还不大懂事，可是从妈妈的脸色与神气上看出来事情有点不大对。她没敢掰开揉碎的细问，而只用小眼src="./images/Image00070.jpg"
+<p>小妞子还不大懂事，可是从妈妈的脸色与神气上看出来事情有点不大对。她没敢掰开揉碎的细问，而只用小眼<img alt="" src="./images/Image00070.jpg" />
 
  着妈妈。等妈妈给她穿好衣服，她紧跟在妈妈后边，不敢离开。她是祁家的孩子，她晓得害怕。</p>
 
@@ -384,6 +384,41 @@
  五牌楼，位于正阳门南的一座牌楼，今已拆除。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00316.html">← 上一页</a> ｜ <a href="./文00318.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "四十六", "itemUrl": "老舍全集/文00317.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

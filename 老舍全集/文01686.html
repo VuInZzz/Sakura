@@ -11,12 +11,52 @@
 <p class="title1">迎春饯友</p>
 <p class="date">第15卷，散文 杂文 书信 · 散文 杂文</p>
 <br>
-<div class="content"><p>亚非作家会议即将召开，中国作家协会已派定代表团前去参加。这是件大事，我们热情地欢送我们的代表团，并预祝这次会议的成功！</p>
-<p>近几年来，亚非两大洲人民争取民族独立与自由的运动，风起云涌，一日千里，形势极好。在这大好形势下，亚非两大洲作家与人民在一起，光荣地创作了崭新的、充满朝气与热情的文学作品。这是亚非两大洲文学事业的晓日新光，给世界文学增加了新的光彩：万紫千红，盛开的香花，扬芬披彩，丰收新的果实。这是振奋人心的文学，是革命乐观主义的文学，是志在改造世界的文学。它与美帝国主义用以麻痹人民、毒害人心的“文学作品”，全无共同之处。新的文学前途无量，堕落的文学定遭唾弃。</p>
-<p>亚非两大洲的作家们更亲密地团结起来，互相学习，携手前进，以极大的信心，辛勤的劳动，道出人民的愿望与要求，指出真理与正义之所在，并为维护真理与伸张正义而奋斗！</p>
-<p>时值春节，我们举酒迎春，也为即将出国赴会的作家代表团送行，祝代表们一路平安，健康愉快！</p>
-<p class="right1">原载1962年2月9日《文汇报》</p>
+<div class="content"><p>亚非作家会议即将召开，中国作家协会已派定代表团前去参加。这是件大事，我们热情地欢送我们的代表团，并预祝这次会议的成功！</p>
+
+<p>近几年来，亚非两大洲人民争取民族独立与自由的运动，风起云涌，一日千里，形势极好。在这大好形势下，亚非两大洲作家与人民在一起，光荣地创作了崭新的、充满朝气与热情的文学作品。这是亚非两大洲文学事业的晓日新光，给世界文学增加了新的光彩：万紫千红，盛开的香花，扬芬披彩，丰收新的果实。这是振奋人心的文学，是革命乐观主义的文学，是志在改造世界的文学。它与美帝国主义用以麻痹人民、毒害人心的“文学作品”，全无共同之处。新的文学前途无量，堕落的文学定遭唾弃。</p>
+
+<p>亚非两大洲的作家们更亲密地团结起来，互相学习，携手前进，以极大的信心，辛勤的劳动，道出人民的愿望与要求，指出真理与正义之所在，并为维护真理与伸张正义而奋斗！</p>
+
+<p>时值春节，我们举酒迎春，也为即将出国赴会的作家代表团送行，祝代表们一路平安，健康愉快！</p>
+
+<p class="right1">原载1962年2月9日《文汇报》</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01685.html">← 上一页</a> ｜ <a href="./文01687.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "迎春饯友", "itemUrl": "老舍全集/文01686.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷15.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

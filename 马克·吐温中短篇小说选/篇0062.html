@@ -28,6 +28,41 @@
 <p>咳，只怪他们没了解真情实况，原来他们一直是在冤枉了蒂尔伯里。蒂尔伯里恪守诺言，一丝不苟；他已经死了，他已按照预定的时间死了。现在他已经死了四天多，对死亡一事已经安之若素；他是彻底地死了，百分之百地死了，像任何一位在墓地里新入土的人那样死了；而且死的那天还留下了充分的时间，可以让这件事刊载在那星期里的《萨加摩尔周刊》上。那条消息只是由于出了一件意外事故而被挤了出去；像这类的意外事故不可能发生在一份大城市的报刊上，但在像《萨加摩尔周刊》这样一份村镇的小报上却是屡见不鲜的。这一次，正当刊载社论的那一页在进行铅字拼版的时候，霍斯泰特嘉宾冷饮室送来了一夸特冷糕，这一来，已经排好的那一盘挽蒂尔伯里的干巴巴的悼词就被挤了出来，以便腾出一些篇幅让主编表达他对那份馈赠的由衷感谢。</p>
 <p>就在去保留版面的字架的途中，蒂尔伯里那篇讣告的铅字被弄乱了，否则那篇文告是会在下一期的报上刊出的，因为，像《萨加摩尔周刊》这样的报，是不肯浪费了“待用”材料的，字架上“待用的”材料一向是与世长存的，除非是中间插入了一件弄乱了铅字的意外事故。而一篇文章一经被弄乱了铅字，它就从此寿终正寝，你再也无法使其起死回生，要它重新见报的机会就没有了，永远没有了。所以，不管蒂尔伯里高兴也罢，或是不高兴也罢，就让他在坟墓里大发雷霆，折腾它一个痛快吧，那没关系——反正在《萨加摩尔周刊》上是再也不会看到他逝世的消息了。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0061.html">← 上一页</a> ｜ <a href="./篇0063.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "马克·吐温中短篇小说选", "bookTitle": "马克·吐温中短篇小说选", "itemTitle": "三", "itemUrl": "马克·吐温中短篇小说选/篇0062.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

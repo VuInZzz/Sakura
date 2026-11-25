@@ -35,6 +35,41 @@
 <p class="noteitem">[411] <b>《略谈皇帝》</b> 应作《闲话皇帝》。1935年5月，上海《新生》周刊第二卷第十五期发表易水（艾寒松）的《闲话皇帝》一文，泛论古今中外的君主制度，涉及日本天皇，6月7日日本驻上海总领事即以“侮辱天皇，妨害邦交”为名提出抗议。国民党政府屈从压力，并趁机压制进步舆论，6月24日查封《新生》周刊，7月9日由法院判处该刊主编杜重远一年两个月徒刑。国民党中央宣传委员会图书杂志审查委员会也因“失责”而撤销。参看本书《后记》及其注〔14〕。</p>
 <p class="noteitem">[412] <b>奴隶社</b> 1935年鲁迅为编印几个青年作者的作品而拟定的一个社团名称。以奴隶社名义出版的《奴隶丛书》，除《生死场》外，还有叶紫的《丰收》和田军的《八月的乡村》。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00628.html">← 上一页</a> ｜ <a href="./文00630.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "萧红作《生死场》序", "itemUrl": "鲁迅全集/文00629.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷06.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -115,7 +115,7 @@
 
 <p>“打几圈儿吧？”大赤包提议。</p>
 
-<p>瑞丰没带着多少钱，但是绝对不能推辞。第一，他以为今天是中秋节，理应打牌。第二，在冠家而拒绝打牌，等于有意破坏秩序。第三，自己的腰包虽然不很充实，可是他相信自己的技巧不坏，不至于垮台。瑞丰太太马上答应了：“我们俩一家吧！我先打！”说着，她摸了摸手指上的金戒指，暗示给丈夫：“有金戒指呢！宁输掉了它，不能丢人！”瑞丰暗中佩服太太的见识与果敢，可是教她先打未免有点不痛快。他晓得她的技巧不怎样高明，而脾气又src="./images/Image00067.jpg"
+<p>瑞丰没带着多少钱，但是绝对不能推辞。第一，他以为今天是中秋节，理应打牌。第二，在冠家而拒绝打牌，等于有意破坏秩序。第三，自己的腰包虽然不很充实，可是他相信自己的技巧不坏，不至于垮台。瑞丰太太马上答应了：“我们俩一家吧！我先打！”说着，她摸了摸手指上的金戒指，暗示给丈夫：“有金戒指呢！宁输掉了它，不能丢人！”瑞丰暗中佩服太太的见识与果敢，可是教她先打未免有点不痛快。他晓得她的技巧不怎样高明，而脾气又<img alt="" src="./images/Image00067.jpg" />
 
  ——越输越不肯下来。假若他立在她后边，给她指点指点呢，她会一定把输钱的罪过都归到他身上，不但劳而无功，而且罪在不赦。他的小干脸上有点发僵。</p>
 
@@ -226,6 +226,41 @@
  唤头，沿街理发者所持的吆喝工具，铁制，形状像大镊子。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00286.html">← 上一页</a> ｜ <a href="./文00288.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "十六", "itemUrl": "老舍全集/文00287.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

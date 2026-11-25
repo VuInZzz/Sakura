@@ -11,15 +11,58 @@
 <p class="title1">本卷说明</p>
 <p class="date">第13卷，曲艺 诗文</p>
 <br>
-<div class="content"><p class="block">本卷收入曲艺、新诗、旧体诗及《老舍幽默诗文集》。</p>
-<p class="block">曲艺共58篇，分为鼓词、相声、快板、太平歌词、山东快书、单弦和唱词，陆续写于1938至1966年。</p>
-<p class="block">新诗共65题，陆续写于1921至1965年；其中《剑北篇》是作者的一部长诗集，1940年2月至1941年初写于重庆，1942年5月由文艺奖助金管理委员会出版部初版。</p>
-<p class="block">旧体诗共126题，陆续写于1917至1966年。</p>
-<p class="block">《老舍幽默诗文集》写于1930至1934年，时代图书公司1934年4月初版。其中的6篇小说收入第八卷，此处存目。</p>
-<p class="block">这些作品大部分曾收入《老舍文集》。除此之外，还尽可能搜集了散见于报刊杂志上的作品入集。</p>
-<p class="block">除《老舍幽默诗文集》外，作品按体裁分别依发表或写作先后编排，篇末注有初发时间及刊物。</p>
-<p class="block">收入本卷时，以集入卷的各文，增加了题注。散篇各文，据初刊本校勘，并增加了一些简注。</p>
+<div class="content"><p class="block">本卷收入曲艺、新诗、旧体诗及《老舍幽默诗文集》。</p>
+
+<p class="block">曲艺共58篇，分为鼓词、相声、快板、太平歌词、山东快书、单弦和唱词，陆续写于1938至1966年。</p>
+
+<p class="block">新诗共65题，陆续写于1921至1965年；其中《剑北篇》是作者的一部长诗集，1940年2月至1941年初写于重庆，1942年5月由文艺奖助金管理委员会出版部初版。</p>
+
+<p class="block">旧体诗共126题，陆续写于1917至1966年。</p>
+
+<p class="block">《老舍幽默诗文集》写于1930至1934年，时代图书公司1934年4月初版。其中的6篇小说收入第八卷，此处存目。</p>
+
+<p class="block">这些作品大部分曾收入《老舍文集》。除此之外，还尽可能搜集了散见于报刊杂志上的作品入集。</p>
+
+<p class="block">除《老舍幽默诗文集》外，作品按体裁分别依发表或写作先后编排，篇末注有初发时间及刊物。</p>
+
+<p class="block">收入本卷时，以集入卷的各文，增加了题注。散篇各文，据初刊本校勘，并增加了一些简注。</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00835.html">← 上一页</a> ｜ <a href="./文00837.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "本卷说明", "itemUrl": "老舍全集/文00836.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷13.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

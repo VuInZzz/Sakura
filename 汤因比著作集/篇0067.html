@@ -72,6 +72,41 @@
 
   <p class="msonormal2">公元前771年，周王朝受到一场无可弥补的灾难的打击，从此逐渐衰弱下去。不过，即使在此之前，甚至在早期，周政权直接统治的区域也很狭小。周政权很大程度上只是地方诸侯的盟主，这些有自治权的诸侯约有七八十个。与800年后秦始皇强加于中国社会的中央集权政体相比，周朝政权显得比较脆弱，即使在开国初期也是如此。另一方面，如果以其前辈商朝政权的标准来衡量，周朝政权可能还算强大些。周人在他们的时代确实控制了中国社会，尽管没有采取直接控制的方式。为周朝所取代的商朝统治者或许仅仅运用武力控制它的近邻政权，而并没有使宗主国与其势力范围内的半独立政权之间的关系趋向制度化。对于那些半独立的政权，商王朝在不断地进行威胁的同时，又怀有一种内在的恐惧。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0066.html">← 上一页</a> ｜ <a href="./篇0068.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第十四章 旧大陆的民族大迁徙", "itemUrl": "汤因比著作集/篇0067.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -100,6 +100,41 @@
 
   <p class="msonormal2">罗马天主教反改革运动的领袖们，由衷地欢迎人文主义。圣依纳爵·罗耀拉 <span class="math-super"><a id="z343" href="part0148.html#bz343" class="calibre1">[343]</a></span>（1491—1556年）为了准备他毕生的事业而接受大学教育，他创立的耶稣会（建于1540年），就像上一个世纪的共生兄弟会一样，诚挚地相信教育的作用并付诸实践。但是，圣依纳爵是作为一名军人开始工作的，耶稣会的主要特点是纪律和献身于教廷事业的精神。正如11和13世纪的情形一样，16世纪的一位伟大人物把教皇从因以前的恶行而即将遭受的灭顶之灾中拯救了出来。圣方济各的精神同格列高利七世和圣依纳爵的精神是对立的，但教廷从这三位救星所共有的忠诚中却获益良多。从1545年到1563年，特伦托宗教会议时断时续地召开，它肯定了教皇对罗马天主教其他部分的君主地位，但同时也改革了教会的恶行。假如这些改革措施的颁布和实行，能够在也应该在1414—1517年之间的某个时候颁布和实行的话，路德或许永远也不会被激怒，并进而做出使他因此而名垂千古的事业。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0123.html">← 上一页</a> ｜ <a href="./篇0125.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第七十一章 西方基督教世界", "itemUrl": "汤因比著作集/篇0124.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册03.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

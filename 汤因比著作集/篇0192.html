@@ -120,6 +120,41 @@
 
   <p class="msonormal2">“泛伊斯兰主义”已经沉睡，然而我们要考虑到一种可能性：如果一个“西方化”世界的世界性下层阶级起来反抗西方控制，呼喊反西方的领导力量，这位沉睡者是可能醒过来的。对于唤起伊斯兰教的好战精神，这个呼喊具有不可估量的心理作用，即使它睡得如同以弗所长眠七圣一样长久，它也会因一个时代英雄的呼声而醒来。在过去的两个历史性时刻，伊斯兰教都成为了一种标志，代表着一个东方社会胜利崛起，反抗西方入侵者。在先知的第一批继承者的领导下，伊斯兰教解放了叙利亚和埃及，希腊控制的重压在这里已近千年。在赞吉、努尔丁和萨拉丁以及马穆鲁克的率领下，伊斯兰教成为抵抗十字军东征和蒙古人入侵的堡垒。如果人类现在的局势导致一场“种族战争”，伊斯兰教还会行动起来再次扮演它的历史角色。但愿这不会应验。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0191.html">← 上一页</a> ｜ <a href="./篇0193.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "伊斯兰教、西方与未来", "itemUrl": "汤因比著作集/篇0192.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册05.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

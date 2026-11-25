@@ -58,6 +58,41 @@
 <p class="noteitem">[22] 据《马可福音》第十五章载：“他们又把两个强盗，和他同钉十字架，一个在右边，一个在左边。从那里经过的人辱骂他，摇着头说，咳，你这拆毁圣殿，三日又建造起来的，可以救自己从十字架上下来罢。祭司长和文士也是这样戏弄他，彼此说，他救了别人，不能救自己。以色列的王基督，现在可以从十字架上下来，叫我们看见，就信了。那和他同钉的人也是讥诮他。”祭司长，古犹太教管祭祀的人；文士，宣讲古犹太法律，兼记录和保管官方文件的人。他们同属上层统治阶级。</p>
 <p class="noteitem">[23] 关于耶稣临死前的情况，据《马可福音》第十五章载：“从午正到申初遍地都黑暗了。申初的时候，耶稣大声喊着说：‘以罗伊，以罗伊，拉马撒巴各大尼？！’翻出来，就是：我的上帝，我的上帝，为什么离弃我？！……气就断了。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00104.html">← 上一页</a> ｜ <a href="./文00106.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "复仇（其二）", "itemUrl": "鲁迅全集/文00105.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷02.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

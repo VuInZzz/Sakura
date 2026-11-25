@@ -90,7 +90,7 @@
 <p>“是呀，好像是这个意思——如果那个句子里用的是单教主格的过去分词，我认为就是那个意思。对，我想那意思是说，教堂的钟楼是那样高，里面又没有<span class="kaiti">风</span><a id="w6"></a><sup class="notelink"><a href="#m6">[6]</a></sup>，所以，遇到有雷暴的时候，如果你不去撞那些钟，那就十分危险<a id="w7"></a><sup class="notelink"><a href="#m7">[7]</a></sup>；而且，难道你没注意，单看这句的措辞本身——”   </p>
 <p>“别去管那个啦，莫蒂默；别只顾从事空谈浪费了宝贵的时间。把那个大就餐铃取来；它就在门厅里。快，莫蒂默，亲爱的；这一来咱们大体上可以安全了。哦，亲爱的，我真的相信，咱们终于可以得救了！”</p>
 <p>我们那幢避暑的小别墅，高高地位于一溜小山顶上，俯临下面一片谷地。我们附近有几处农庄住宅——那最近的与我们相隔大约三四百码。</p>
-<p>我站在那把椅子上，刚费力地把那只怪大的铃src="./images/image00260.jpeg"啷啷摇了约莫七八分钟，这时我们的百叶窗突然被从外面拉开，一盏耀眼的牛眼灯<a id="w8"></a><sup class="notelink"><a href="#m8">[8]</a></sup>从窗口捅了进来，接着就听到有人粗声粗气地问：</p>
+<p>我站在那把椅子上，刚费力地把那只怪大的铃<img alt="" src="./images/image00260.jpeg" />啷啷摇了约莫七八分钟，这时我们的百叶窗突然被从外面拉开，一盏耀眼的牛眼灯<a id="w8"></a><sup class="notelink"><a href="#m8">[8]</a></sup>从窗口捅了进来，接着就听到有人粗声粗气地问：</p>
 <p>“这儿究竟出了什么事啦？”</p>
 <p>窗外满都是人脑袋，脑袋上满都是眼睛，都神情激动地直瞪着我那一身睡衣，以及我那一套准备上阵的装备。</p>
 <p>我一失手落下了那只铃，困惑不解地跳下了椅子，说：</p>
@@ -125,6 +125,41 @@
 <p class="noteitem"><span>[8]</span> 夜间外出巡逻时常用的一种上面嵌有一块凸透镜的提灯。</p>
 <p class="noteitem"><span>[9]</span> 詹姆斯·艾布拉姆·加菲尔德（1831—1881），美国第二十任总统（1881），就任后四个月遇刺身亡。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0036.html">← 上一页</a> ｜ <a href="./篇0038.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "马克·吐温中短篇小说选", "bookTitle": "马克·吐温中短篇小说选", "itemTitle": "麦克威廉斯太太与雷电", "itemUrl": "马克·吐温中短篇小说选/篇0037.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

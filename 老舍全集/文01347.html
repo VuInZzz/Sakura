@@ -11,9 +11,46 @@
 <p class="title1">五</p>
 <p class="date">第14卷，散文 杂文 · 血点</p>
 <br>
-<div class="content"><p>成见这个鬼不但使别人讨厌它，它自己也越来越觉得自己讨厌，而不得已的硬着头皮，假装以讨厌为荣。文艺工作者呀，把这小鬼从你心中打出去！你必须打出去它，不然你的心便死硬，以倔强自谀，而实际上是已落在了时代后边。神圣的民族抗战把中华的一切将都大大的改变了一下，这变动将是任何一个聪明人所不能想象到的。在这时候，你至少要把心放开，能放开多大便放开多大，或者你能随着这几乎是不可思议的变动，而得到一点新的理解，供献一点新的意见。反之，若抱着你以前的那一套旧把戏，而想在这新时代耍一耍，那除了是立意要出风头，便什么也不是。可怜啊，这风头便丢尽了你的脸。一粒砂中可以见到一个世界，那可还是一粒砂那么小的一个世界呀！据我看，你的心要和新中国那么大，你才能写出伟大的东西来。不必向文艺之神祷告吧，那是劳而无功的事；你自己且先下决心驱逐出去成见那小鬼吧。</p>
-<p>从我们自家的文艺遗产，你得到一些成见；也许从别人家的文艺作品与理论，你得到一些成见……不打开你的心，你的用功与研究等等好事反倒教你固执与褊狭。打开你的心，你才会看到我们独力抗战，自图生存，不是国内任何一个力量，不是任何一方面的努力，所能单独支持得起来的。配备着全民抗战的文艺，也不是任何一种文章义法，任何一种文艺主张，所能支持起来的。你须要明白中国，还须要明白世界；你须明白你自己，也须明白你的同胞们；你须明白文艺，也须明白文艺与抗战的关系……起码你须有这个态度，你才能看出抗战前途的光明，与明日的文艺大概是什么样子。成见么，它使你死于今日。</p>
+<div class="content"><p>成见这个鬼不但使别人讨厌它，它自己也越来越觉得自己讨厌，而不得已的硬着头皮，假装以讨厌为荣。文艺工作者呀，把这小鬼从你心中打出去！你必须打出去它，不然你的心便死硬，以倔强自谀，而实际上是已落在了时代后边。神圣的民族抗战把中华的一切将都大大的改变了一下，这变动将是任何一个聪明人所不能想象到的。在这时候，你至少要把心放开，能放开多大便放开多大，或者你能随着这几乎是不可思议的变动，而得到一点新的理解，供献一点新的意见。反之，若抱着你以前的那一套旧把戏，而想在这新时代耍一耍，那除了是立意要出风头，便什么也不是。可怜啊，这风头便丢尽了你的脸。一粒砂中可以见到一个世界，那可还是一粒砂那么小的一个世界呀！据我看，你的心要和新中国那么大，你才能写出伟大的东西来。不必向文艺之神祷告吧，那是劳而无功的事；你自己且先下决心驱逐出去成见那小鬼吧。</p>
+
+<p>从我们自家的文艺遗产，你得到一些成见；也许从别人家的文艺作品与理论，你得到一些成见……不打开你的心，你的用功与研究等等好事反倒教你固执与褊狭。打开你的心，你才会看到我们独力抗战，自图生存，不是国内任何一个力量，不是任何一方面的努力，所能单独支持得起来的。配备着全民抗战的文艺，也不是任何一种文章义法，任何一种文艺主张，所能支持起来的。你须要明白中国，还须要明白世界；你须明白你自己，也须明白你的同胞们；你须明白文艺，也须明白文艺与抗战的关系……起码你须有这个态度，你才能看出抗战前途的光明，与明日的文艺大概是什么样子。成见么，它使你死于今日。</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01346.html">← 上一页</a> ｜ <a href="./文01348.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "五", "itemUrl": "老舍全集/文01347.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -37,9 +37,9 @@
 
 <p>拿古代希腊和中国的戏剧与现代的比较，我们看出来它们的不同是在表现真实的程度不一样。无论什么戏，只要它是戏，便须表现生活的真实，因为刺激情感是它的起源。但是，这表现真实的方法是越来越真切的，所以古代希腊与中国的旧剧便不能与西洋现代的戏剧比了。古代希腊的戏剧是由民间的歌唱，进而为有音乐的表现，而后又加入故事。有这样的进展程序，所以它的诗的分子很重要。表演的时候，是在极大的露天戏园，能容纳两三万人，于是，演员必须穿着五六寸高的厚鞋，戴着面具，表演只能用手势与受过训练的声音慢诵戏文，以使听众全能看得见听得见。这个方法在事实上能给观众一些感动，假如观众是在那个场面之前。中国戏剧是显然由歌唱故事而来，所以，它的组成分子是诗与音乐多于行动的，它的趋向是述说的，如角色的自道姓名和环境，和吟唱眼中所见景色与人物，和一件事反复的陈说；在武剧中事实总是很简单的，它的表现全在歌舞与杂技上。毛西河《词话》里说：</p>
 
-<p class="block">“古歌舞不相合，歌者不舞，舞者不歌；即舞曲中词，亦不必与舞者搬演照应，……宋末，有安定郡王赵令畴者，始作‘商调鼓子词’，谱《西厢》传奇，则纯以事实谱词曲间，然犹无演白也。至金章宗朝，董解元，不知何人，实作‘西厢src="./images/Image00230.jpg"
+<p class="block">“古歌舞不相合，歌者不舞，舞者不歌；即舞曲中词，亦不必与舞者搬演照应，……宋末，有安定郡王赵令畴者，始作‘商调鼓子词’，谱《西厢》传奇，则纯以事实谱词曲间，然犹无演白也。至金章宗朝，董解元，不知何人，实作‘西厢<img alt="" src="./images/Image00230.jpg" />
 
- 弹词’，则有白有曲，专以一人src="./images/Image00230.jpg"
+ 弹词’，则有白有曲，专以一人<img alt="" src="./images/Image00230.jpg" />
 
  弹并念唱之。</p>
 
@@ -116,6 +116,41 @@
  叔本华：《论文学的几种形式》。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01929.html">← 上一页</a> ｜ <a href="./文01931.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "第十四讲 戏剧", "itemUrl": "老舍全集/文01930.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷16.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

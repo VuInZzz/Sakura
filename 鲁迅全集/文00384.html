@@ -61,6 +61,41 @@
 <p class="noteitem">[74] <b>黄震遐</b>（1907—1974） 广东南海人，曾任《大晚报》记者、杭州笕桥空军学校教官。“民族主义文学”的骨干。《大上海的毁灭》，一部取材于一·二八上海战争，夸张日本武力，宣扬失败主义的小说；1932年5月28日起连载于上海《大晚报》，同年11月由大晚报社出版单行本。</p>
 <p class="noteitem">[75] <b>十九路军</b> 国民党军队。原为国民革命军第十一军，1930年改编为第十九路军。总指挥蒋光鼐，副总指挥兼军长蔡廷锴。九一八事变后调驻上海。1932年1月28日日军进攻上海，该军曾自动进行抵抗。国民党当局与日本签订《淞沪停战协定》后，被调往福建“剿共”。1933年11月，该军领导人联合国民党内李济深等，在福建成立“中华共和国人民革命政府”，与红军订立抗日反蒋协定。不久，在蒋军进攻下失败。1934年1月被撤消番号。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00383.html">← 上一页</a> ｜ <a href="./文00385.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "对于战争的祈祷", "itemUrl": "鲁迅全集/文00384.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

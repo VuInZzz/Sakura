@@ -61,6 +61,41 @@
 <p class="noteitem">[661] <b>关羽</b>（160？—219） 字云长，河东解县（今山西临猗）人，三国时蜀汉大将。刘备定西蜀，他留镇荆襄。建安二十四年在荆州与孙权军作战，兵败被杀。在小说《三国演义》中有他死后显圣成神的描述。岳飞（1103—1142），字鹏举，相州汤阴（今属河南）人，南宋名将。因坚持抗金，于绍兴十一年十二月十九日被宋高宗和秦桧杀害。小说《说岳全传》中说，岳飞是大鹏转世，秦桧是黑龙转世；秦桧害死岳飞，是报前世大鹏啄伤黑龙的夙怨。</p>
 <p class="noteitem">[662] <b>沪汉烈士的追悼会</b> 1925年上海五卅惨案发生后，6月11日汉口群众的反帝斗争也遭到英帝国主义及湖北督军萧耀南的镇压。6月25日，北京各界数十万人游行示威，并在天安门召开沪汉烈士追悼会。有人在会场设立一座两丈四尺高的木质灵位，悬挂着三丈六尺长的挽联，上写“在孔曰成仁在孟曰正命”“于礼为国殇于义为鬼雄”；指挥台正中的白布横额上，写有“天地正气”四个大字。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00022.html">← 上一页</a> ｜ <a href="./文00024.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "论睁了眼看", "itemUrl": "鲁迅全集/文00023.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷01.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

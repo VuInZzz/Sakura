@@ -31,6 +31,41 @@
 <p class="noteitem">[743] Ad.<img class="inline" alt="" src="./images/image06440.jpeg"/>erny 阿多尔夫·契尔尼（Adolf<img class="inline" alt="" src="./images/image06441.jpeg"/>erny，1864—？）捷克作家。J.S.Machar，马察尔（1864—1942），捷克诗人，评论家。第一次世界大战时曾因参加祖国独立运动被捕入狱。主要作品有《萨蒂利之死》、《马格达伦》等。Anton Sova，安东宁·索瓦（Antonin Sova，1864—1928），捷克诗人。他信仰空想社会主义，创作受法国象征派的影响。主要作品有《受挫折的心》、《过去的烦恼》等。</p>
 <p class="noteitem">[744] <b>K.Rais</b> 莱斯（1859—1926），捷克作家，他的小说多反映农民和山地居民的痛苦，并同情工人争取美好生活的斗争。K.Klostermann，克罗斯退曼（1848—1923），生于德国的捷克作家，他的作品主要描写西南波希米亚地区的现实生活。Mrštik<b>兄弟</b>，莫尔什蒂克兄弟，兄名阿洛伊思（Alois Mrštik，1861—1924），捷克作家，著有《在乡村的一年》等；弟名威廉（Vilém Mrštik，1863—1912），著有《五月的故事》及长篇《圣塔卢齐亚》等。M.Šim<img class="inline" alt="" src="./images/image06442.jpeg"/>ek，什马切克（1860—1913），捷克作家，曾在甜菜糖厂工作。著有《在切割机旁》、《工厂的灵魂》等。Alois Jirásek，阿洛伊思·伊拉塞克（1851—1930），捷克作家。他的作品充满对祖国独立和自由的向往。著有长篇小说《斯卡拉奇》、《在激流中》、《在我们国土上》及剧本《扬·日什卡》、《扬·胡斯》等。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01090.html">← 上一页</a> ｜ <a href="./文01092.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "《近代捷克文学概观》译者附记", "itemUrl": "鲁迅全集/文01091.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷10.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

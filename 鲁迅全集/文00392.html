@@ -45,6 +45,41 @@
 <p class="noteitem">[130] <b>庚款委员会</b> 1900年（庚子）八国联军侵入中国，强迫清政府于次年订立《辛丑条约》。其中规定付给各国“偿款”海关银四亿五千万两，分三十九年还清，年息四厘（本息总额为九亿八千万两），通称“庚子赔款”。后来，美、英、法、日等帝国主义先后将部分赔款“退还”，用以“资助”中国教育事业等，并分别成立了管理这项款务的机构。胡适曾任中英庚款顾问委员会的中国委员及管理美国庚款的中华教育文化基金董事会董事兼秘书，握有该会实权。</p>
 <p class="noteitem">[131] <b>“好人”</b> 1922年5月，胡适曾在他主持的《努力周报》第二期上提出“好政府”的主张，宣传由几个“好人”、“社会上的优秀分子”“加入政治运动”，组成“好政府”，中国就可得救。1930年前后，胡适、罗隆基、梁实秋等又在《新月》月刊上重提这个主张。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00391.html">← 上一页</a> ｜ <a href="./文00393.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "“光明所到……”", "itemUrl": "鲁迅全集/文00392.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷05.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

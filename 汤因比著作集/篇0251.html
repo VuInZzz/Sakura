@@ -26,6 +26,41 @@
 
   <p class="msonormal2">人情世事沉浮动荡，还有什么能相对而言恒久呢？或许，我在回仰光的航班上俯瞰所见的掸邦高原一行行崇山峻岭，较之人类会更长存世间。伊洛瓦底江肯定会比我从曼德勒到实皆途中跨越的桥梁更经久不衰。如今为了避免遭到蓄意破坏，桥梁在傍晚就关闭了。河流被这些仿佛取自玩具柜的梅卡诺<span class="math-super"><a id="z125" href="part0271.html#bz125" class="calibre1">[125]</a></span>大梁跨越其上，现在看来却俨然是个巨人，尽管还要奔流上400英里，它才会在茫茫海洋中失去自己的模样。还有多少人类无常不定的景象，有待河流、高山和老法师来见证呢？我发觉自己问起了这个问题，正当我从仰光机场驾车驶入市区，行经重重硕大拱门簇拥下的小巷之际——那都是迎接周恩来从气氛不祥的边境返回的凯旋门。我又一次循着他的足迹，还收获了并非为我而安排的民众的欢迎。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0250.html">← 上一页</a> ｜ <a href="./篇0252.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "30.老法师", "itemUrl": "汤因比著作集/篇0251.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

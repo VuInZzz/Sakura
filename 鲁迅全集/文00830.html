@@ -38,6 +38,41 @@
 <p class="noteitem">[422] <b>《五代史平话》</b> 不著撰人，应是宋代说话人所用的讲史底本之一，叙述梁、唐、晋、汉、周五代史事，各代均分上下二卷，内缺梁史和汉史的下卷。该书开端说：“刘季杀了项羽，立着国号曰汉。只因疑忌功臣，如韩王信、彭越、陈豨之徒，皆不免族灭诛夷。这三个功臣，抱屈啣冤，诉于天帝。天帝可怜见三功臣无辜被戮，令他每三个托生做三个豪杰出来：韩信去曹家托生，做着个曹操；彭越去孙家托生，做着个孙权；陈豨去那宗室家托生，做着个刘备。这三个分了他的天下：曹操篡夺献帝的，立国号曰魏；刘先主图兴复汉室，立国号曰蜀；孙权自兴兵荆州，立国号曰吴。”</p>
 <p class="noteitem">[423] <b>张耒</b>（1054—1114） 字文潜，淮阴（今属江苏）人，宋代诗人。官至太常少卿。《<b>明道杂志</b>》，二卷，又续一卷，记述作者在黄州郡时的见闻。下面的引语见该书续卷。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00829.html">← 上一页</a> ｜ <a href="./文00831.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "书苑折枝", "itemUrl": "鲁迅全集/文00830.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -112,6 +112,41 @@
 <p>天翻地覆君莫管，花前月下尽消磨。</p>
 <p>喝两杯美酒，唱一曲短歌，这个歌女是新从上海到哈尔滨来的，名叫陈丽宝。她专唱那些颓废淫靡的小调，《早行乐》就是她的拿手歌曲之一，是她把这首享乐至上的歌曲由十里洋场带到这东方小巴黎来的。她演唱的一个最大特点是充分发挥了“此时无声胜有声”的古老音乐“理论”，形成了她的独特演唱方法。当她的歌唱到了高潮的地方，人们都被吸引得侧耳倾听的时候，她会突然把脖子往前一探，把声音猛往下一收，音量收到最小的限度，就像俯身在你耳旁边说悄悄话一样。如果这首歌曲是大家所熟悉的，那她于脆连一点声音也没有了，光看她那鲜红的嘴唇上下翻动，而听不到一点声音。这时连乐队也不伴奏了，全场没一点声音，千万双眼睛都盯着她那张红嘴，想听而听不着，听不着又像听着了，就在这回肠荡气的时候，她又突然把脖子往上一扬，胸脯一挺，双手往起一伸，声音就像从喇叭里冲出来的一样，一下灌满全场，贯满每个人的耳朵，于是一个满堂彩轰然而起。不，叫满堂彩并不准确，因为那喊声里充满了怪声的叫好，扯着嗓子的嗥叫，野兽一样的嘶鸣，还有跺地板的，拍椅子坐席的，把两个手指头插到嘴里吹口哨的，甚至还有往空中抛橘子皮，扔帽子的。一阵疯狂过去又来一阵。陈丽宝像一针超级吗啡一样，麻醉了好多哈尔滨青年的神经。今天，日满俱乐部花重金把她请来了，要给这些日寇、汉奸们也注射一针。这些老政客本来都是一些酒色之徒，经她用那种特殊的演唱方法一刺激，那浑身的肥肉立刻轻了几十斤，有的竞跟着那乐曲的节奏抖擞起来。他们的表现形式当然不会像剧场里的青年那样跺地板，吹口哨。青年的特点之一是有多少热量就放多少，有时甚至放过了头。而老家伙则讲究留有余地，他们把劲头憋在心里，憋得大肚子直忽闪，憋得腮帮子直打颤，憋得手脚乱动弹，有的甚至像足球“越位”一样，越到了不应该越的地方，这我们在下一章里将要具体写到。现在先让我们再来看看那个玉旨雄一吧。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./章052.html">← 上一页</a> ｜ <a href="./章054.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "夜幕下的哈尔滨", "bookTitle": "夜幕下的哈尔滨", "itemTitle": "第 53 章 - 夜幕下的哈尔滨", "itemUrl": "夜幕下的哈尔滨/章053.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="navbar"><a href="./index.html">返回本书目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 <br>
 <hr color="#C0C0C0" width="60%%" size="1" align="left">

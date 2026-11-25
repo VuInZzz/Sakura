@@ -51,6 +51,41 @@
 
   <p class="msonormal2">在政治统一后的世界中必须保留宗教多元化和多样性的另一个原因在于：这样一个世界性国家中的生活将会是相当沉闷的。为了避免自我毁灭，我们必须选择世界性国家。但任何成就都要付出相应的代价；我们为世界性国家中的安全局面所付出的代价中就包括了单调乏味的生活。今天，我们依旧生活在一个极度多元化、总会变出令人苦恼花样的世界中。我们需要很强的想象力，才能构想出我们自己创造出来的、废除了战争、制止了人口增长，并为超过今天两三倍的人口提供了充足食物的世界会是什么样子。在这样一个全新社会中，人们的价值取向将会被颠倒过来。我们今天看重的是安全以及作为其保障的统一与规范。但如果我们顺利实现了这三个目标的话，我们珍视的东西就会变成令当今社会感到苦恼的多样性。这种即将到来的价值取向转变是本书第四部分（也是最后一个部分）的主题。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0213.html">← 上一页</a> ｜ <a href="./篇0215.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第十章 各种高级宗教的融合是众望所归的吗？", "itemUrl": "汤因比著作集/篇0214.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册06.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

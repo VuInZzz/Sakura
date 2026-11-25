@@ -37,6 +37,41 @@
 <p class="noteitem">[95] <b>新月社</b> 以留学英美的知识分子为核心的文学和政治性团体，1923年成立于北京。取名于印度诗人泰戈尔的《新月集》。主要成员有胡适、徐志摩、陈西滢、闻一多、梁实秋、罗隆基等。该社于1926年夏天借北京《晨报副刊》版面出过《诗刊》（周刊）十一期，提倡新格律诗创作。1927年该社成员多数南下，在上海创办新月书店，于1928年3月发刊综合性的《新月》月刊，张扬“英国式”民主政治。</p>
 <p class="noteitem">[96] “公理”和“正义”，是现代评论派陈西滢等人在支持章士钊、杨荫榆压迫女师大学生时经常使用的字眼。1925年11月底，当女师大学生斗争胜利，回校复课时，陈西滢、王世杰等人又组织所谓“教育界公理维持会”，反对女师大复校，支持章士钊另立女子大学。作者在《华盖集续编·新的蔷薇》中曾说：“公理是只有一个的。然而听说这早被他们拿去了，所以我已经一无所有。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00221.html">← 上一页</a> ｜ <a href="./文00223.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "辞“大义”", "itemUrl": "鲁迅全集/文00222.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷03.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

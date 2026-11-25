@@ -26,6 +26,41 @@
 
   <p class="msonormal2">站在这片饱受摧残的原野上，回望我来时翻越的绿色平原，可以看见印加人建造、旨在守护住他们所征服的谷地的堡垒，就那么耸立在孤立隔绝的沙脊最末端的支脉上。在此地与帕拉卡斯之间的钦查谷地，我还见过另外一个堡垒——“步兵堡”——屹立不倒，守卫着当地被征服的统治者的宫殿小丘。印加人通常选取平原的中心和谷地的窄处这两个位置来构筑他们的要塞，布置岗哨设立驻防。“佩恩蒂德站”守卫的是从印加人的故土高地下到峡谷的那条路。平原上的“步兵堡”及其各个姐妹堡垒，沿着海岸线边上的帝国主干道（如今随着泛美公路秘鲁段的通行，又重新焕发了生机）连成一串。下个月我将会攀上这些安第斯山脉的罗马人位于高原的家——高踞于云彩之下、从不降雨的国度。沿海的峡谷从未体验过雨水，却曾感受过来自多雨国度的人类征服者之辣手——而且这在安第斯文明的漫长历史上至少有过两回了，远在西班牙征服者漂洋过海到来之前。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0223.html">← 上一页</a> ｜ <a href="./篇0225.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "3.秘鲁的人与水", "itemUrl": "汤因比著作集/篇0224.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

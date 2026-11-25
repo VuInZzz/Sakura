@@ -11,14 +11,56 @@
 <p class="title1">立秋后</p>
 <p class="date">第15卷，散文 杂文 书信 · 散文 杂文</p>
 <br>
-<div class="content"><p>去年来青岛，已是秋天。秋水秋山，红楼黄叶，自是另一番风味；虽未有见到夏日的热闹，可是秋夜听潮，或海岸独坐，亦足畅怀。</p>
-<p>秋去冬来，野风横吹，湿冷入骨；日落以后，市上海滨俱少行人；未免觉得寂苦。</p>
-<p>春到甚迟，直到樱花开了，才能撤去火炉，户外活动渐渐增多，可是春假里除了崂山旅行，也还想不出更好的办法。</p>
-<p>六七月之间才真看到青岛的光荣，尤其是初次看到，更觉得有点了不得。可是一两星期过去，又仿佛没有什么了：士女是为避暑而来，自然表现着许多洋习气，以言文化，乃在蔻丹指甲与新奇浴衣之间，所谓浪漫，亦不过买票跳舞，喝冷咖啡而已。闭户休息，寂寞不减于冬令，自叹命薄福浅！</p>
-<p>有一件事是可喜的，即夏日有会友的机会。别已二年五载，忽然相值，相与话旧，真一乐事。再说呢，一向糊口四方，到处受友人的招待，今则反客为主，略尽地主之谊，也能更明白些交友的道理。况且此地是世外桃源，平日少见寡闻，于今各处朋友带来各处消息，心泉渐活，又回到人间，不复梦梦。</p>
-<p>立秋以后，别处天气渐凉，此地反倒热起来；朋友们逐渐走去，车站码头送别，“明夏再来呀！”能不黯然销魂！</p>
-<p class="right1">原载1935年8月18日《青岛民报·避暑录话》</p>
+<div class="content"><p>去年来青岛，已是秋天。秋水秋山，红楼黄叶，自是另一番风味；虽未有见到夏日的热闹，可是秋夜听潮，或海岸独坐，亦足畅怀。</p>
+
+<p>秋去冬来，野风横吹，湿冷入骨；日落以后，市上海滨俱少行人；未免觉得寂苦。</p>
+
+<p>春到甚迟，直到樱花开了，才能撤去火炉，户外活动渐渐增多，可是春假里除了崂山旅行，也还想不出更好的办法。</p>
+
+<p>六七月之间才真看到青岛的光荣，尤其是初次看到，更觉得有点了不得。可是一两星期过去，又仿佛没有什么了：士女是为避暑而来，自然表现着许多洋习气，以言文化，乃在蔻丹指甲与新奇浴衣之间，所谓浪漫，亦不过买票跳舞，喝冷咖啡而已。闭户休息，寂寞不减于冬令，自叹命薄福浅！</p>
+
+<p>有一件事是可喜的，即夏日有会友的机会。别已二年五载，忽然相值，相与话旧，真一乐事。再说呢，一向糊口四方，到处受友人的招待，今则反客为主，略尽地主之谊，也能更明白些交友的道理。况且此地是世外桃源，平日少见寡闻，于今各处朋友带来各处消息，心泉渐活，又回到人间，不复梦梦。</p>
+
+<p>立秋以后，别处天气渐凉，此地反倒热起来；朋友们逐渐走去，车站码头送别，“明夏再来呀！”能不黯然销魂！</p>
+
+<p class="right1">原载1935年8月18日《青岛民报·避暑录话》</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01742.html">← 上一页</a> ｜ <a href="./文01744.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "立秋后", "itemUrl": "老舍全集/文01743.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷15.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

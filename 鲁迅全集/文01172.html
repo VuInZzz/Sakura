@@ -42,6 +42,41 @@
 <p class="noteitem">[209] <b>两次学生宣言</b> 指北京女师大学生于1926年9月3日、8日分别发表的宣言。主要内容是反对北洋政府撤销女师大，揭露任可澄、林素园率领军警武装接收学校的暴行，呼吁全国各界声援。（据1926年9月4日、8日《世界日报》）</p>
 <p class="noteitem">[210] <b>岂明</b> 即周作人（1885—1967），浙江绍兴人，鲁迅的二弟。早年留学日本，曾任北京大学、北京女子师范大学教授，语丝社成员之一。抗日战争时期出任日伪华北政务委员会教育总署督办。<b>祖正</b>，即徐祖正（1895—1978），字耀辰，江苏昆山人，早年留学日本，曾任北京大学、北京女子师范大学教授。周作人在《语丝》第九十六期（1926年9月11日）发表的《女师大的命运》一文，其中述及徐祖正被林素园“当面诬为赤化”的经过：“（一九二六年）八月（按应为九月）四日上午，北京女子师范大学因为续招新生，开考试委员会，我也出席，议事完了，正要分散的时候，忽然说女子学院的学长林素园来了。……我因与林君略略相识，便约了一位徐君（按指徐祖正）前去招待。略谈几句，林君就露出不逊的态度来，徐君……劝他注意，末后渐近争论，徐君便说我教训你不要如此。说时迟，那时快，林君勃然大怒，厉声疾呼曰：‘你是共产党！抓，抓，抓！’我那时真有点不大敢相信自己的耳朵了。……尔时警察既未即进‘抓’徐君，徐君乃乘间力请于林君，要求宣示证据，经了同来的两个人的好些奇妙的辩解，如‘共产党并没有什么要紧’之类，林君终乃道谢，云系误会，于是此事遂告一结束。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01171.html">← 上一页</a> ｜ <a href="./文01173.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "四七", "itemUrl": "鲁迅全集/文01172.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷11.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

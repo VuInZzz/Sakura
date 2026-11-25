@@ -99,6 +99,41 @@
 <p class="noteitem">[104] <b>枚乘</b> 枚乘及其所撰《七发》，参看本书第八篇及其注〔16〕。自枚乘作《七发》后，“七”成为一种文体。<b>《连珠》</b>，扬雄撰。后来“连珠”亦成为一种文体。《艺文类聚》卷五十七引西晋傅玄《连珠序》云：“其文体辞丽而言约，不指说事情，必假喻以达其旨，而贤者微悟，合于古诗劝兴之义。欲使历历如贯珠，易<img class="inline" alt="" src="./images/image06349.jpeg"/>而可悦，故谓之连珠也。”</p>
 <p class="noteitem">[105] <b>《大招》</b> 王逸《楚辞章句·大招序》：“《大招》者，屈原之所作也。或曰景差，疑不能明也。”南宋朱熹《楚辞集注》云：“此篇决为差作无疑也。”明胡应麟《诗薮·杂编·遗逸》则云：“（唐）勒赋四篇，志于《艺文》。……盖《大招》即此四篇中之一篇。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00961.html">← 上一页</a> ｜ <a href="./文00963.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "第四篇 屈原及宋玉", "itemUrl": "鲁迅全集/文00962.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷09.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

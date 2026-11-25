@@ -41,6 +41,41 @@
 <p class="noteitem">[338] 杨荫榆于5月21日下午召请“全体主任专任教员，评议会会员”，在她所匿居的太平湖饭店开会，提出请警察迫令被开除的六名学生出校、提前放暑假等主张，以破坏学生运动，因受到部分与会者反对而未得逞。（见1925年5月22、23日《晨报》消息）</p>
 <p class="noteitem">[339] <b>致函学生家长，屡以品性为言</b> 杨荫榆开除刘和珍等六人后，给学生家长发信说：“本校为全国女学师资策源之地，学风品性，尤宜注重。乃近年以来，首都教育，以受政潮影响，青年学子，遂多率意任情之举。习染既深，挽救匪易，本校比以整饬学纪，曾将少数害群分子除其学籍，用昭惩儆。……夙仰贵家长平昔对于家庭教育，甚为注重，而于子女在校之品性学业，尤极关怀。为此函达，并盼谆属照常勤学，免为被退学生莠言所动。”（见1925年5月11日北京《晨报》）</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00821.html">← 上一页</a> ｜ <a href="./文00823.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "为北京女师大学生拟呈教育部文二件", "itemUrl": "鲁迅全集/文00822.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷08.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

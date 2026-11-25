@@ -24,6 +24,41 @@
 
   <p class="msonormal2">随着你踏上壮观的西侧石桥，跨过吴哥窟的护城河，建筑结构的规模气势就逐渐开始向你咄咄逼来。等你穿过四方院外围的西门，踏上穿行园区直通塔庙的人行道，所见的建筑设计气度之恢宏，足令你敛声屏息。可不存在什么虎头蛇尾的情况。当你进入吴哥窟主体，接连攀登三层台面，直至你的视线和安坐在中心塔尖四缘的神像齐平为止，你每迈出一步，惊叹和喜悦之情就与之俱增。简单精准的技艺成就了经典之质。柬埔寨土地上这一12世纪的建筑杰作应和了来自印度的灵感，但是高棉的艺术家已经将借鉴引入的理念转化成了自己的原创。在明媚蓝天的烘托下，人类以其天资出神入化地从石头中创造出的近乎完美的形式跃然而现，连石头自身也泛起暖暖的紫色光泽。人可以长栖此地以寄余生，终日饱览无限美景。吴哥果真全都是在单单一位国王的统治时期内建成的吗？他们说，中世纪柬埔寨的每位国王都有志于为自己建造一座吴哥，就像古王国时代每位埃及法老都力求为自己建造一座金字塔。我还未曾亲眼目睹吉萨的金字塔，对于一名英国人来说，从今以后埃及或许是禁地<span class="math-super"><a id="z118" href="part0271.html#bz118" class="calibre1">[118]</a></span>，但我并不觉意难平。朝看吴哥夕可死矣。如我一般三生有幸，在一趟旅行的路途中，看到吴哥又看到婆罗浮屠，那么你就将先行体验到了乐福直观。<span class="math-super"><a id="z119" href="part0271.html#bz119" class="calibre1">[119]</a></span></p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0247.html">← 上一页</a> ｜ <a href="./篇0249.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "27.吴哥", "itemUrl": "汤因比著作集/篇0248.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

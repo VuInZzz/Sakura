@@ -11,10 +11,48 @@
 <p class="title1">王春同志千古</p>
 <p class="date">第14卷，散文 杂文</p>
 <br>
-<div class="content"><p>王春同志去世，是文艺界的一个大损失！我和王春同志相识不很久，可是初次见面，我就觉得他是个可爱的人。后来，来往渐多，我越来越敬爱他。他有光明磊落的态度，知道的必说出来，说错了不怕批评。他健谈，我常由他的谈话中得到好处。他作事也负责任，求他看文章，他不但提出意见，而且仔细斟酌，代为改正。因为作事负责，他的生活非常勤苦，影响到健康。我早就看出他面带病容，可是他还不肯休息，苦干到底。他是坚守岗位，以身殉职的文艺工作者。</p>
-<p>王春同志对北京市文联的工作，《北京文艺》月刊（现已停刊）和《说说唱唱》的编辑工作都帮过很多的忙。现在，每逢开会，大家都想念他，记得他给我们的帮助和友爱！我们一定以学习他的磊落光明和鞠躬尽瘁的态度与精神，纪念我们可爱的朋友！</p>
-<p class="right">原载1952年3月29日北京《新民报》日刊</p>
+<div class="content"><p>王春同志去世，是文艺界的一个大损失！我和王春同志相识不很久，可是初次见面，我就觉得他是个可爱的人。后来，来往渐多，我越来越敬爱他。他有光明磊落的态度，知道的必说出来，说错了不怕批评。他健谈，我常由他的谈话中得到好处。他作事也负责任，求他看文章，他不但提出意见，而且仔细斟酌，代为改正。因为作事负责，他的生活非常勤苦，影响到健康。我早就看出他面带病容，可是他还不肯休息，苦干到底。他是坚守岗位，以身殉职的文艺工作者。</p>
+
+<p>王春同志对北京市文联的工作，《北京文艺》月刊（现已停刊）和《说说唱唱》的编辑工作都帮过很多的忙。现在，每逢开会，大家都想念他，记得他给我们的帮助和友爱！我们一定以学习他的磊落光明和鞠躬尽瘁的态度与精神，纪念我们可爱的朋友！</p>
+
+<p class="right">原载1952年3月29日北京《新民报》日刊</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01512.html">← 上一页</a> ｜ <a href="./文01514.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "王春同志千古", "itemUrl": "老舍全集/文01513.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

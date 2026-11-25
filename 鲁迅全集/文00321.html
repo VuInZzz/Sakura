@@ -34,6 +34,41 @@
 <p class="noteitem">[7] <b>《自由谈》</b> 《申报》的副刊之一。始办于1911年8月，从1933年1月起，作者应新任主编黎烈文之约，连续在该刊发表杂文；后来将1月至5月发表的编为《伪自由书》，6月至11月的编为《准风月谈》。</p>
 <p class="noteitem">[8] <b>《十字街头》</b> 半月刊，第三期改为旬刊，“左联”刊物之一，鲁迅、冯雪峰合编。1931年12月在上海创刊，次年1月即被国民党政府禁止，仅出三期。<b>《文学月报》</b>，“左联”刊物之一，先后由姚蓬子、周起应（周扬）等编辑。1932年6月在上海创刊，同年12月被国民党政府禁止，仅出六期。<b>《北斗》</b>，参看本卷第374页注〔1〕。<b>《现代》</b>，文艺月刊，施蛰存、杜衡编辑，1932年5月在上海创刊，1935年3月改为综合性月刊，汪馥泉编辑，同年五月出至第六卷第四期停刊。<b>《涛声》</b>，文艺性周刊，曹聚仁编辑。1931年8月在上海创刊，1933年11月停刊。共出八十二期。<b>《论语》</b>，文艺性半月刊，林语堂、陶亢德等编辑，1932年9月在上海创刊，1937年8月停刊，共出一一七期。<b>《申报月刊》</b>，申报馆编辑和出版的国际时事综合性刊物，也刊载少量文艺作品。1932年7月在上海创刊，1935年12月出至第四卷第十二期停刊。<b>《文学》</b>，月刊，郑振铎、傅东华、王统照等编辑，1933年7月在上海创刊，1937年11月出至第九卷第四期停刊。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00320.html">← 上一页</a> ｜ <a href="./文00322.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "题记", "itemUrl": "鲁迅全集/文00321.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷04.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

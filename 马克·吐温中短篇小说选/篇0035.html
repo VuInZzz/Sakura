@@ -39,7 +39,7 @@
 <p>于是我们又将小床移回到原处，让保姆睡在育儿室里，在紧隔壁一间屋子里另给我们自己安放了一张床。</p>
 <p>可是，过了不多一会儿，麦克威廉斯太太又说，万一小家伙被佩内洛普传染上了怎么办？一转到了这念头，她又恐慌起来，我们一伙人一同动手，再把小床从育儿室里往外搬，她自己也出力，在紧张的匆忙中差点儿没把那张小床拉扯得七零八碎，但那速度仍没能令她满意。</p>
 <p>我们搬到楼下去睡；就是没地方安插那保姆，但是麦克威廉斯太太说，保姆的经验对我们有不可估量的帮助。于是我们连人带东西，一股脑儿又搬回到自己的卧室里，同时感到极大的快慰，像一度被风暴袭击后的鸟儿又找到了自己的窠。</p>
-<p class="center">src="./images/image00264.jpeg"</p>
+<p class="center"><img alt="" src="./images/image00264.jpeg" /></p>
 <p>麦克威廉斯太太赶往育儿室去，察看那里的情况。不一会儿她回来了，这时又被吓坏了。她说：</p>
 <p>“小家伙怎么会那样睡？”</p>
 <p>我说：</p>
@@ -115,6 +115,41 @@
 <p class="noteitem"><span>[3]</span> 量木材体积的单位，一般为8×4×4立方英尺。</p>
 <p class="noteitem"><span>[4]</span> 佩内洛普的昵称。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0034.html">← 上一页</a> ｜ <a href="./篇0036.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "马克·吐温中短篇小说选", "bookTitle": "马克·吐温中短篇小说选", "itemTitle": "麦克威廉斯两口子如何对付膜性喉炎", "itemUrl": "马克·吐温中短篇小说选/篇0035.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

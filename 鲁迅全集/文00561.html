@@ -68,6 +68,41 @@
 <p class="noteitem">[127] <b>《东华录》</b> 清代蒋良骥编，三十二卷。系从清太祖天命至世宗雍正六朝的实录和其他文献摘抄而成。后由王先谦加以增补，扩编为一九五卷，并新增乾隆、嘉庆、道光三朝史料，合为《九朝东华录》，共四二五卷。稍后，他又补辑《咸丰朝东华录》和《同治朝东华录》各一百卷；此后又有朱寿朋编的《光绪朝东华录》二二〇卷。<b>《上谕八旗》</b>，内容是雍正一朝关于八旗政务的谕旨和奏议等文件，共分三集：《上谕八旗》十三卷、《上谕旗务议复》十二卷、《谕行旗务奏议》十三卷。<b>《雍正朱批谕旨》</b>，三六〇卷，内容是经雍正朱批的“臣工”二百余人的奏折。</p>
 <p class="noteitem">[128] <b>性灵文字</b> 指当时林语堂提倡“性灵”的文章。他在《论语》第二卷第十五期（1933年4月）发表的《有不为斋随笔·论文》中说：“文章者，个人性灵之表现。性灵之为物，惟我知之，生我之父母不知，同床之吾妻亦不知。然文学之生命实寄托于此。”</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00560.html">← 上一页</a> ｜ <a href="./文00562.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "买《小学大全》记", "itemUrl": "鲁迅全集/文00561.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷06.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

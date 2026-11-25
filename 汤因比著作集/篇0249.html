@@ -26,6 +26,41 @@
 
   <p class="msonormal2">在东南亚国家中，泰国可谓独一无二，除了“二战”期间日本军队在此出现过之外，泰国从未遭受过外国势力占领，哪怕是暂时的也没有。如此般幸免于难一部分归因于运气，泰国得以担当起英国在印度和缅甸的领地与法国在印度支那的领地之间的缓冲国角色。不过，泰国一以贯之的独立，主要还是归功于其自身的稳健谨慎、滴水不漏和深谋远虑的治国方略。追溯到一个世纪以前——也就是说，早在明治维新的推手们大张旗鼓之时，泰国王室政府同样也已经开始派送学生到西方国家留学；此外，还雇用西方专家来协助培训国内的民众，进入现代生活；但在选择哪些国家的时候，泰国一直很审慎。泰国毫不迟疑地接纳了英国柚木种植场主和法国考古学家，但是在雇用西方陆空将军和海军上将的问题上，却显示出对丹麦人的偏好。幸亏采取了这些明智又适时的举措，泰国才能够一直成功应对现代世界日趋艰难的状况。最重要的是，泰国已经建立起一支能充分胜任的人事队伍，由受过培训、经验丰富的技术员、专业人士和行政人员组成。在西方接受过学校教育乃至大学教育的泰国人，其数量之众令人瞩目；其中有些人还能用无可挑剔的纯正英语，相互戏谑谈笑。他们完全同其西方校友、大学同学旗鼓相当，不遑多让。在与西方同僚的社交关系方面，即便是最功成名就的日本人有时也不免有几分僵硬和不自在，相形之下，泰国人与西方人之间的私交就显得轻松自在、无拘无束。人完全可以在地图上写下泰国这个词而无需添上一个问号。泰国就在那里，而且还将继续在那里。有何不可？不管是印度还是中国，泰国都与之毫无相交叠的边境，泰国人知道如何同化散布于他们当中的中国移民。说到底，中国人和泰国人是近亲，说的是同一语族的语言。泰国大可自信坦然地面对未来。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0248.html">← 上一页</a> ｜ <a href="./篇0250.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "28.泰国掠影", "itemUrl": "汤因比著作集/篇0249.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -11,18 +11,64 @@
 <p class="title1">写于一九五〇年十月一日</p>
 <p class="date">第14卷，散文 杂文</p>
 <br>
-<div class="content"><p>从去年年底到现在，我写了不少的东西。写的好与不好是另一问题，不在话下。为什么我能写出不少东西来，是这里所要谈的。这须要与解放前的情形比较一下：</p>
-<p>在国民党反动派当权的时候，我不能自由呼吸。那并非说，我的呼吸器官有什么毛病，而是统治者的手老按在我的脖子上，不准我出声。</p>
-<p>现在，那双魔手离开了我，我能出声了；我的声音变成了文字。</p>
-<p>在从前，我的头时常发昏，不能执笔。头昏一半由于营养不良，一半也因心中抑郁。一个写家被看成一个小偷，时时刻刻的有特务跟在身后，怎能不抑郁呢？</p>
-<p>现在，我恢复了写家的尊严，可以抬着头走路了，可以自由的走路了，我的头不再发昏。</p>
-<p>在从前，我不能替我所同情的人说话，于是只好沉默。我也不能骂那些我所憎恶的人，于是也只好沉默。</p>
-<p>现在，穷人翻了身，我必须给他们写作，这是多么高兴的事呢！而且，写得不够啊；我恨自己只有一只手会写字！我也可以骂我所憎恶的人了，连反动派的义父美国流氓也可以骂了——当初，在重庆的时候，骂日本侵略者都须有个分寸啊！</p>
-<p>在从前，闷在家中坐，还怕祸从天上来。</p>
-<p>现在，我可参加多少多少社会活动。由此，我时时得到新的感觉，新的启示，新的知识，有助于我的写作。从前，社会与我的中间砌着一堵高墙。现在，社会上的一切是我写作的泉源。</p>
-<p>两相比较，这个变动太大了，我的喜悦也就变成一团火，燃烧着我的心，催着我写作。</p>
-<p class="right">原载1950年10月1日北京《新民报》日刊</p>
+<div class="content"><p>从去年年底到现在，我写了不少的东西。写的好与不好是另一问题，不在话下。为什么我能写出不少东西来，是这里所要谈的。这须要与解放前的情形比较一下：</p>
+
+<p>在国民党反动派当权的时候，我不能自由呼吸。那并非说，我的呼吸器官有什么毛病，而是统治者的手老按在我的脖子上，不准我出声。</p>
+
+<p>现在，那双魔手离开了我，我能出声了；我的声音变成了文字。</p>
+
+<p>在从前，我的头时常发昏，不能执笔。头昏一半由于营养不良，一半也因心中抑郁。一个写家被看成一个小偷，时时刻刻的有特务跟在身后，怎能不抑郁呢？</p>
+
+<p>现在，我恢复了写家的尊严，可以抬着头走路了，可以自由的走路了，我的头不再发昏。</p>
+
+<p>在从前，我不能替我所同情的人说话，于是只好沉默。我也不能骂那些我所憎恶的人，于是也只好沉默。</p>
+
+<p>现在，穷人翻了身，我必须给他们写作，这是多么高兴的事呢！而且，写得不够啊；我恨自己只有一只手会写字！我也可以骂我所憎恶的人了，连反动派的义父美国流氓也可以骂了——当初，在重庆的时候，骂日本侵略者都须有个分寸啊！</p>
+
+<p>在从前，闷在家中坐，还怕祸从天上来。</p>
+
+<p>现在，我可参加多少多少社会活动。由此，我时时得到新的感觉，新的启示，新的知识，有助于我的写作。从前，社会与我的中间砌着一堵高墙。现在，社会上的一切是我写作的泉源。</p>
+
+<p>两相比较，这个变动太大了，我的喜悦也就变成一团火，燃烧着我的心，催着我写作。</p>
+
+<p class="right">原载1950年10月1日北京《新民报》日刊</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01485.html">← 上一页</a> ｜ <a href="./文01487.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "写于一九五〇年十月一日", "itemUrl": "老舍全集/文01486.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷14.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

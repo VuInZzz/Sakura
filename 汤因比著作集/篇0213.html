@@ -90,6 +90,41 @@
   <p class="msonormal2">无论如何，专制主义与个人主义的对立在历史上曾引发过尖锐冲突。教皇的专权引发了15世纪的大公会议运动和16世纪的宗教改革运动；随后，从教皇约翰二十三世召集的梵蒂冈大公会议起，天主教主动将教皇的绝对权力调整为一种有限的权力。与耶稣同时代的犹太教教师们则对耶稣进行指责，因为“他教导他们正像有权柄的人，不像他们的文士”<span class="math-super"><a id="z40" href="part0190.html#bz40" class="calibre1">[40]</a></span>。耶稣之所以冒犯了这些人，是因为他无视拉比犹太教的一个传统，即一名犹太教教师，无论他拥有多少新鲜思想和巨大声名，都必须让他的同行们去评判自己的新见解；在他们就此问题达成共识之前，他不可以声称这是一条合法的教义。耶稣无视或反对这种共识原则；他的个性化的布道使自己失去了在犹太教中的一席之地，并为此牺牲了生命。耶稣没有成为犹太史上最受尊敬的教师，却通过自己的死而成为一个新宗教派别的创始人。这个新派别认为，基督教会已继承了上帝选民的遗产。在当时犹太教教师们的眼中，进一步加深耶稣罪过的是：耶稣宣称自己拥有的权威是上帝直接赋予他的。在犹太教教师们看来，这种说法是亵渎神明的。不过，如果真是这样的话，那么以色列和犹太的先知们也犯了同样的罪孽；因为这些先知们是通过打破铁板一块的传统社会，同上帝直接联系的方式才建立了犹太教这种高级宗教的。</p>
 
   </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0212.html">← 上一页</a> ｜ <a href="./篇0214.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "第九章 潜在的世界性宗教的重要意义", "itemUrl": "汤因比著作集/篇0213.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册06.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

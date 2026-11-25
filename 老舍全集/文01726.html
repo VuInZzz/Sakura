@@ -21,13 +21,13 @@
 
 <p>二姐借来个留声机，只有五张戏片。头一天还怪好，一家大小都哼唧着，很有个礼乐之邦的情调。第二天就有咧嘴的了，“换个样儿行不行？”可是也还没有打起来，要不怎说音乐足以陶养性情呢。第三天——雨更大了——时局可不妙，有起誓的了。但留声机依旧的转着，有的人想把歌儿背过来，一张连唱二三十次，并且是把耳朵放在机旁，唯恐走了一点音。起誓的和学歌的就不能不打起来了。据近邻王老太太看呢，打起来也比再唱强，到底是换换样儿呀。</p>
 
-<p>一起打，差点把留声机碰掉下来，虽然没碰掉，也不怎么把那个“节音机”给碰动了，针儿碰到“慢”那边去。我也不晓得这个小针叫什么，反正就是那个使唱片加快或减速度的玩艺，大概你比我明白。我家里对于摩登事儿太落伍。我还算是晓得这个针儿——不管它姓什么吧——的作用。二姐连这个都不知道。第四天，雨大邪了，一阵一个海，干什么去呢？还得唱。机器转开了，声音像憋住气的牛，不唱，慢慢的src="./images/Image00215.jpg"
+<p>一起打，差点把留声机碰掉下来，虽然没碰掉，也不怎么把那个“节音机”给碰动了，针儿碰到“慢”那边去。我也不晓得这个小针叫什么，反正就是那个使唱片加快或减速度的玩艺，大概你比我明白。我家里对于摩登事儿太落伍。我还算是晓得这个针儿——不管它姓什么吧——的作用。二姐连这个都不知道。第四天，雨大邪了，一阵一个海，干什么去呢？还得唱。机器转开了，声音像憋住气的牛，不唱，慢慢的<img alt="" src="./images/Image00215.jpg" />
 
- src="./images/Image00215.jpg"
+ <img alt="" src="./images/Image00215.jpg" />
 
- ；片子不转，晃悠。上了一片，src="./images/Image00215.jpg"
+ ；片子不转，晃悠。上了一片，<img alt="" src="./images/Image00215.jpg" />
 
- src="./images/Image00215.jpg"
+ <img alt="" src="./images/Image00215.jpg" />
 
  了有半点多钟，大家都落了泪。二姐不叫再唱了：“别唱了，等晴天再说吧。阴天返潮，连话匣子都皮了
 
@@ -50,6 +50,41 @@
  皮了，指物体受潮软化。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01725.html">← 上一页</a> ｜ <a href="./文01727.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "暑中杂谈二则", "itemUrl": "老舍全集/文01726.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷15.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

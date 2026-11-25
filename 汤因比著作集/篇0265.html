@@ -26,6 +26,41 @@
 
   <p class="msonormal2">我的天哪，这里是纳贾夫<span class="math-super"><a id="z177" href="part0271.html#bz177" class="calibre1">[177]</a></span>，我瞄到了金顶<span class="math-super"><a id="z178" href="part0271.html#bz178" class="calibre1">[178]</a></span>。骄阳正全速奔上中天，在其火力不绝的照耀下，金顶像块燃烧的玻璃一般光彩夺目。我们疾速越过飞沙走石的沙漠之际，棕榈丛阴暗的边缘渐渐消失在视野之中。出现了平坦的干草原和干燥的峡谷、干草原和峡谷、峡谷和干草原，如此循环往复。风景地貌变得单调乏味，突然间我的眼珠差点弹了出来，原来这儿出现了一个流淌着天蓝色河水的峡谷——峡谷变得陡峭险峻的时候，蓝色的河流形成了白色泡沫。这必定是豪兰干河<span class="math-super"><a id="z179" href="part0271.html#bz179" class="calibre1">[179]</a></span>，可谁听说过有河水在干河当中流淌的？不过最后出现的，才是奇迹中的奇迹。两道白雪皑皑的山脉一前一后现身了：前黎巴嫩山和黎巴嫩山。沙漠棕褐色的沙砾变身为一连串黑色的小火山，而后又转变成绿地。我们路过了姑塔绿洲。经过阿巴纳和法珥法以后，我们越过大马士革，又过了12分钟，我们已经跃过那些壮观的白色山脉，在一片海洋上空盘旋着开始下降了，这可不是波斯湾，而是地中海。马尔诺斯特姆<span class="math-super"><a id="z180" href="part0271.html#bz180" class="calibre1">[180]</a></span>、贝鲁特，哎呀，我几乎回到英格兰了，真够虎头蛇尾的。今天早上我还凝视着俾路支呢，眼前这一切是真实的吗？</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0264.html">← 上一页</a> ｜ <a href="./篇0266.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "汤因比著作集", "bookTitle": "汤因比著作集", "itemTitle": "44.从卡拉奇一跃前往贝鲁特", "itemUrl": "汤因比著作集/篇0265.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./册07.html">返回本册目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -39,6 +39,41 @@
 <p class="noteitem">[148] 指本书《不是信》一文。</p>
 <p class="noteitem">[149] 徐志摩在1926年1月20日《晨报副刊》发表的《再添几句闲话的闲话乘便妄想解围》中说：“我真的觉得没有一件事情你可以除外你自己专骂旁人的。……我们心里的心里，你要是有胆量望里看的话，那一种可能的恶、孽、罪，不曾犯过？谁也不能比谁强得了多少，老实说。……引申这个意义，我们就可以懂得罗曼罗兰‘Above the Battle-field’的喊声。鬼是可怕的；他不仅附在你敌人的身上，那是你瞅得见的，他也附在你自己的身上，这你往往看不到。要打鬼的话，你就得连你自己身上的一起打了去，才是公平。”罗曼罗兰（Romain Rolland，1866—1944），法国作家、社会活动家。著有长篇小说《约翰·克里斯朵夫》、剧本《爱与死的搏斗》等。“Above the Battlefield”，英语，意为“在战场上”；这是徐志摩对罗曼罗兰在第一次世界大战期中反对帝国主义战争的文集《超乎混战之上》一书书名不准确的英译。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00185.html">← 上一页</a> ｜ <a href="./文00187.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "我还不能“带住”", "itemUrl": "鲁迅全集/文00186.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷03.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

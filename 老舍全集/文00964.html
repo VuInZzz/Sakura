@@ -11,38 +11,104 @@
 <p class="title1">为和平而战</p>
 <p class="date">第13卷，曲艺 诗文 · 雪中行军</p>
 <br>
-<div class="content"><p class="center">四万万五千万灵魂，</p>
-<p class="center">凝成一团烈火，</p>
-<p class="center">烧断百年来的锁镣，</p>
-<p class="center">为青天白日一条血路杀开！</p>
-<p class="center">从金沙的大漠，</p>
-<p class="center">到常绿的海南，</p>
-<p class="center">杀声一片，</p>
-<p class="center">战鼓齐鸣：</p>
-<p class="center">杀退人间的公敌，</p>
-<p class="center">给来世放一线光明！</p>
-<p class="center">东西南北，风之所至，</p>
-<p class="center">都展开正义之旗；</p>
-<p class="center">到处是人，</p>
-<p class="center">到处是血；</p>
-<p class="center">哪个怕死，</p>
-<p class="center">四万万五千万国民？</p>
-<p class="center">和平若就是屈膝，</p>
-<p class="center">和平便等于怯懦无耻；</p>
-<p class="center">拉起手来，同胞，</p>
-<p class="center">打倒敌人才有和平！</p>
-<p class="center">今日的挣扎苦战，</p>
-<p class="center">是正义与人道的复生！</p>
-<p class="center">死者无言，</p>
-<p class="center">生者无泪，</p>
-<p class="center">咬定牙根，</p>
-<p class="center">誓不屈膝！</p>
-<p class="center">为正义，为人道，齐喊，</p>
-<p class="center">我们齐喊：杀上前去！</p>
-<p class="center">把天地杀昏，看，</p>
-<p class="center">我们头上升起了和平的大星！</p>
-<p class="right1">原载《抗战诗选》，1939年战时文化出版社出版</p>
+<div class="content"><p class="center">四万万五千万灵魂，</p>
+
+<p class="center">凝成一团烈火，</p>
+
+<p class="center">烧断百年来的锁镣，</p>
+
+<p class="center">为青天白日一条血路杀开！</p>
+
+<p class="center">从金沙的大漠，</p>
+
+<p class="center">到常绿的海南，</p>
+
+<p class="center">杀声一片，</p>
+
+<p class="center">战鼓齐鸣：</p>
+
+<p class="center">杀退人间的公敌，</p>
+
+<p class="center">给来世放一线光明！</p>
+
+<p class="center">东西南北，风之所至，</p>
+
+<p class="center">都展开正义之旗；</p>
+
+<p class="center">到处是人，</p>
+
+<p class="center">到处是血；</p>
+
+<p class="center">哪个怕死，</p>
+
+<p class="center">四万万五千万国民？</p>
+
+<p class="center">和平若就是屈膝，</p>
+
+<p class="center">和平便等于怯懦无耻；</p>
+
+<p class="center">拉起手来，同胞，</p>
+
+<p class="center">打倒敌人才有和平！</p>
+
+<p class="center">今日的挣扎苦战，</p>
+
+<p class="center">是正义与人道的复生！</p>
+
+<p class="center">死者无言，</p>
+
+<p class="center">生者无泪，</p>
+
+<p class="center">咬定牙根，</p>
+
+<p class="center">誓不屈膝！</p>
+
+<p class="center">为正义，为人道，齐喊，</p>
+
+<p class="center">我们齐喊：杀上前去！</p>
+
+<p class="center">把天地杀昏，看，</p>
+
+<p class="center">我们头上升起了和平的大星！</p>
+
+<p class="right1">原载《抗战诗选》，1939年战时文化出版社出版</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00963.html">← 上一页</a> ｜ <a href="./文00965.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "为和平而战", "itemUrl": "老舍全集/文00964.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷13.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -70,6 +70,41 @@
 <p>王一民对他们老两口点点头，一推外屋门，斜穿操场，向北面楼门走去。一进这个楼门，就是礼堂。</p>
 <p>王一民快步在学生中间穿行着。学生给他让开一条路，默默地看着他。在快走到楼门前的时候，他忽然发现罗世诚正直盯盯地看着他。罗世诚那大个子高出一般学生一头，自然容易看见了。王一民发现罗世诚眼睛里兴奋得直放光，嘴角上还挂着几丝笑纹。王一民又注意往他身旁一看，发现小个子肖光义也站在那里用同样兴奋的目光，同样的笑容望着他。这一来王一民全明白了，这件事还是他们俩干的！只不知是否经过团组织批准？是自发的盲目行动，还是有计划的行动？……王一民见他俩正在直盯盯地望着自己，便将头往正面一转，装作没看见的样子，绕过停在楼门前的五六辆摩托车，大踏步走上台阶，走进了楼门。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./章013.html">← 上一页</a> ｜ <a href="./章015.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "夜幕下的哈尔滨", "bookTitle": "夜幕下的哈尔滨", "itemTitle": "第 14 章 - 夜幕下的哈尔滨", "itemUrl": "夜幕下的哈尔滨/章014.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="navbar"><a href="./index.html">返回本书目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 <br>
 <hr color="#C0C0C0" width="60%%" size="1" align="left">

@@ -11,14 +11,56 @@
 <p class="title1">病</p>
 <p class="date">第15卷，散文 杂文 书信 · 散文 杂文</p>
 <br>
-<div class="content"><p>我是个“幺”儿子。母亲在生我的时候已四十二岁了。我还不到两岁，父亲即去世。母亲没有乳，只给我打一点面糊吃。父亲去世后，家更穷了，天天吃棒子面与咸菜。一直到十多岁，我老是多病，瘦弱得像一块不体面的皮糖。谁也想不到我能长大成人，我自己似乎也没有把握。</p>
-<p>每逢病倒，母亲便请刘干妈来给我看看。刘干妈烧上高香，盘腿端坐炕上，然后打几个哈欠，神便附了她的体。神很和气，问长问短，然后不知怎样，便由手指间揉出一丸药来。吃了药，我有时候就好起来，有时候就不高兴好起来；但好与不好，总须送给神仙一吊钱。</p>
-<p>夏天老生病，能够几天不吃东西——现在想起来，恐怕多半是饭太不好吃的缘故。</p>
-<p>后来，有了施诊的医院，母亲便不大信神仙了，因为上医院比请神仙省点钱。卫生设施能减除迷信，不是吗？</p>
-<p>九岁入私塾，十二岁入高等小学，小学毕业，本想去学手艺，可是我考中了师范学校。“师范”与“吃饭”差不多，既供给膳宿，且白给制服——要不是这样，我便绝对没有继续读书的希望。学校内有校医，治病方便，得以不死。</p>
-<p>近来，又常生病，因想起童年的状况，也就照样的满不在乎！</p>
-<p class="right1">原载1942年4月《妇女新运》第四卷第四期</p>
+<div class="content"><p>我是个“幺”儿子。母亲在生我的时候已四十二岁了。我还不到两岁，父亲即去世。母亲没有乳，只给我打一点面糊吃。父亲去世后，家更穷了，天天吃棒子面与咸菜。一直到十多岁，我老是多病，瘦弱得像一块不体面的皮糖。谁也想不到我能长大成人，我自己似乎也没有把握。</p>
+
+<p>每逢病倒，母亲便请刘干妈来给我看看。刘干妈烧上高香，盘腿端坐炕上，然后打几个哈欠，神便附了她的体。神很和气，问长问短，然后不知怎样，便由手指间揉出一丸药来。吃了药，我有时候就好起来，有时候就不高兴好起来；但好与不好，总须送给神仙一吊钱。</p>
+
+<p>夏天老生病，能够几天不吃东西——现在想起来，恐怕多半是饭太不好吃的缘故。</p>
+
+<p>后来，有了施诊的医院，母亲便不大信神仙了，因为上医院比请神仙省点钱。卫生设施能减除迷信，不是吗？</p>
+
+<p>九岁入私塾，十二岁入高等小学，小学毕业，本想去学手艺，可是我考中了师范学校。“师范”与“吃饭”差不多，既供给膳宿，且白给制服——要不是这样，我便绝对没有继续读书的希望。学校内有校医，治病方便，得以不死。</p>
+
+<p>近来，又常生病，因想起童年的状况，也就照样的满不在乎！</p>
+
+<p class="right1">原载1942年4月《妇女新运》第四卷第四期</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01770.html">← 上一页</a> ｜ <a href="./文01772.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "病", "itemUrl": "老舍全集/文01771.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷15.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -25,9 +25,9 @@
 
 <p>简单说几句关于文字改革问题。在文字改革上，有许多不同的意见，但是作家们一致拥护。文字改革的方法是不求规范化的。这是什么意思呢？就是说，文字改革是一个过渡的办法。我们将来一定是用拼音文字。方块字难处很多：难认，难念，难懂，难记，难写。过渡期间，消灭汉字不行，那么办就天下大乱了。文字改革就是让汉字简单一些，让它容易认些，容易记些，容易写些，省一点力气，这是必要的。一个外国小学生学了五年拼音文字可以差不多能认、能念、能写一点简单的话。我们的文字既是那么难，小学生读过五六年书，还不易写好简单的文字。不是有一度要把小学六年制改成五年制么，结果没有改，主要是文字不易掌握，非六年不可。汉字非常顽强，怎样记也记不住。看到它不认识。这是知识传播的很大障碍。有些生字，甚至大学毕业生，甚至我自己也是见到不认识，瞎蒙，常常念错。一个“斤”字加上“走”旁念“近”，加三点水就坏了，不能念“近”音了。</p>
 
-<p>因为汉字发展的历史是复杂的，所以简化汉字就应原来怎样现在还怎样，不要硬造一套新字。如“鸡”、“难”、“观”等字，一个“又”加一个“鸟”念“鸡”，“又”代表“奚”；“观”字一边是“雚”，与“奚”并不一样。可是我们人民自古以来，只要写不上来就写个“又”，我们今天不必再去改正。又如“擬”现在改成“拟”，要是规范化的话，凡是有“疑”旁的就都应变成“以”。可是“癡”简写为“痴”，“礙”简写为“碍”，相沿已久；如果力求规范化，把“痴”写成“src="./images/Image00245.jpg"
+<p>因为汉字发展的历史是复杂的，所以简化汉字就应原来怎样现在还怎样，不要硬造一套新字。如“鸡”、“难”、“观”等字，一个“又”加一个“鸟”念“鸡”，“又”代表“奚”；“观”字一边是“雚”，与“奚”并不一样。可是我们人民自古以来，只要写不上来就写个“又”，我们今天不必再去改正。又如“擬”现在改成“拟”，要是规范化的话，凡是有“疑”旁的就都应变成“以”。可是“癡”简写为“痴”，“礙”简写为“碍”，相沿已久；如果力求规范化，把“痴”写成“<img alt="" src="./images/Image00245.jpg" />
 
- ”，“礙”写成“src="./images/Image00246.jpg"
+ ”，“礙”写成“<img alt="" src="./images/Image00246.jpg" />
 
  ”，谁认识呢？不要勉强统一起来，用不着，行不通。</p>
 
@@ -88,6 +88,41 @@
  本篇是作者1956年3月在全国青年文学创作者会议上的发言。</p>
 
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文02230.html">← 上一页</a> ｜ <a href="./文02232.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "关于语言规范化", "itemUrl": "老舍全集/文02231.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷17.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

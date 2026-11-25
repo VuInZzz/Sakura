@@ -11,30 +11,88 @@
 <p class="title1">我的白昼晴朗</p>
 <p class="date">乘着歌声的翅膀：海涅诗选 · 1855</p>
 <br>
-<div class="content">
-<h2 class="chapter-two">我的白昼晴朗</h2>
-<p class="bodytext">我的白昼晴朗，我的黑夜幸福。</p>
-<p class="bodytext">当我弹起诗琴，人民都向我欢呼。</p>
-<p class="bodytext">那时我的歌是空气和火焰，</p>
-<p class="bodytext">煽动一些美丽的热烈的情感。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">我的夏天还在开花，可是我已经</p>
-<p class="bodytext">把收获向我的仓库里运送——</p>
-<p class="bodytext">许多事物使世界这样可贵、可爱，</p>
-<p class="bodytext">可是这些事物我如今就要离开。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">乐器从我的手里落下。那只酒杯，</p>
-<p class="bodytext">我曾经愉快地放在骄傲的唇边，</p>
-<p class="bodytext">如今它打碎了，碎成许多碎片。</p>
-<p class="bodytext"><br/>
-</p>
-<p class="bodytext">神啊！死亡是多么丑恶可悲！</p>
-<p class="bodytext">神啊！在这甜美亲切的人间</p>
-<p class="bodytext">生活有多么亲切，有多么甜美！</p>
-<p class="bodytext-right">（冯至 译）</p>
+<div class="content">
+
+<h2 class="chapter-two">我的白昼晴朗</h2>
+
+<p class="bodytext">我的白昼晴朗，我的黑夜幸福。</p>
+
+<p class="bodytext">当我弹起诗琴，人民都向我欢呼。</p>
+
+<p class="bodytext">那时我的歌是空气和火焰，</p>
+
+<p class="bodytext">煽动一些美丽的热烈的情感。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">我的夏天还在开花，可是我已经</p>
+
+<p class="bodytext">把收获向我的仓库里运送——</p>
+
+<p class="bodytext">许多事物使世界这样可贵、可爱，</p>
+
+<p class="bodytext">可是这些事物我如今就要离开。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">乐器从我的手里落下。那只酒杯，</p>
+
+<p class="bodytext">我曾经愉快地放在骄傲的唇边，</p>
+
+<p class="bodytext">如今它打碎了，碎成许多碎片。</p>
+
+<p class="bodytext"><br/>
+
+</p>
+
+<p class="bodytext">神啊！死亡是多么丑恶可悲！</p>
+
+<p class="bodytext">神啊！在这甜美亲切的人间</p>
+
+<p class="bodytext">生活有多么亲切，有多么甜美！</p>
+
+<p class="bodytext-right">（冯至 译）</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0234.html">← 上一页</a> ｜ <a href="./篇0236.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "海涅诗选", "bookTitle": "乘着歌声的翅膀：海涅诗选", "itemTitle": "我的白昼晴朗", "itemUrl": "海涅诗选/篇0235.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

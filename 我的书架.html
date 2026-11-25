@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Language" content="zh-cn">
+<title>我的书架 · OCR中文文库</title>
+<link rel="stylesheet" href="./MIA01.css" type="text/css">
+<style>
+.shelfbar{margin:10px 0;font-size:14px}
+.shelfbtn{font-size:13px;padding:3px 10px;cursor:pointer}
+.shelfmsg{color:#b00;font-size:13px;margin-left:8px}
+.shelfgroup{margin:18px 0}
+.shelflist{line-height:1.9;font-size:15px}
+.shelflist li{margin-bottom:2px}
+.shelfempty{color:#666;font-size:14px}
+</style>
+</head><body>
+<p class="navbar"><a style="text-decoration:none" href="./index.html">OCR中文文库</a> -&gt; <a style="text-decoration:none" href="./我的书架.html">我的书架</a></p>
+<hr color="#808080" size="1">
+<p class="title1">我的书架</p>
+<p class="date">登录后跨设备同步 · 云端保存</p>
+<br>
+
+<div class="shelfbar" id="authbar">正在检查登录状态……</div>
+
+<div id="shelfgate" style="display:none">
+  <blockquote><font color="#000066">使用 WorkBuddy 账号登录后，你的收藏与阅读进度会保存到云端，可在任意设备继续阅读。请选择下方「使用 WorkBuddy 登录」，登录后将自动回到本页。</font></blockquote>
+  <p><button class="shelfbtn" type="button" onclick="CloudShelf.signIn('shelf')">使用 WorkBuddy 登录</button><span class="shelfmsg" id="loginmsg"></span></p>
+</div>
+
+<div id="shelfcontent" style="display:none">
+  <p><button class="shelfbtn" type="button" onclick="CloudShelf.signOut().then(function(){location.reload()}).catch(function(e){document.getElementById('opmsg').textContent=e.message})">退出登录</button><span class="shelfmsg" id="opmsg"></span></p>
+  <div class="shelfgroup">
+    <p class="title3">我的收藏</p>
+    <div class="shelflist" id="favlist">加载中……</div>
+  </div>
+  <div class="shelfgroup">
+    <p class="title3">阅读进度</p>
+    <div class="shelflist" id="proglist">加载中……</div>
+  </div>
+</div>
+
+<script src="./cloud.js"></script>
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function itemHtml(r){
+  var href = CloudShelf.ROOT + r.item_url.replace(/^\.\//,'');
+  var label = r.item_title || r.book_title || r.item_url;
+  return '<li><a href="'+esc(href)+'">'+esc(label)+'</a> <span style="color:#888">（'+esc(r.book_title)+'）</span> '+
+         '<button class="shelfbtn" type="button" onclick="delItem('+r.id+')">移除</button></li>';
+}
+function renderList(el,rows){
+  if(!rows.length){el.innerHTML='<p class="shelfempty">暂无记录</p>';return}
+  el.innerHTML='<ul style="list-style:none;padding-left:0">'+rows.map(itemHtml).join('')+'</ul>';
+}
+function delItem(id){
+  if(!confirm('确定移除这条记录吗？')) return;
+  CloudShelf.removeShelf(id).then(function(){loadShelf()}).catch(function(e){document.getElementById('opmsg').textContent=e.message});
+}
+function loadShelf(){
+  Promise.all([CloudShelf.listShelf('favorite'),CloudShelf.listShelf('progress')]).then(function(res){
+    renderList(document.getElementById('favlist'),res[0]);
+    renderList(document.getElementById('proglist'),res[1]);
+  }).catch(function(e){
+    document.getElementById('favlist').textContent=e.message;
+    document.getElementById('proglist').textContent='';
+  });
+}
+function boot(){
+  var bar=document.getElementById('authbar');
+  // 回调必须在任何路由判断前处理
+  CloudShelf.handleCallback().then(function(){
+    return CloudShelf.getSession();
+  }).then(function(res){
+    var session=res&&res.data&&res.data.session;
+    if(!session){
+      bar.textContent='当前未登录';
+      document.getElementById('shelfgate').style.display='block';
+      return;
+    }
+    var name=(session.user&&session.user.name)||'读者';
+    bar.innerHTML='已登录：'+esc(name);
+    document.getElementById('shelfcontent').style.display='block';
+    loadShelf();
+  }).catch(function(e){
+    bar.textContent='';
+    document.getElementById('shelfgate').style.display='block';
+    document.getElementById('loginmsg').textContent=e.message;
+  });
+}
+boot();
+</script>
+</body></html>

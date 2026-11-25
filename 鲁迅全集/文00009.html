@@ -101,6 +101,41 @@
 <p class="noteitem">[409] 《论语·述而》记有孔子“述而不作，信而好古”的话。根据朱熹的注释，述即传旧，作是创始的意思。这原是孔子自述的话，说他从事整理《诗》、《书》、《礼》、《乐》、《易》、《春秋》等工作，都只是传旧，自己并未有所创造。后来“述而不作”便成为一种古训，认为只应该遵从传统的道德、思想和制度，不应该立异或有所创造。因此，不述而作，也就是违背古训。</p>
 <p class="noteitem">[410] 对于室女守志殉死的封建道德，明清间有些较开明的文人曾表示过非议，如明代归有光的《贞女论》、清代汪中《女子许嫁而婿死从死及守志议》，都曾指出它的不合理；后来俞正燮作《贞女说》，更表示了鲜明的反对的态度：“未同衾而同穴，谓之无害，则又何必亲迎，何必庙见，何必为酒食以召乡党僚友，世又何必有男女之别乎？此盖贤者未思之过……呜呼，男儿以忠义自责则可耳，妇女贞烈，岂是男子荣耀也。”室女，即未嫁的女子。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文00008.html">← 上一页</a> ｜ <a href="./文00010.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "我之节烈观", "itemUrl": "鲁迅全集/文00009.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷01.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -18,7 +18,7 @@
 <p>“什么事情真糟糕，朋友？”</p>
 <p>“咳，所有的一切，所有的一切。我真希望当初要是能够不死就好了。”</p>
 <p>“您的话使我感到惊奇。您为什么要说这种话呢？出了什么毛病吗？是怎么一回事？”</p>
-<p class="center">src="./images/image00261.jpeg"</p>
+<p class="center"><img alt="" src="./images/image00261.jpeg" /></p>
 <p>“怎么一回事！瞧瞧我这件送终的衣服——这一身破烂货。瞧瞧这块墓碑，它已经被碰得七损八伤。瞧瞧那口羞人的旧棺材。一个人眼看着他的全部家产都要完蛋，您还问他出了什么毛病。他妈的天火烧的！”</p>
 <p>“您冷静点儿呀，您冷静点儿呀，”我说，“这情况确实是非常糟——这情况肯定是非常糟，可是，看您已处于目前的状态下，我没想到您还会对这些事十分介意。”</p>
 <p>“哼，我的好先生，我对这些事<span class="em_dot">可</span>介意啦。瞧它们损伤了我的自尊心，影响了……也可以说是破坏了我的舒适。如果您允许的话，就让我谈一谈我目前的处境吧——让我原原本本叙述，您听了就会明白。”可怜的骷髅一边说一边把他寿衣上的兜头帽向后推了推，仿佛是准备采取什么行动，但这样一来就不知不觉流露出一副兴致勃勃的神情，那神情非但跟他目前生活（是不是可以这样说）境况的严重性很不相称，而且跟他愁苦的情绪形成了鲜明的对照。</p>
@@ -45,6 +45,41 @@
 <p class="noteitem"><span>[1]</span> 响板也称“呱哒板”，是作为伴奏器的骨制圆形凹板。敲时用手指相拍。</p>
 <p class="noteitem"><span>[2]</span> 模拟成语“把肉体和灵魂保持在一起”（意为苟延残喘）。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0029.html">← 上一页</a> ｜ <a href="./篇0031.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "马克·吐温中短篇小说选", "bookTitle": "马克·吐温中短篇小说选", "itemTitle": "怪梦——兼寓规训之意", "itemUrl": "马克·吐温中短篇小说选/篇0030.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

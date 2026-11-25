@@ -46,6 +46,41 @@
 <p class="noteitem">[117] <b>删节Hugo文的案语</b> Hugo，即雨果（1802—1885），法国作家。著有《悲惨世界》、《巴黎圣母院》等。《莽原》半月刊第二卷第十一期（1927年6月）发表刘半农所译雨果《〈克洛特格欧〉的后序》，原作被删节很多。译者在删节处所作按语中曾一再声言说“这里是提倡宗教的话……我实在不愿意译”，“这仍是‘神道设教’的愚民政策，不值得译出”等等。因此鲁迅信中说他“狄克推多”（英语Dictator的音译，独裁的意思）。</p>
 <p class="noteitem">[118] <b>徐志摩陈什么</b> 徐志摩（1897—1931），浙江海宁人，曾留学英、美，诗人，新月社主要成员。著有《志摩的诗》、《猛虎集》等。他所译的《赣第德》，1927年由北新书局出版。陈什么，指陈翰笙。</p>
 </div></div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文01498.html">← 上一页</a> ｜ <a href="./文01500.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "鲁迅全集", "bookTitle": "鲁迅全集", "itemTitle": "270717 致章廷谦", "itemUrl": "鲁迅全集/文01499.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷12.html">返回本卷目录</a> · <a href="./index.html">返回总目</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

@@ -11,10 +11,48 @@
 <p class="title1">后记</p>
 <p class="date">第16卷，文论 · 小花朵集</p>
 <br>
-<div class="content"><p>近二三年来，我又写了不少各种体裁的小文章。形式不同，内容各异，质量也或高或低。若把它们都编在一本集子里，必然杂乱无章。因此，我同意百花文艺出版社编辑同志们的意见：暂将那些与文艺问题有关的文章选编起来，以免乱七八糟。至于选用的文章是否都精彩，值得阅读，就不敢说了。</p>
-<p>有些朋友颇喜爱《内蒙风光》这一篇游记，并嘱选入集内。可是，这样一来，便不能不稍打乱原来的辑选计划。故将它打入附录，以事两全。</p>
-<p class="right1">老舍 一九六二年十一月于北京</p>
+<div class="content"><p>近二三年来，我又写了不少各种体裁的小文章。形式不同，内容各异，质量也或高或低。若把它们都编在一本集子里，必然杂乱无章。因此，我同意百花文艺出版社编辑同志们的意见：暂将那些与文艺问题有关的文章选编起来，以免乱七八糟。至于选用的文章是否都精彩，值得阅读，就不敢说了。</p>
+
+<p>有些朋友颇喜爱《内蒙风光》这一篇游记，并嘱选入集内。可是，这样一来，便不能不稍打乱原来的辑选计划。故将它打入附录，以事两全。</p>
+
+<p class="right1">老舍 一九六二年十一月于北京</p>
+
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./文02018.html">← 上一页</a> ｜ <a href="./文02020.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "老舍全集", "bookTitle": "老舍全集", "itemTitle": "后记", "itemUrl": "老舍全集/文02019.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./卷16.html">返回本卷目录</a> · <a href="./index.html">返回总目</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

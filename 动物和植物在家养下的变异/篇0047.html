@@ -22,7 +22,7 @@
 
   <p class="bodytext">在一些场合中，例如在猪、兔等以及由于种子而受到重视的那些植物的场合中，对于更能育的个体的直接选择，恐怕大大地增强了它们的能育性；在所有场合中，这种情形可能是间接地发生的，因为从更能育的个体产生出来的无数后代中有些获得了被保存下来的更良好机会。但是，关于猫、雪貂和狗，以及关于像胡萝卜、甘蓝和天门冬那样的非以多产性而受到重视的植物，选择只能起从属的作用；而且它们的增大了的能育性必须归因于它们长期生活于其中的更有利的生活条件。</p>
 
-  <div class="tupian">src="./images/01424.jpeg"</div>
+  <div class="tupian"><img alt="" src="./images/01424.jpeg" /></div>
 
   <p class="zhusi"><a id="new-notef1" href="part0473.html#new-note1" class="calibre4">[1]</a> 小圣伊莱尔引用，《普通博物学》，第三卷，第476页。这个原稿送往印刷之后，在赫伯特·斯宝塞的《生物学原理》（第二卷，1867年，第457页以次）中出现了关于这一问题的充分讨论。</p>
 
@@ -30,6 +30,41 @@
 
   <p class="zhusi"><a id="new-notef3" href="part0473.html#new-note3" class="calibre4">[3]</a> 关于原鸡的卵，参阅勃里斯，《博物学年报》，第二辑，第一卷，1848年，第456页。关于野鸭和驯鸭，《麦克季利夫雷》，《英国的鸟类》，第五卷，第37页；《鸭》（Die Enten），第87页。关于野鹅，洛伊得，《斯堪底那维亚探险记》，第二卷，1854年，第413页；关于驯鹅，《观赏的家禽》，狄克逊牧师著，第139页。关于鸽的育种，皮斯特，《鸽的饲育》，1831年，第46页；包依塔和考尔比，《鸽》，第158页。关于孔雀，按照得明克的材料（《鸽的普通博物学》，1813年，第二卷，第41页），雌孔雀在印度甚至可以下二十个卵；但按照季尔顿和另一位作者的材料（在推葛梅尔的《家鸡之书》中引用，1866年，第280，282页），她在那里只产四个到九个或十个卵：据《家鸡之书》所载，据说她在英国产五个到六个卵，但另一位作者说，产八个到十二个卵。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./篇0046.html">← 上一页</a> ｜ <a href="./篇0048.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "动物和植物在家养下的变异", "bookTitle": "动物和植物在家养下的变异", "itemTitle": "由家养和栽培所引起的能育性的增大", "itemUrl": "动物和植物在家养下的变异/篇0047.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="backtotoc" style="text-align:center;margin-top:20px"><a href="./index.html">返回目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 
 <br><hr color="#C0C0C0" width="60%" size="1" align="left">

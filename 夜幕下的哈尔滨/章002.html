@@ -26,6 +26,41 @@
 <p>“九一八”事变爆发不久，他就被党派进东满抗日义勇军里去了。在那里，他就有这么一支小枪。因为有武术的功底，手劲、眼力都好，所以他枪法练得又快又好，面对敌人，弹不虚发。一九三三年初，党又调他回哈尔滨做反日救国会工作。他就把小枪送给他的良师益友李汉超了。今天，他面前又摆着这么支烤蓝的小枪，怎能不高兴呢。他找出一块干净布包好，塞在腰带上。然后站起身，跳上写字台，举起手轻轻托开两块天棚板，手一用劲，又翻上了棚顶。天棚是两层的，他探着身子，掀开一块木板，板下放着党的文件和马列主义书籍。他从腰中拔出小枪，放在文件上，盖好木板，又翻回到屋里。他所以把这么重要的东西都放在棚顶上，是有他的安排的。如果出现情况，他跳上写字台就可以迅速地翻上顶棚。房盖上他早已准备好一个部位，椽子和瓦片都是活动的，手一扒，头一顶就可以钻出去。紧挨着他住的西房山头，是一棵高大的杨树，他纵身一跳就可跳到树上，然后顺着树往下一滑就到了墙外。这样，敌人还没有攻破屋门，他已经跑到墙外的胡同里去了。</p>
 <p>王一民从天棚上下来，擦掉写字台上的脚印，一看手表，已经快到四点钟了。他还想在日酋玉旨雄一到达前，赶回车站去。他忙洗了洗手，打开立柜下边的抽屉，从里面拿出一块黑面包，一碟酸黄瓜，又从暖壶里倒了一碗白开水，坐在桌前，咬一口面包，就一块酸黄瓜，香甜地吃了起来。</p>
 </div>
+<p class="pagenav" style="text-align:center;margin:14px 0"><a href="./章001.html">← 上一页</a> ｜ <a href="./章003.html">下一页 →</a></p>
+<p id="cloudFav" style="text-align:center;font-size:13px;margin:10px 0"><span id="cfMsg">云端书架：<a href="../我的书架.html">登录后可收藏本篇</a></span></p>
+<script src="../cloud.js"></script>
+<script>
+(function(){
+  var msg=document.getElementById("cfMsg");
+  var meta={"bookKey": "夜幕下的哈尔滨", "bookTitle": "夜幕下的哈尔滨", "itemTitle": "第 2 章 - 夜幕下的哈尔滨", "itemUrl": "夜幕下的哈尔滨/章002.html"};
+  function act(fav){
+    msg.innerHTML = fav
+      ? '★ 已收藏 · <a href="../我的书架.html">我的书架</a> ｜ <a href="javascript:;" id="cfBtn">取消收藏</a>'
+      : '☆ <a href="javascript:;" id="cfBtn">收藏本篇到云端书架</a> ｜ <a href="../我的书架.html">我的书架</a>';
+    document.getElementById("cfBtn").onclick=function(){
+      if(fav){
+        CloudShelf.listShelf("favorite").then(function(rows){
+          var hit=rows.filter(function(r){return r.item_url===meta.itemUrl})[0];
+          if(hit) return CloudShelf.removeShelf(hit.id);
+        }).then(function(){act(false)}).catch(function(e){msg.textContent=e.message});
+      }else{
+        CloudShelf.saveShelf({bookKey:meta.bookKey,bookTitle:meta.bookTitle,
+          itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"favorite"})
+          .then(function(){act(true);CloudShelf.saveShelf({bookKey:meta.bookKey,
+            bookTitle:meta.bookTitle,itemTitle:meta.itemTitle,itemUrl:meta.itemUrl,kind:"progress"}).catch(function(){})})
+          .catch(function(e){msg.textContent=e.message});
+      }
+    };
+  }
+  CloudShelf.getSession().then(function(res){
+    if(!res||!res.data||!res.data.session) return;
+    return CloudShelf.listShelf("favorite").then(function(rows){
+      act(rows.some(function(r){return r.item_url===meta.itemUrl}));
+    });
+  }).catch(function(){});
+})();
+</script>
+
 <p class="navbar"><a href="./index.html">返回本书目录</a> · <a href="../index.html">返回 OCR中文文库</a></p>
 <br>
 <hr color="#C0C0C0" width="60%%" size="1" align="left">
